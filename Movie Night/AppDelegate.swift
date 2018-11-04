@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func prepareAppWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = OnBoardingVC()
+        window?.rootViewController = OnBoardingController()
         window?.makeKeyAndVisible()
     }
 

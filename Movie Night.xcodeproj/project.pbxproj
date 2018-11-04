@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		CF8027CAE0C640E37DBB8C5D /* Pods_Movie_Night.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF80E2DD074BAF0241E995F /* Pods_Movie_Night.framework */; };
+		D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */; };
+		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
-		D8949FEA21872E3100A549B5 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FE921872E3100A549B5 /* OnBoardingVC.swift */; };
+		D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FE921872E3100A549B5 /* OnBoardingController.swift */; };
+		D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */; };
+		D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */; };
+		D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */; };
+		D8F7E3242187ACC30016B7E6 /* EasyConstraintsEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E3232187ACC30016B7E6 /* EasyConstraintsEx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DF80E2DD074BAF0241E995F /* Pods_Movie_Night.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Night.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1311163C16887FE599DFE855 /* Pods-Movie Night.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Night.release.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night.release.xcconfig"; sourceTree = "<group>"; };
 		C1C0BF42E0FD1C02FECDB888 /* Pods-Movie Night.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Night.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night.debug.xcconfig"; sourceTree = "<group>"; };
+		D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroTextModel.swift; sourceTree = "<group>"; };
+		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8949FD921871DCE00A549B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8949FDB21871DCE00A549B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8949FE921872E3100A549B5 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
+		D8949FE921872E3100A549B5 /* OnBoardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingController.swift; sourceTree = "<group>"; };
+		D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
+		D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageCell.swift; sourceTree = "<group>"; };
+		D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionViewCell.swift; sourceTree = "<group>"; };
+		D8F7E3232187ACC30016B7E6 /* EasyConstraintsEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyConstraintsEx.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +57,14 @@
 				1311163C16887FE599DFE855 /* Pods-Movie Night.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8116588218EF7430086C778 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		D8949FC321871DCC00A549B5 = {
@@ -70,10 +90,12 @@
 			children = (
 				D8949FDB21871DCE00A549B5 /* Info.plist */,
 				D8949FCF21871DCC00A549B5 /* AppDelegate.swift */,
-				D8949FE521871FFA00A549B5 /* Support Files */,
+				D8949FE521871FFA00A549B5 /* SupportFiles */,
+				D8F7E31921873FB70016B7E6 /* Extensions */,
+				D8F7E31F218749F80016B7E6 /* CustomComponents */,
 				D8949FE421871FF700A549B5 /* Models */,
 				D8949FE321871FF300A549B5 /* Views */,
-				D8949FE221871FF000A549B5 /* View Models */,
+				D8949FE221871FF000A549B5 /* ViewModels */,
 				D8949FE121871FEB00A549B5 /* Controllers */,
 			);
 			path = "Movie Night";
@@ -88,16 +110,17 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		D8949FE221871FF000A549B5 /* View Models */ = {
+		D8949FE221871FF000A549B5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = "View Models";
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D8949FE321871FF300A549B5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D8F7E31E218749870016B7E6 /* OnBoarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,25 +128,52 @@
 		D8949FE421871FF700A549B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D8116588218EF7430086C778 /* OnBoarding */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D8949FE521871FFA00A549B5 /* Support Files */ = {
+		D8949FE521871FFA00A549B5 /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
 				D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */,
 				D8949FD621871DCE00A549B5 /* Assets.xcassets */,
 			);
-			path = "Support Files";
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 		D8949FE821872DFA00A549B5 /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				D8949FE921872E3100A549B5 /* OnBoardingVC.swift */,
+				D8949FE921872E3100A549B5 /* OnBoardingController.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		D8F7E31921873FB70016B7E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */,
+				D8F7E3232187ACC30016B7E6 /* EasyConstraintsEx.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D8F7E31E218749870016B7E6 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		D8F7E31F218749F80016B7E6 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */,
+				D811658B218EFB8B0086C778 /* MNViewController.swift */,
+			);
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 		DFE373F51A58E5485003B9E4 /* Frameworks */ = {
@@ -210,12 +260,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -247,8 +295,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */,
+				D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */,
+				D8F7E3242187ACC30016B7E6 /* EasyConstraintsEx.swift in Sources */,
+				D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
-				D8949FEA21872E3100A549B5 /* OnBoardingVC.swift in Sources */,
+				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
+				D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */,
+				D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

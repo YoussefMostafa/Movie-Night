@@ -10,6 +10,5 @@ target 'Movie Night' do
 pod 'Alamofire', '~> 4.7'
 
 #Layout
-pod "TinyConstraints"
 
 end
