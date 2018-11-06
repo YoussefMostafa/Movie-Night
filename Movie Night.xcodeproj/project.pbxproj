@@ -10,6 +10,7 @@
 		CF8027CAE0C640E37DBB8C5D /* Pods_Movie_Night.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF80E2DD074BAF0241E995F /* Pods_Movie_Night.framework */; };
 		D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */; };
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
+		D8116590219129760086C778 /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* FBLoginButton.swift */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
@@ -26,6 +27,7 @@
 		C1C0BF42E0FD1C02FECDB888 /* Pods-Movie Night.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Night.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night.debug.xcconfig"; sourceTree = "<group>"; };
 		D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroTextModel.swift; sourceTree = "<group>"; };
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
+		D811658F219129760086C778 /* FBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButton.swift; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */,
 				D811658B218EFB8B0086C778 /* MNViewController.swift */,
+				D811658F219129760086C778 /* FBLoginButton.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */,
+				D8116590219129760086C778 /* FBLoginButton.swift in Sources */,
 				D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

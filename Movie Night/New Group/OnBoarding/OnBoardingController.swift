@@ -12,8 +12,8 @@ class OnBoardingController: MNViewController {
     
     // MARK: - Attributes
     
-    var toggle = true
-    var pageCellId = "PageCellId"
+    private var toggle = true
+    private var pageCellId = "PageCellId"
     
     // MARK: - DataSources
     
@@ -41,6 +41,47 @@ class OnBoardingController: MNViewController {
         return collectionView
     }()
     
+    private let pageIndicatorView: UIPageControl = {
+        let pageControl = UIPageControl(frame: .zero)
+        pageControl.currentPage = 0
+        pageControl.numberOfPages = 3
+        return pageControl
+    }()
+    
+    private let signUpWithMailButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Signup with Email", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        button.setTitleColor(UIColor.rgb(55, 71, 79, 1), for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 2
+        return button
+    }()
+    
+    private let fbLoginButton: UIButton = {
+        let button = FBLoginButton(type: .system)
+        return button
+    }()
+    
+    private let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .clear
+        button.setTitle("L O G I N", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
+    
+    private lazy var loginButtonsStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [signUpWithMailButton, fbLoginButton, loginButton])
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        return stackView
+    }()
+    
     
     // MARK: - Controller Methods
     
@@ -49,12 +90,17 @@ class OnBoardingController: MNViewController {
         view.addSubview(backgroundImageView)
         view.addSubview(brightnessLayerView)
         view.addSubview(onboardingCollectionView)
+        view.addSubview(pageIndicatorView)
+        view.addSubview(loginButtonsStackView)
     }
     
     internal override func setupConstraints() {
         backgroundImageView.edgesToSuperView()
         brightnessLayerView.edgesToSuperView()
         onboardingCollectionView.edgesToSuperView()
+        pageIndicatorView.centerHorizontally()
+        pageIndicatorView.anchorBottom(loginButtonsStackView.safeAreaLayoutGuide.topAnchor, padding: 48)
+        loginButtonsStackView.anchor(top: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: view.leadingAnchor, trailling: view.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16), width: nil, height: 124)
     }
     
     internal override func prepareDataSources() {
@@ -77,10 +123,15 @@ class OnBoardingController: MNViewController {
         return .lightContent
     }
     
+    override func viewDidLayoutSubviews() {
+        pageIndicatorView.subviews.forEach {$0.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)}
+    }
+    
 }
 
 
 // MARK: Extensions
+
 
 extension OnBoardingController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -105,5 +156,20 @@ extension OnBoardingController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let screenWidth = UIScreen.main.bounds.width
+        let screenMidPoint = screenWidth/2
+        let xOffset = scrollView.contentOffset.x
+        let page = Int(xOffset/screenWidth)
+        pageIndicatorView.currentPage = page
+        pageIndicatorView.updateCurrentPageDisplay()
+
+        
+        if (xOffset/2) > screenMidPoint {
+            
+                    }
+    }
+    
     
 }

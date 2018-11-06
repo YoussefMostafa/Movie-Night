@@ -13,11 +13,12 @@ extension UIView {
     typealias YAnchor = NSLayoutYAxisAnchor
     typealias XAnchor = NSLayoutXAxisAnchor
     
-    static var leading: XAnchor?
-    static var trailling: XAnchor?
-    static var top_: YAnchor?
-    static var bottom: YAnchor?
-
+    enum AnchorType {
+        case top
+        case bottom
+        case leading
+        case trailling
+    }
 
     func edgesToSuperView(safeAreas: Bool = false, padding: UIEdgeInsets? = nil) {
         let view = self
@@ -60,6 +61,41 @@ extension UIView {
         if let height = height {
             setHeight(height)
         }
+    }
+    
+    func edgesToSuperView(exclude anchorType: AnchorType, width: CGFloat? = nil, height: CGFloat? = nil, padding: CGFloat = 0) {
+        guard let superview = self.superview else { return }
+        let padding = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        switch anchorType {
+        case .top:
+            anchor(top: nil, bottom: superview.bottomAnchor, leading: superview.leadingAnchor, trailling: superview.trailingAnchor, padding: padding, width: width, height: height)
+        case .bottom:
+            anchor(top: superview.topAnchor, bottom: nil, leading: superview.leadingAnchor, trailling: superview.trailingAnchor, padding: padding, width: width, height: height)
+        case .leading:
+            anchor(top: superview.topAnchor, bottom: superview.bottomAnchor, leading: nil, trailling: superview.trailingAnchor, padding: padding, width: width, height: height)
+        case .trailling:
+            anchor(top: superview.topAnchor, bottom: superview.bottomAnchor, leading: superview.leadingAnchor, trailling: nil, padding: padding, width: width, height: height)
+        }
+    }
+    
+    func anchorBottom(_ anchor: YAnchor, padding: CGFloat) {
+        turnAutoresizingMaskIntoConstraintsOff()
+        self.bottomAnchor.constraint(equalTo: anchor, constant: -padding).isActive = true
+    }
+    
+    func anchorTop(_ anchor: YAnchor, padding: CGFloat) {
+        turnAutoresizingMaskIntoConstraintsOff()
+        self.topAnchor.constraint(equalTo: anchor, constant: padding).isActive = true
+    }
+    
+    func anchorLeading(_ anchor: XAnchor, padding: CGFloat) {
+        turnAutoresizingMaskIntoConstraintsOff()
+        self.leadingAnchor.constraint(equalTo: anchor, constant: padding).isActive = true
+    }
+    
+    func anchorTrailling(_ anchor: XAnchor, padding: CGFloat) {
+        turnAutoresizingMaskIntoConstraintsOff()
+        self.trailingAnchor.constraint(equalTo: anchor, constant: -padding).isActive = true
     }
     
     func setWidth(_ width: CGFloat) {

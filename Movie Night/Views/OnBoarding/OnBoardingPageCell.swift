@@ -42,11 +42,12 @@ class OnBoardingPageCell: MNCollectionViewCell {
     }
     
     override func setupConstraints() {
-        introTextLabel.anchor(top: safeAreaLayoutGuide.topAnchor, bottom: nil, leading: leadingAnchor, trailling: nil, padding: UIEdgeInsets(top: 185, left: 32, bottom: 0, right: 0), width: 266, height: nil)
+        introTextLabel.anchor(top: topAnchor, bottom: nil, leading: leadingAnchor, trailling: nil, padding: UIEdgeInsets(top: 165, left: 32, bottom: 0, right: 0), width: 267, height: nil)
     }
     
     override func setupUI() {
         backgroundColor = .clear
+        introTextLabel.adjustsFontSizeToFitWidth = true
     }
     
 }

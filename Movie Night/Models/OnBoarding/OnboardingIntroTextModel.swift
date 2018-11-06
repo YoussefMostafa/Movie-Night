@@ -10,7 +10,7 @@ import Foundation
 
 struct OnboardingIntroTextModel {
     let introTexts = [
-        "Catch new trailers from the year’s biggest movies and TV shows",
+        "Watch new trailers from the year’s biggest movies and TV shows",
         "Create a watchlist and keep track of what you want to watch",
         "Discover New Movies & TV Shows"
     ]
