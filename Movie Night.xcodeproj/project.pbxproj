@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		CF8027CAE0C640E37DBB8C5D /* Pods_Movie_Night.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF80E2DD074BAF0241E995F /* Pods_Movie_Night.framework */; };
+		D80DD01B219629230021E926 /* MNNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80DD01A219629230021E926 /* MNNavigationBar.swift */; };
 		D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */; };
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8116590219129760086C778 /* FBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* FBLoginButton.swift */; };
+		D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
@@ -25,9 +27,11 @@
 		0DF80E2DD074BAF0241E995F /* Pods_Movie_Night.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Night.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1311163C16887FE599DFE855 /* Pods-Movie Night.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Night.release.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night.release.xcconfig"; sourceTree = "<group>"; };
 		C1C0BF42E0FD1C02FECDB888 /* Pods-Movie Night.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Night.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night.debug.xcconfig"; sourceTree = "<group>"; };
+		D80DD01A219629230021E926 /* MNNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationBar.swift; sourceTree = "<group>"; };
 		D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroTextModel.swift; sourceTree = "<group>"; };
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D811658F219129760086C778 /* FBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginButton.swift; sourceTree = "<group>"; };
+		D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationControllerExt.swift; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			children = (
 				D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */,
 				D8F7E3232187ACC30016B7E6 /* EasyConstraintsEx.swift */,
+				D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */,
 				D811658B218EFB8B0086C778 /* MNViewController.swift */,
 				D811658F219129760086C778 /* FBLoginButton.swift */,
+				D80DD01A219629230021E926 /* MNNavigationBar.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -300,8 +306,10 @@
 			files = (
 				D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */,
 				D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */,
+				D80DD01B219629230021E926 /* MNNavigationBar.swift in Sources */,
 				D8F7E3242187ACC30016B7E6 /* EasyConstraintsEx.swift in Sources */,
 				D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */,
+				D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */,

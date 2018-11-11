@@ -124,6 +124,7 @@ class OnBoardingController: MNViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        navigationItem.title = "Popular"
         pageIndicatorView.subviews.forEach {$0.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)}
     }
     

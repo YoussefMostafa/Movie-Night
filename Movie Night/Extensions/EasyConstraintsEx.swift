@@ -20,15 +20,16 @@ extension UIView {
         case trailling
     }
 
-    func edgesToSuperView(safeAreas: Bool = false, padding: UIEdgeInsets? = nil) {
+    func edgesToSuperView(safeArea: Bool = false, padding: UIEdgeInsets? = nil) {
         let view = self
         guard let superView = view.superview else { return }
-        
-        if safeAreas {
-            anchor(top: superView.safeAreaLayoutGuide.topAnchor, bottom: superView.safeAreaLayoutGuide.bottomAnchor, leading: superView.safeAreaLayoutGuide.leadingAnchor, trailling: superView.safeAreaLayoutGuide.trailingAnchor, padding: padding)
-            return
-        }
-        anchor(top: superView.topAnchor, bottom: superView.bottomAnchor, leading: superView.leadingAnchor, trailling: superView.trailingAnchor, padding: padding)
+            anchor(
+                top: safeArea ? superView.safeAreaLayoutGuide.topAnchor : superView.topAnchor,
+                bottom: safeArea ? superView.safeAreaLayoutGuide.bottomAnchor : superView.bottomAnchor,
+                leading: safeArea ? superView.safeAreaLayoutGuide.leadingAnchor : superView.leadingAnchor,
+                trailling: safeArea ? superView.safeAreaLayoutGuide.trailingAnchor : superView.trailingAnchor,
+                padding: padding
+            )
     }
     
     func anchor(top: YAnchor?, bottom: YAnchor?, leading: XAnchor?, trailling: XAnchor?, padding: UIEdgeInsets?, width: CGFloat? = nil, height: CGFloat? = nil) {
@@ -63,19 +64,51 @@ extension UIView {
         }
     }
     
-    func edgesToSuperView(exclude anchorType: AnchorType, width: CGFloat? = nil, height: CGFloat? = nil, padding: CGFloat = 0) {
+    func edgesToSuperView(exclude anchorType: AnchorType, width: CGFloat? = nil, height: CGFloat? = nil, padding: CGFloat = 0, safeArea: Bool = false) {
         guard let superview = self.superview else { return }
         let padding = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
-        switch anchorType {
-        case .top:
-            anchor(top: nil, bottom: superview.bottomAnchor, leading: superview.leadingAnchor, trailling: superview.trailingAnchor, padding: padding, width: width, height: height)
-        case .bottom:
-            anchor(top: superview.topAnchor, bottom: nil, leading: superview.leadingAnchor, trailling: superview.trailingAnchor, padding: padding, width: width, height: height)
-        case .leading:
-            anchor(top: superview.topAnchor, bottom: superview.bottomAnchor, leading: nil, trailling: superview.trailingAnchor, padding: padding, width: width, height: height)
-        case .trailling:
-            anchor(top: superview.topAnchor, bottom: superview.bottomAnchor, leading: superview.leadingAnchor, trailling: nil, padding: padding, width: width, height: height)
-        }
+            switch anchorType {
+            case .top:
+                anchor(
+                    top: nil, bottom:
+                    safeArea ? superview.safeAreaLayoutGuide.bottomAnchor : superview.bottomAnchor,
+                    leading: safeArea ? superview.safeAreaLayoutGuide.leadingAnchor :  superview.leadingAnchor,
+                    trailling: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
+                    padding: padding,
+                    width: width,
+                    height: height
+                )
+            case .bottom:
+                anchor(
+                    top: safeArea ? superview.safeAreaLayoutGuide.topAnchor : superview.topAnchor,
+                    bottom: nil,
+                    leading: safeArea ? superview.safeAreaLayoutGuide.leadingAnchor : superview.leadingAnchor,
+                    trailling: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
+                    padding: padding,
+                    width: width,
+                    height: height
+                )
+            case .leading:
+                anchor(
+                    top: safeArea ? superview.safeAreaLayoutGuide.topAnchor : superview.topAnchor,
+                    bottom: safeArea ? superview.safeAreaLayoutGuide.bottomAnchor : superview.bottomAnchor,
+                    leading: nil,
+                    trailling: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
+                    padding: padding,
+                    width: width,
+                    height: height
+                )
+            case .trailling:
+                anchor(
+                    top: safeArea ? superview.safeAreaLayoutGuide.topAnchor : superview.topAnchor,
+                    bottom: safeArea ? superview.safeAreaLayoutGuide.bottomAnchor : superview.bottomAnchor,
+                    leading: safeArea ? superview.safeAreaLayoutGuide.leadingAnchor : superview.leadingAnchor,
+                    trailling: nil,
+                    padding: padding,
+                    width: width,
+                    height: height
+                )
+            }
     }
     
     func anchorBottom(_ anchor: YAnchor, padding: CGFloat) {
@@ -108,24 +141,28 @@ extension UIView {
         self.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
     
-    func centerInSuperView(width: CGFloat? = nil, height: CGFloat? = nil) {
+    func centerInSuperView(width: CGFloat? = nil, height: CGFloat? = nil, safeArea: Bool = false ) {
         let view = self
         if let width = width { setWidth(width) }
         if let height = height { setHeight(height) }
-        view.centerHorizontally()
-        view.centerVertically()
+        view.centerHorizontally(constant: 0, safeArea: safeArea)
+        view.centerVertically(constant: 0, safeArea: safeArea)
     }
     
-    func centerHorizontally(constant: CGFloat = 0) {
-        turnAutoresizingMaskIntoConstraintsOff()
-        guard let superView = self.superview else { return }
-        self.centerXAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.centerXAnchor, constant: constant).isActive = true
+    func centerInSuperView(safeArea: Bool = false) {
+        centerInSuperView(width: nil, height: nil, safeArea: safeArea)
     }
     
-    func centerVertically(constant: CGFloat = 0) {
+    func centerHorizontally(constant: CGFloat = 0, safeArea: Bool = false) {
         turnAutoresizingMaskIntoConstraintsOff()
         guard let superView = self.superview else { return }
-        self.centerYAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.centerYAnchor, constant: constant).isActive = true
+        self.centerXAnchor.constraint(equalTo: safeArea ? superView.safeAreaLayoutGuide.centerXAnchor : superView.centerXAnchor , constant: constant).isActive = true
+    }
+    
+    func centerVertically(constant: CGFloat = 0, safeArea: Bool = false) {
+        turnAutoresizingMaskIntoConstraintsOff()
+        guard let superView = self.superview else { return }
+        self.centerYAnchor.constraint(equalTo: safeArea ? superView.safeAreaLayoutGuide.centerYAnchor : superView.centerYAnchor, constant: constant).isActive = true
     }
     
     func set(width: CGFloat, height: CGFloat) {

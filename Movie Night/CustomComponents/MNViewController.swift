@@ -10,13 +10,27 @@ import UIKit
 
 class MNViewController: UIViewController {
     
+    // MARK: - Views
+    
+//    var navigationBar: MNNavigationBar?
+    var hasNavigationBar: Bool = false
+    
+    // MARK: - LifeCycle Methods
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         setupSubViews()
         setupConstraints()
         setupUI()
         prepareDataSources()
         registerCells()
         setupDelegates()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+//        if hasNavigationBar { setupNavigationBar() }
     }
     
     func setupSubViews() {}
@@ -26,5 +40,20 @@ class MNViewController: UIViewController {
     func fetchData() {}
     func registerCells() {}
     func setupDelegates() {}
+    
+    
+//    func setupNavigationBar() {
+//        let navBarFrame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 44 + view.safeAreaInsets.top)
+//        let navigationBar = MNNavigationBar(frame: navBarFrame)
+//        self.navigationBar = navigationBar
+//        view.addSubview(navigationBar)
+//    }
+    
+    public func x() {
+        
+    }
+    
+    
+    
     
 }
