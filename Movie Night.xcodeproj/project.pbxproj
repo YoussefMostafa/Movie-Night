@@ -16,6 +16,8 @@
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
 		D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FE921872E3100A549B5 /* OnBoardingController.swift */; };
+		D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A01E2198CA0F0048D414 /* APIManager.swift */; };
+		D8A2A0212198CB3A0048D414 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */; };
 		D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */; };
 		D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */; };
 		D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */; };
@@ -36,6 +38,8 @@
 		D8949FD921871DCE00A549B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8949FDB21871DCE00A549B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8949FE921872E3100A549B5 /* OnBoardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingController.swift; sourceTree = "<group>"; };
+		D8A2A01E2198CA0F0048D414 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageCell.swift; sourceTree = "<group>"; };
 		D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 				D8949FDB21871DCE00A549B5 /* Info.plist */,
 				D8949FCF21871DCC00A549B5 /* AppDelegate.swift */,
 				D8949FE521871FFA00A549B5 /* SupportFiles */,
+				D8A2A01D2198C9A70048D414 /* Helpers */,
 				D8F7E31921873FB70016B7E6 /* Extensions */,
 				D8F7E31F218749F80016B7E6 /* CustomComponents */,
 				D8949FE421871FF700A549B5 /* Models */,
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */,
+				D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */,
 				D8949FD621871DCE00A549B5 /* Assets.xcassets */,
 			);
 			path = SupportFiles;
@@ -152,6 +158,14 @@
 				D8949FE921872E3100A549B5 /* OnBoardingController.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		D8A2A01D2198C9A70048D414 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D8A2A01E2198CA0F0048D414 /* APIManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D8F7E31921873FB70016B7E6 /* Extensions */ = {
@@ -252,6 +266,7 @@
 			files = (
 				D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */,
 				D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */,
+				D8A2A0212198CB3A0048D414 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +281,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -305,6 +324,7 @@
 				D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */,
 				D8F7E3242187ACC30016B7E6 /* EasyConstraintsEx.swift in Sources */,
 				D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */,
+				D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */,
 				D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
@@ -452,10 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T448CTU295;
 				INFOPLIST_FILE = "Movie Night/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.UsefDev.Movie-Night";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -471,10 +488,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T448CTU295;
 				INFOPLIST_FILE = "Movie Night/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.UsefDev.Movie-Night";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

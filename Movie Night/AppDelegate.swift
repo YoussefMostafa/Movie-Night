@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,8 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        prepareAppWindow()
+        prepare()
         return true
+    }
+    
+    private func prepare() {
+        prepareAppWindow()
+        prepareFirebase()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -46,6 +52,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: OnBoardingController())
         window?.makeKeyAndVisible()
+    }
+    
+    
+    
+    private func prepareFirebase() {
+        FirebaseApp.configure()
     }
 
 }

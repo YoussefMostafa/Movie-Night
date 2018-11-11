@@ -11,4 +11,7 @@ pod 'Alamofire', '~> 4.7'
 
 #Layout
 
+#Firebase
+pod 'Firebase/Core'
+
 end
