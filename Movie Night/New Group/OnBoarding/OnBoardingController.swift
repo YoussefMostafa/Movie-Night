@@ -14,6 +14,8 @@ class OnBoardingController: MNViewController {
     
     private var toggle = true
     private var pageCellId = "PageCellId"
+    private var pageNo = 1
+    private var lastContentOffset:  CGPoint = CGPoint(x: 0, y: 0)
     
     // MARK: - DataSources
     
@@ -160,17 +162,14 @@ extension OnBoardingController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let screenWidth = UIScreen.main.bounds.width
-        let screenMidPoint = screenWidth/2
-        let xOffset = scrollView.contentOffset.x
-        let page = Int(xOffset/screenWidth)
-        pageIndicatorView.currentPage = page
-        pageIndicatorView.updateCurrentPageDisplay()
-
-        
-        if (xOffset/2) > screenMidPoint {
-            
-                    }
+        let screenMidPoint = (screenWidth*CGFloat(pageNo)) - (screenWidth/2)
+        if scrollView.contentOffset.x > screenMidPoint {
+            pageNo += 1
+            pageIndicatorView.currentPage = pageNo-1
+        } else if scrollView.contentOffset.x < lastContentOffset.x {
+            pageNo -= 1
+        }
+        lastContentOffset = scrollView.contentOffset
     }
-    
-    
+
 }

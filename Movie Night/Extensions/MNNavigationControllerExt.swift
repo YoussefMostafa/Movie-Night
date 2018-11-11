@@ -10,6 +10,13 @@ import UIKit
 
 extension UINavigationController {
     
+    private var gradientColors: [CGColor] {
+        return [
+            UIColor.rgb(0, 181, 255, 1).cgColor,
+            UIColor.rgb(254, 25, 250, 1).cgColor
+        ]
+    }
+    
     // MARK: - LyfeCycle Methods
     
     open override func viewDidLayoutSubviews() {
@@ -22,18 +29,11 @@ extension UINavigationController {
     
     private func setupGradient() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = gradientColors()
+        gradientLayer.colors = gradientColors
         gradientLayer.type = .axial
         gradientLayer.startPoint = CGPoint(x: 0, y: 1)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         setFramesFor(gradientLayer)
-    }
-    
-    private func gradientColors() -> [CGColor] {
-        return [
-            UIColor.rgb(0, 181, 255, 1).cgColor,
-            UIColor.rgb(254, 25, 250, 1).cgColor
-        ]
     }
     
     private func setFramesFor(_ gradientLayer: CALayer) {
