@@ -52,17 +52,6 @@ class OnBoardingController: MNLoginController {
         return pageControl
     }()
     
-    private let signUpWithMailButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("Signup with Email", for: .normal)
-        button.titleLabel?.textAlignment = .center
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        button.setTitleColor(UIColor.rgb(55, 71, 79, 1), for: .normal)
-        button.backgroundColor = .white
-        button.layer.cornerRadius = 2
-        return button
-    }()
-    
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .clear

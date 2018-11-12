@@ -11,25 +11,41 @@ import FBSDKLoginKit
 
 class MNLoginController: MNViewController {
     
-    private(set) var fbLoginButton = MNFBLoginButton(type: .system)
+    // MARK: - Views
+    
+    var fbLoginButton: MNFBLoginButton  {
+        let button = MNFBLoginButton(type: .system)
+        button.delegate = self
+        button.backgroundColor = UIColor.rgb(59, 89, 152)
+        button.layer.cornerRadius = 2
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        return button
+    }
+    
+    var signUpWithMailButton: UIButton {
+        let button = UIButton(type: .system)
+        button.setTitle("Signup with Email", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        button.setTitleColor(UIColor.rgb(55, 71, 79, 1), for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 2
+        return button
+    }
+    
+    // MARK: - LifeCycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fbLoginButton.delegate = self
     }
     
-    override func setupUI() {
-        setupFacebookButtonUI()
-    }
-    
-    private func setupFacebookButtonUI() {
-        fbLoginButton.backgroundColor = UIColor.rgb(59, 89, 152)
-        fbLoginButton.layer.cornerRadius = 2
-        fbLoginButton.layer.masksToBounds = true
-        fbLoginButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-    }
+    // MARK: - Class Methods
     
 }
+
+// MARK: - Extensions
 
 extension MNLoginController: FBSDKLoginButtonDelegate {
     
