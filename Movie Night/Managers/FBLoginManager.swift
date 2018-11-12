@@ -1,5 +1,5 @@
 //
-//  APIManager.swift
+//  FBLoginManager.swift
 //  Movie Night
 //
 //  Created by Youssef Mostafa on 11/11/18.
@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import Alamofire
 
-class APIManager {
+class FBLoginManager {
     
-    // MARK: - Main instance
-    static let shared = APIManager()
+    // MARK: - Singelton instance
+    
+    static let shared = FBLoginManager()
     
     // MARK: - Attributes
     
@@ -20,5 +20,6 @@ class APIManager {
     
     private init() {}
     
-    // Mark: - Methods
+    // MARK: - Methods
+    
 }

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
-class OnBoardingController: MNViewController {
+class OnBoardingController: MNLoginController {
     
     // MARK: - Attributes
     
@@ -40,6 +41,7 @@ class OnBoardingController: MNViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
@@ -61,11 +63,6 @@ class OnBoardingController: MNViewController {
         return button
     }()
     
-    private let fbLoginButton: UIButton = {
-        let button = FBLoginButton(type: .system)
-        return button
-    }()
-    
     private let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .clear
@@ -83,6 +80,13 @@ class OnBoardingController: MNViewController {
         stackView.spacing = 8
         return stackView
     }()
+    
+    // MARK: - LifeCycle Methods
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pageIndicatorView.subviews.forEach {$0.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)}
+    }
     
     
     // MARK: - Controller Methods
@@ -114,6 +118,7 @@ class OnBoardingController: MNViewController {
     }
     
     override func setupUI() {
+        super.setupUI()
         onboardingCollectionView.backgroundColor = .clear
         onboardingCollectionView.isPagingEnabled = true
         if let layout = onboardingCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -125,16 +130,11 @@ class OnBoardingController: MNViewController {
         return .lightContent
     }
     
-    override func viewDidLayoutSubviews() {
-        navigationItem.title = "Popular"
-        pageIndicatorView.subviews.forEach {$0.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)}
-    }
-    
 }
 
 
-// MARK: Extensions
 
+// MARK: - PageControll Extension
 
 extension OnBoardingController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     

@@ -13,5 +13,9 @@ pod 'Alamofire', '~> 4.7'
 
 #Firebase
 pod 'Firebase/Core'
+pod 'Firebase/Auth'
+
+#Facebook
+pod 'FBSDKLoginKit'
 
 end

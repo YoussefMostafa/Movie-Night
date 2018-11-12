@@ -1,5 +1,5 @@
 //
-//  FBLoginButton.swift
+//  MNFBLoginButton.swift
 //  Movie Night
 //
 //  Created by Youssef Mostafa on 11/6/18.
@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
-class FBLoginButton: UIButton {
+class MNFBLoginButton: FBSDKLoginButton {
     
     private let fbImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "FaceBookIcon"))
@@ -17,19 +18,8 @@ class FBLoginButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
         setupSubViews()
         setupConstraints()
-    }
-    
-    private func setupUI() {
-        backgroundColor = UIColor.rgb(59, 89, 152)
-        layer.cornerRadius = 2
-        layer.masksToBounds = true
-        setTitleColor(.white, for: .normal)
-        setTitle("Signup with Facebook", for: .normal)
-        titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        return
     }
     
     private func setupSubViews() {
@@ -37,6 +27,7 @@ class FBLoginButton: UIButton {
     }
     
     private func setupConstraints() {
+        removeConstraints(constraints)
         fbImageView.edgesToSuperView(exclude: .trailling, width: 36, height: nil, padding: 0)
     }
     
