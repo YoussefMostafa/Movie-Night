@@ -17,22 +17,22 @@ extension UIView {
         case top
         case bottom
         case leading
-        case trailling
+        case trailing
     }
 
-    func edgesToSuperView(safeArea: Bool = false, padding: UIEdgeInsets? = nil) {
+    func edgesToSuperView(safeArea: Bool = false, padding: UIPadding? = nil) {
         let view = self
         guard let superView = view.superview else { return }
             anchor(
                 top: safeArea ? superView.safeAreaLayoutGuide.topAnchor : superView.topAnchor,
                 bottom: safeArea ? superView.safeAreaLayoutGuide.bottomAnchor : superView.bottomAnchor,
                 leading: safeArea ? superView.safeAreaLayoutGuide.leadingAnchor : superView.leadingAnchor,
-                trailling: safeArea ? superView.safeAreaLayoutGuide.trailingAnchor : superView.trailingAnchor,
+                trailing: safeArea ? superView.safeAreaLayoutGuide.trailingAnchor : superView.trailingAnchor,
                 padding: padding
             )
     }
     
-    func anchor(top: YAnchor?, bottom: YAnchor?, leading: XAnchor?, trailling: XAnchor?, padding: UIEdgeInsets?, width: CGFloat? = nil, height: CGFloat? = nil) {
+    func anchor(top: YAnchor? = nil, bottom: YAnchor? = nil, leading: XAnchor? = nil, trailing: XAnchor? = nil, padding: UIPadding? = nil, width: CGFloat? = nil, height: CGFloat? = nil) {
         
         let view = self
         
@@ -51,7 +51,7 @@ extension UIView {
             view.leadingAnchor.constraint(equalTo: leading, constant: padding?.left ?? 0).isActive = true
         }
         
-        if let trailling = trailling {
+        if let trailling = trailing {
             view.trailingAnchor.constraint(equalTo: trailling, constant: -(padding?.right ?? 0)).isActive = true
         }
         
@@ -66,14 +66,14 @@ extension UIView {
     
     func edgesToSuperView(exclude anchorType: AnchorType, width: CGFloat? = nil, height: CGFloat? = nil, padding: CGFloat = 0, safeArea: Bool = false) {
         guard let superview = self.superview else { return }
-        let padding = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        let padding = UIPadding(top: padding, left: padding, bottom: padding, right: padding)
             switch anchorType {
             case .top:
                 anchor(
-                    top: nil, bottom:
+                    bottom:
                     safeArea ? superview.safeAreaLayoutGuide.bottomAnchor : superview.bottomAnchor,
                     leading: safeArea ? superview.safeAreaLayoutGuide.leadingAnchor :  superview.leadingAnchor,
-                    trailling: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
+                    trailing: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
                     padding: padding,
                     width: width,
                     height: height
@@ -81,9 +81,8 @@ extension UIView {
             case .bottom:
                 anchor(
                     top: safeArea ? superview.safeAreaLayoutGuide.topAnchor : superview.topAnchor,
-                    bottom: nil,
                     leading: safeArea ? superview.safeAreaLayoutGuide.leadingAnchor : superview.leadingAnchor,
-                    trailling: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
+                    trailing: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
                     padding: padding,
                     width: width,
                     height: height
@@ -92,18 +91,16 @@ extension UIView {
                 anchor(
                     top: safeArea ? superview.safeAreaLayoutGuide.topAnchor : superview.topAnchor,
                     bottom: safeArea ? superview.safeAreaLayoutGuide.bottomAnchor : superview.bottomAnchor,
-                    leading: nil,
-                    trailling: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
+                    trailing: safeArea ? superview.safeAreaLayoutGuide.trailingAnchor : superview.trailingAnchor,
                     padding: padding,
                     width: width,
                     height: height
                 )
-            case .trailling:
+            case .trailing:
                 anchor(
                     top: safeArea ? superview.safeAreaLayoutGuide.topAnchor : superview.topAnchor,
                     bottom: safeArea ? superview.safeAreaLayoutGuide.bottomAnchor : superview.bottomAnchor,
                     leading: safeArea ? superview.safeAreaLayoutGuide.leadingAnchor : superview.leadingAnchor,
-                    trailling: nil,
                     padding: padding,
                     width: width,
                     height: height

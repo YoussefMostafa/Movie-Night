@@ -15,12 +15,7 @@ class MNLoginController: MNViewController {
     
     var fbLoginButton: MNFBLoginButton  {
         let button = MNFBLoginButton(type: .system)
-        button.delegate = self
-        button.backgroundColor = UIColor.rgb(59, 89, 152)
-        button.layer.cornerRadius = 2
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        button.layer.masksToBounds = true
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        
         return button
     }
     
@@ -41,6 +36,11 @@ class MNLoginController: MNViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
     // MARK: - Class Methods
     
 }
@@ -50,6 +50,20 @@ class MNLoginController: MNViewController {
 extension MNLoginController: FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+        if error != nil {
+            print(error.localizedDescription)
+            return
+        }
+        
+        
+        FBLoginManager.shared.signIn(with: result.token) { (userInfo, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+        }
         
     }
     

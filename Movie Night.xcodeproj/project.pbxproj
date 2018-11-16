@@ -12,10 +12,15 @@
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* MNFBLoginButton.swift */; };
 		D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */; };
+		D872C5C1219CAFF400807169 /* LoginProfileSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */; };
+		D872C5C4219EEFC300807169 /* UIPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C3219EEFC300807169 /* UIPadding.swift */; };
+		D872C5C6219F4FB600807169 /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C5219F4FB600807169 /* MNButton.swift */; };
+		D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D872C5CB219F50A300807169 /* BLMultiColorLoader.m */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
 		D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FE921872E3100A549B5 /* OnBoardingController.swift */; };
+		D8A006CC219A2206004EC041 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A006CB219A2206004EC041 /* UserInfo.swift */; };
 		D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A01E2198CA0F0048D414 /* APIManager.swift */; };
 		D8A2A0212198CB3A0048D414 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */; };
 		D8A2A0232198CFAF0048D414 /* FBLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A0222198CFAF0048D414 /* FBLoginManager.swift */; };
@@ -34,12 +39,18 @@
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D811658F219129760086C778 /* MNFBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButton.swift; sourceTree = "<group>"; };
 		D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationControllerExt.swift; sourceTree = "<group>"; };
+		D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfileSetupController.swift; sourceTree = "<group>"; };
+		D872C5C3219EEFC300807169 /* UIPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPadding.swift; sourceTree = "<group>"; };
+		D872C5C5219F4FB600807169 /* MNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
+		D872C5CA219F50A300807169 /* BLMultiColorLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMultiColorLoader.h; sourceTree = "<group>"; };
+		D872C5CB219F50A300807169 /* BLMultiColorLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMultiColorLoader.m; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8949FD921871DCE00A549B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8949FDB21871DCE00A549B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8949FE921872E3100A549B5 /* OnBoardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingController.swift; sourceTree = "<group>"; };
+		D8A006CB219A2206004EC041 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		D8A2A01E2198CA0F0048D414 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8A2A0222198CFAF0048D414 /* FBLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginManager.swift; sourceTree = "<group>"; };
@@ -79,6 +90,42 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		D872C5BE219CAD8200807169 /* Supers */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */,
+				D811658B218EFB8B0086C778 /* MNViewController.swift */,
+				D8A2A0262199132E0048D414 /* MNLoginController.swift */,
+			);
+			name = Supers;
+			sourceTree = "<group>";
+		};
+		D872C5BF219CAF0A00807169 /* Login&Signup */ = {
+			isa = PBXGroup;
+			children = (
+				D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */,
+			);
+			path = "Login&Signup";
+			sourceTree = "<group>";
+		};
+		D872C5C2219EEFA300807169 /* EasyConstaints */ = {
+			isa = PBXGroup;
+			children = (
+				D8F7E3232187ACC30016B7E6 /* EasyConstraintsEx.swift */,
+				D872C5C3219EEFC300807169 /* UIPadding.swift */,
+			);
+			path = EasyConstaints;
+			sourceTree = "<group>";
+		};
+		D872C5C9219F509800807169 /* BLMultiColorLoader */ = {
+			isa = PBXGroup;
+			children = (
+				D872C5CA219F50A300807169 /* BLMultiColorLoader.h */,
+				D872C5CB219F50A300807169 /* BLMultiColorLoader.m */,
+			);
+			path = BLMultiColorLoader;
+			sourceTree = "<group>";
+		};
 		D8949FC321871DCC00A549B5 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +152,7 @@
 				D8949FE521871FFA00A549B5 /* SupportFiles */,
 				D8A2A01D2198C9A70048D414 /* Managers */,
 				D8F7E31921873FB70016B7E6 /* Extensions */,
+				D872C5BE219CAD8200807169 /* Supers */,
 				D8F7E31F218749F80016B7E6 /* CustomComponents */,
 				D8949FE421871FF700A549B5 /* Models */,
 				D8949FE321871FF300A549B5 /* Views */,
@@ -117,6 +165,7 @@
 		D8949FE121871FEB00A549B5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D872C5BF219CAF0A00807169 /* Login&Signup */,
 				D8949FE821872DFA00A549B5 /* OnBoarding */,
 			);
 			name = Controllers;
@@ -141,6 +190,7 @@
 		D8949FE421871FF700A549B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D8A006CA219A21E8004EC041 /* Session */,
 				D8116588218EF7430086C778 /* OnBoarding */,
 			);
 			path = Models;
@@ -164,6 +214,14 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		D8A006CA219A21E8004EC041 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				D8A006CB219A2206004EC041 /* UserInfo.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
 		D8A2A01D2198C9A70048D414 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +234,8 @@
 		D8F7E31921873FB70016B7E6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D872C5C2219EEFA300807169 /* EasyConstaints */,
 				D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */,
-				D8F7E3232187ACC30016B7E6 /* EasyConstraintsEx.swift */,
 				D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */,
 			);
 			path = Extensions;
@@ -194,10 +252,9 @@
 		D8F7E31F218749F80016B7E6 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
-				D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */,
-				D811658B218EFB8B0086C778 /* MNViewController.swift */,
+				D872C5C9219F509800807169 /* BLMultiColorLoader */,
 				D811658F219129760086C778 /* MNFBLoginButton.swift */,
-				D8A2A0262199132E0048D414 /* MNLoginController.swift */,
+				D872C5C5219F4FB600807169 /* MNButton.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -336,9 +393,11 @@
 			files = (
 				D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */,
 				D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */,
+				D872C5C1219CAFF400807169 /* LoginProfileSetupController.swift in Sources */,
 				D8F7E3242187ACC30016B7E6 /* EasyConstraintsEx.swift in Sources */,
 				D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */,
 				D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */,
+				D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */,
 				D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
 				D8A2A0272199132E0048D414 /* MNLoginController.swift in Sources */,
@@ -346,7 +405,10 @@
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */,
 				D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */,
+				D8A006CC219A2206004EC041 /* UserInfo.swift in Sources */,
+				D872C5C6219F4FB600807169 /* MNButton.swift in Sources */,
 				D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */,
+				D872C5C4219EEFC300807169 /* UIPadding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

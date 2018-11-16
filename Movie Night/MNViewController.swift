@@ -10,14 +10,11 @@ import UIKit
 
 class MNViewController: UIViewController {
     
-    // MARK: - Views
-
-    var hasNavigationBar: Bool = false
-    
     // MARK: - LifeCycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareProps()
         setupSubViews()
         setupConstraints()
         setupUI()
@@ -29,6 +26,7 @@ class MNViewController: UIViewController {
     
     // MARK: - Methods
     
+    func prepareProps() {}
     func setupSubViews() {}
     func setupConstraints() {}
     func setupUI() {}

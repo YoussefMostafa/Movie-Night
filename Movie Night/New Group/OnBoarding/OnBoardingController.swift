@@ -95,7 +95,13 @@ class OnBoardingController: MNLoginController {
         onboardingCollectionView.edgesToSuperView()
         pageIndicatorView.centerHorizontally()
         pageIndicatorView.anchorBottom(loginButtonsStackView.safeAreaLayoutGuide.topAnchor, padding: 48)
-        loginButtonsStackView.anchor(top: nil, bottom: view.safeAreaLayoutGuide.bottomAnchor, leading: view.leadingAnchor, trailling: view.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16), width: nil, height: 124)
+        loginButtonsStackView.anchor(
+            bottom: view.safeAreaLayoutGuide.bottomAnchor,
+            leading: view.leadingAnchor,
+            trailing: view.trailingAnchor,
+            padding: UIPadding(left: 16, bottom: 8, right: 16),
+            height: 124
+        )
     }
     
     internal override func prepareDataSources() {

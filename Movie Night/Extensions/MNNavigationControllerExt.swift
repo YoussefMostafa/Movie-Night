@@ -21,9 +21,9 @@ extension UINavigationController {
     
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        isNavigationBarHidden = true
         setupGradient()
     }
+    
     
     // MARK: - Class Methods
     
