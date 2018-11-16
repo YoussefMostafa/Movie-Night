@@ -44,6 +44,7 @@
 		D872C5C5219F4FB600807169 /* MNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
 		D872C5CA219F50A300807169 /* BLMultiColorLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMultiColorLoader.h; sourceTree = "<group>"; };
 		D872C5CB219F50A300807169 /* BLMultiColorLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMultiColorLoader.m; sourceTree = "<group>"; };
+		D872C5CF219F54B800807169 /* MoviewNight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoviewNight-Bridging-Header.h"; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */,
+				D872C5CF219F54B800807169 /* MoviewNight-Bridging-Header.h */,
 				D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */,
 				D8949FD621871DCE00A549B5 /* Assets.xcassets */,
 			);
@@ -556,6 +558,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.UsefDev.Movie-Night";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Movie Night/SupportFiles/MoviewNight-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -575,6 +578,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.UsefDev.Movie-Night";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Movie Night/SupportFiles/MoviewNight-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

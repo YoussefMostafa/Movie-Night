@@ -11,6 +11,26 @@ import Foundation
 
 class MNButton: UIButton {
     
-
+    private(set) lazy var loadingView: BLMultiColorLoader = {
+        let view = BLMultiColorLoader()
+        view.colorArray = [UIColor.white]
+        view.lineWidth = 2
+        addSubview(view)
+        view.anchorTrailling(trailingAnchor, padding: 16)
+        view.centerVertically()
+        view.set(width: 20, height: 20)
+        return view
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
 }

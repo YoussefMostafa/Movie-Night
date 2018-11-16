@@ -60,8 +60,8 @@ class LoginProfileSetupController: MNViewController {
         return textField
     }()
     
-    private(set) lazy var continueButton: UIButton = {
-        let button = UIButton(type: .system)
+    private(set) lazy var continueButton: MNButton = {
+        let button = MNButton(type: .system)
         button.backgroundColor = UIColor.rgb(67, 71, 86)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         button.tintColor = .white
@@ -82,6 +82,7 @@ class LoginProfileSetupController: MNViewController {
         continueButton.setTitle("Continue", for: .normal)
         navigationItem.title = "Profile"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
+        continueButton.loadingView.startAnimation()
     }
     
     override func setupSubViews() {
@@ -111,7 +112,7 @@ class LoginProfileSetupController: MNViewController {
             padding: UIPadding(top: 2),
             height: 40
         )
-
+        
         profileImageView.set(width: 95, height: 95)
         profileImageView.centerHorizontally()
         profileImageView.anchorTop(cautionLabel.bottomAnchor, padding: 45)
