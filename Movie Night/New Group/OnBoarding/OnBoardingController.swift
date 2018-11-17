@@ -9,7 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 
-class OnBoardingController: MNLoginController {
+class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     
     // MARK: - Attributes
     
@@ -45,6 +45,22 @@ class OnBoardingController: MNLoginController {
         return collectionView
     }()
     
+    var fbLoginButton: MNFBLoginButton = {
+        let button = MNFBLoginButton(type: .system)
+        return button
+    }()
+    
+    var signUpWithMailButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Signup with Email", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        button.setTitleColor(UIColor.rgb(55, 71, 79, 1), for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 2
+        return button
+    }()
+    
     private let pageIndicatorView: UIPageControl = {
         let pageControl = UIPageControl(frame: .zero)
         pageControl.currentPage = 0
@@ -75,6 +91,11 @@ class OnBoardingController: MNLoginController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         pageIndicatorView.subviews.forEach {$0.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)}
+    }
+    
+    override func setupDelegates() {
+        super.setupDelegates()
+        fbLoginButton.delegate = self
     }
     
     
@@ -115,6 +136,7 @@ class OnBoardingController: MNLoginController {
     override func setupUI() {
         super.setupUI()
         onboardingCollectionView.backgroundColor = .clear
+        navigationController?.isNavigationBarHidden = true
         onboardingCollectionView.isPagingEnabled = true
         if let layout = onboardingCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
@@ -123,6 +145,10 @@ class OnBoardingController: MNLoginController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    func loginSuccessed(with userInfo: UserInfo) {
+        
     }
     
 }
@@ -166,5 +192,5 @@ extension OnBoardingController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         lastContentOffset = scrollView.contentOffset
     }
-
+    
 }

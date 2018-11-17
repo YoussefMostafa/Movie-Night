@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -50,14 +49,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func prepareAppWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: LoginProfileSetupController())
+        window?.rootViewController = UINavigationController(rootViewController: OnBoardingController())
         window?.makeKeyAndVisible()
     }
     
-    
-    
     private func prepareFirebase() {
-        FirebaseApp.configure()
+        FirebaseManager.configure()
     }
 
 }

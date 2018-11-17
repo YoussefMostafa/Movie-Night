@@ -16,6 +16,8 @@
 		D872C5C4219EEFC300807169 /* UIPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C3219EEFC300807169 /* UIPadding.swift */; };
 		D872C5C6219F4FB600807169 /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C5219F4FB600807169 /* MNButton.swift */; };
 		D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D872C5CB219F50A300807169 /* BLMultiColorLoader.m */; };
+		D872C5D1219F5CA000807169 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D0219F5CA000807169 /* AppManager.swift */; };
+		D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D2219F5D1100807169 /* FirebaseManager.swift */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
@@ -23,8 +25,7 @@
 		D8A006CC219A2206004EC041 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A006CB219A2206004EC041 /* UserInfo.swift */; };
 		D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A01E2198CA0F0048D414 /* APIManager.swift */; };
 		D8A2A0212198CB3A0048D414 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */; };
-		D8A2A0232198CFAF0048D414 /* FBLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A0222198CFAF0048D414 /* FBLoginManager.swift */; };
-		D8A2A0272199132E0048D414 /* MNLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A0262199132E0048D414 /* MNLoginController.swift */; };
+		D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A0222198CFAF0048D414 /* FaceBookManager.swift */; };
 		D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */; };
 		D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */; };
 		D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */; };
@@ -45,6 +46,8 @@
 		D872C5CA219F50A300807169 /* BLMultiColorLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLMultiColorLoader.h; sourceTree = "<group>"; };
 		D872C5CB219F50A300807169 /* BLMultiColorLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLMultiColorLoader.m; sourceTree = "<group>"; };
 		D872C5CF219F54B800807169 /* MoviewNight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoviewNight-Bridging-Header.h"; sourceTree = "<group>"; };
+		D872C5D0219F5CA000807169 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		D872C5D2219F5D1100807169 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,8 +57,7 @@
 		D8A006CB219A2206004EC041 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		D8A2A01E2198CA0F0048D414 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D8A2A0222198CFAF0048D414 /* FBLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginManager.swift; sourceTree = "<group>"; };
-		D8A2A0262199132E0048D414 /* MNLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNLoginController.swift; sourceTree = "<group>"; };
+		D8A2A0222198CFAF0048D414 /* FaceBookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookManager.swift; sourceTree = "<group>"; };
 		D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageCell.swift; sourceTree = "<group>"; };
 		D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -96,7 +98,6 @@
 			children = (
 				D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */,
 				D811658B218EFB8B0086C778 /* MNViewController.swift */,
-				D8A2A0262199132E0048D414 /* MNLoginController.swift */,
 			);
 			name = Supers;
 			sourceTree = "<group>";
@@ -227,8 +228,10 @@
 		D8A2A01D2198C9A70048D414 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				D872C5D0219F5CA000807169 /* AppManager.swift */,
 				D8A2A01E2198CA0F0048D414 /* APIManager.swift */,
-				D8A2A0222198CFAF0048D414 /* FBLoginManager.swift */,
+				D8A2A0222198CFAF0048D414 /* FaceBookManager.swift */,
+				D872C5D2219F5D1100807169 /* FirebaseManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -402,11 +405,12 @@
 				D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */,
 				D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
-				D8A2A0272199132E0048D414 /* MNLoginController.swift in Sources */,
-				D8A2A0232198CFAF0048D414 /* FBLoginManager.swift in Sources */,
+				D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
+				D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */,
 				D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */,
 				D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */,
+				D872C5D1219F5CA000807169 /* AppManager.swift in Sources */,
 				D8A006CC219A2206004EC041 /* UserInfo.swift in Sources */,
 				D872C5C6219F4FB600807169 /* MNButton.swift in Sources */,
 				D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */,
