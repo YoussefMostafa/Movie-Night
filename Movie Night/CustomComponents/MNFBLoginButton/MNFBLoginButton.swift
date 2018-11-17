@@ -10,15 +10,11 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 
-class MNFBLoginButton: UIButton {
+class MNFBLoginButton: MNButton {
     
     // MARK: - Delegate
     
-    var delegate: MNFBLoginButtonDelegate? {
-        didSet {
-            print("dsfsdfs")
-        }
-    }
+    var delegate: MNFBLoginButtonDelegate? 
     
     // MARK: - Views
     
@@ -58,8 +54,17 @@ class MNFBLoginButton: UIButton {
     
     @objc private func didTap() {
         guard let delegate = delegate else { return }
-        FaceBookManager.login(delegate as! UIViewController) { (userInfo) in
-            guard let userInfo = userInfo else { return }
+        delegate.loadingViewStartedAnimation()
+        FaceBookManager.login(delegate as! UIViewController) { (userInfo, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                delegate.loadingViewStopedAnimation()
+                return
+            }
+            guard let userInfo = userInfo else {
+                delegate.loadingViewStopedAnimation()
+                return
+            }
             delegate.loginSuccessed(with: userInfo)
         }
     }
@@ -71,8 +76,5 @@ class MNFBLoginButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-protocol MNFBLoginButtonDelegate {
-    func loginSuccessed(with userInfo: UserInfo)
+    
 }

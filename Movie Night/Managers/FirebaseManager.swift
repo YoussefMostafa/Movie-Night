@@ -38,12 +38,7 @@ class FirebaseManager {
     }
     
     private static func getUserInfo(from authResults: AuthDataResult) -> UserInfo {
-        let user = authResults.user
-        
-        print("ddd")
-        print(user.email)
-        
-        
+        let user = authResults.user    
         return UserInfo(uid: user.uid, name: user.displayName, email: user.email, profilePicture: user.photoURL, phoneNumber: user.phoneNumber)
     }
     

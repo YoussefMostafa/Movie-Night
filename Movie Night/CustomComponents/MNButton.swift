@@ -22,4 +22,14 @@ class MNButton: UIButton {
         return view
     }()
     
+    func startAnimation() {
+        loadingView.startAnimation()
+        isEnabled = false
+    }
+    
+    func stopAnimation() {
+        loadingView.stopAnimation()
+        isEnabled = true
+    }
+    
 }

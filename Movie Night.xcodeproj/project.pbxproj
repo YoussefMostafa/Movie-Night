@@ -18,6 +18,7 @@
 		D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D872C5CB219F50A300807169 /* BLMultiColorLoader.m */; };
 		D872C5D1219F5CA000807169 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D0219F5CA000807169 /* AppManager.swift */; };
 		D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D2219F5D1100807169 /* FirebaseManager.swift */; };
+		D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		D872C5CF219F54B800807169 /* MoviewNight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoviewNight-Bridging-Header.h"; sourceTree = "<group>"; };
 		D872C5D0219F5CA000807169 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		D872C5D2219F5D1100807169 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButtonDelegate.swift; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +128,15 @@
 				D872C5CB219F50A300807169 /* BLMultiColorLoader.m */,
 			);
 			path = BLMultiColorLoader;
+			sourceTree = "<group>";
+		};
+		D872C5D421A0283000807169 /* MNFBLoginButton */ = {
+			isa = PBXGroup;
+			children = (
+				D811658F219129760086C778 /* MNFBLoginButton.swift */,
+				D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */,
+			);
+			path = MNFBLoginButton;
 			sourceTree = "<group>";
 		};
 		D8949FC321871DCC00A549B5 = {
@@ -257,8 +268,8 @@
 		D8F7E31F218749F80016B7E6 /* CustomComponents */ = {
 			isa = PBXGroup;
 			children = (
+				D872C5D421A0283000807169 /* MNFBLoginButton */,
 				D872C5C9219F509800807169 /* BLMultiColorLoader */,
-				D811658F219129760086C778 /* MNFBLoginButton.swift */,
 				D872C5C5219F4FB600807169 /* MNButton.swift */,
 			);
 			path = CustomComponents;
@@ -403,6 +414,7 @@
 				D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */,
 				D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */,
 				D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */,
+				D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */,
 				D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
 				D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */,

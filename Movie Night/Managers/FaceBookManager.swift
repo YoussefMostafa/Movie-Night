@@ -32,36 +32,37 @@ class FaceBookManager {
     
     // MARK: - Methods
     
-    static func login(_ controller: UIViewController, _ completionHandler: @escaping (UserInfo?)->()) {
+    static func login(_ controller: UIViewController, _ completionHandler: @escaping (UserInfo?, Error?)->()) {
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["email"], from: controller) { (results, error) in
             
             if error != nil {
+                completionHandler(nil, error)
                 return
             }
             
             guard let results = results else { return }
             
             if results.isCancelled {
-                completionHandler(nil)
+                completionHandler(nil, error)
                 return
             }
-
-            signInUsingFireBase({ (userInfo) in
-                completionHandler(userInfo)
+            
+            signInUsingFireBase({ (userInfo, error) in
+                completionHandler(userInfo, error)
             })
         }
     }
     
-    private static func signInUsingFireBase(_ completionHandler: @escaping (UserInfo) -> () ) {
+    private static func signInUsingFireBase(_ completionHandler: @escaping (UserInfo?, Error?) -> () ) {
         FirebaseManager.signin(with: shared.accessToken, { (userInfo, error) in
-            
             if let error = error {
                 print(error.localizedDescription)
+                completionHandler(nil, error)
                 return
             }
             guard let userInfo = userInfo else { return }
-            completionHandler(userInfo)
+            completionHandler(userInfo, nil)
         })
     }
     

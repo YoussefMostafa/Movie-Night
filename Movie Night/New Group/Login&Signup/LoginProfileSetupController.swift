@@ -82,7 +82,6 @@ class LoginProfileSetupController: MNViewController {
         continueButton.setTitle("Continue", for: .normal)
         navigationItem.title = "Profile"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
-        continueButton.loadingView.startAnimation()
     }
     
     override func setupSubViews() {

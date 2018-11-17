@@ -17,6 +17,7 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     private var pageCellId = "PageCellId"
     private var pageNo = 1
     private var lastContentOffset:  CGPoint = CGPoint(x: 0, y: 0)
+    private var fbLoadingViewAnimating = false
     
     // MARK: - DataSources
     
@@ -52,7 +53,7 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     
     var signUpWithMailButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Signup with Email", for: .normal)
+        button.setTitle("Signup With Phone Number", for: .normal)
         button.titleLabel?.textAlignment = .center
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         button.setTitleColor(UIColor.rgb(55, 71, 79, 1), for: .normal)
@@ -96,6 +97,11 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     override func setupDelegates() {
         super.setupDelegates()
         fbLoginButton.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fbLoadingViewAnimating ? fbLoginButton.startAnimation() : fbLoginButton.stopAnimation()
     }
     
     
@@ -149,6 +155,21 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     
     func loginSuccessed(with userInfo: UserInfo) {
         
+        loadingViewStopedAnimation()
+    }
+    
+    func loadingViewStopedAnimation() {
+        fbLoadingViewAnimating = false
+        signUpWithMailButton.isEnabled = true
+        signUpWithMailButton.layer.opacity = 1
+        fbLoginButton.stopAnimation()
+    }
+    
+    func loadingViewStartedAnimation() {
+        fbLoadingViewAnimating = true
+        signUpWithMailButton.isEnabled = false
+        signUpWithMailButton.layer.opacity = 0.5
+        fbLoginButton.startAnimation()
     }
     
 }
