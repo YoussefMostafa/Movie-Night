@@ -14,10 +14,10 @@ class MNViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         prepareProps()
         setupSubViews()
         setupConstraints()
-        setupUI()
         prepareDataSources()
         registerCells()
         setupDelegates()

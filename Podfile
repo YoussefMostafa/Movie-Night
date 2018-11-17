@@ -8,6 +8,7 @@ target 'Movie Night' do
 
 #Networking
 pod 'Alamofire', '~> 4.7'
+pod 'SDWebImage', '~> 4.0'
 
 #Layout
 
@@ -17,5 +18,6 @@ pod 'Firebase/Auth'
 
 #Facebook
 pod 'FBSDKLoginKit'
+
 
 end

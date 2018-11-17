@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class LoginProfileSetupController: MNViewController {
     
@@ -14,21 +15,46 @@ class LoginProfileSetupController: MNViewController {
     
     var navigationBarInset: CGFloat = 0
     
+    private var dataSource: LoginProfileViewModel? {
+        willSet {
+            welcomeLabel.text = newValue?.welcomeText
+            cautionLabel.text = newValue?.cautionText
+            userNameTextField.text = newValue?.username
+            profileLoadingView.startAnimating()
+            profileImageView.sd_setImage(with: newValue?.profilePic, placeholderImage: #imageLiteral(resourceName: "Oval"), options: .progressiveDownload) { (image, error, caheType, url) in
+                self.profileLoadingView.stopAnimating()
+            }
+        }
+    }
+    
+    var userInfo: UserInfo? {
+        willSet {
+            guard let userInfo = newValue else { return }
+            dataSource = LoginProfileViewModel(userInfo)
+        }
+    }
+    
     // MARK: - Views
     
-    private(set) lazy var welcomeLabel: UILabel = {
+    private(set) var welcomeLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         label.textColor = .white
         return label
     }()
     
-    private(set) lazy var cautionLabel: UILabel = {
+    private(set) var cautionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        label.textColor = .white
+        label.textColor = UIColor.rgb(135, 145, 149)
         label.numberOfLines = 0
         return label
+    }()
+    
+    private(set) var profileLoadingView: UIActivityIndicatorView = {
+        let loadingView = UIActivityIndicatorView()
+        loadingView.color = .black
+        return loadingView
     }()
     
     private(set) lazy var profileImageView: UIImageView = {
@@ -36,10 +62,13 @@ class LoginProfileSetupController: MNViewController {
         imageView.layer.cornerRadius = 47
         imageView.image = #imageLiteral(resourceName: "Oval")
         imageView.layer.masksToBounds = true
+        imageView.addSubview(profileLoadingView)
+        profileLoadingView.centerInSuperView()
+        profileLoadingView.set(width: 18, height: 18)
         return imageView
     }()
     
-    private(set) lazy var choosePictureButton: UIButton = {
+    private(set) var choosePictureButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Choose another picture", for: .normal)
         button.backgroundColor = .clear
@@ -48,7 +77,7 @@ class LoginProfileSetupController: MNViewController {
         return button
     }()
     
-    private(set) lazy var userNameTextField: UITextField = {
+    private(set) var userNameTextField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.layer.shadowColor = UIColor.rgb(55, 71, 79, 0.45).cgColor
         textField.layer.shadowOpacity = 1
@@ -60,7 +89,7 @@ class LoginProfileSetupController: MNViewController {
         return textField
     }()
     
-    private(set) lazy var continueButton: MNButton = {
+    private(set) var continueButton: MNButton = {
         let button = MNButton(type: .system)
         button.backgroundColor = UIColor.rgb(67, 71, 86)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
@@ -78,7 +107,8 @@ class LoginProfileSetupController: MNViewController {
     override func setupUI() {
         view.backgroundColor = UIColor.rgb(20, 29, 38)
         navigationController?.isNavigationBarHidden = false
-        cautionLabel.text = "You’re about to continue with Facebook. Take a look at your information"
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        navigationItem.hidesBackButton = true
         continueButton.setTitle("Continue", for: .normal)
         navigationItem.title = "Profile"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
@@ -102,7 +132,6 @@ class LoginProfileSetupController: MNViewController {
             padding: UIPadding(top: 29+navigationBarInset, left: 24, right: 24),
             height: 32
         )
-        
         
         cautionLabel.anchor(
             top: welcomeLabel.bottomAnchor,

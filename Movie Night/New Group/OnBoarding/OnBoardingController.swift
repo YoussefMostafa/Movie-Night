@@ -142,8 +142,8 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     override func setupUI() {
         super.setupUI()
         onboardingCollectionView.backgroundColor = .clear
-        navigationController?.isNavigationBarHidden = true
         onboardingCollectionView.isPagingEnabled = true
+        navigationController?.isNavigationBarHidden = true
         if let layout = onboardingCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }
@@ -154,8 +154,10 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     }
     
     func loginSuccessed(with userInfo: UserInfo) {
-        
         loadingViewStopedAnimation()
+        let controller = LoginProfileSetupController()
+        controller.userInfo = userInfo
+        navigationController?.pushViewController( controller, animated: true)
     }
     
     func loadingViewStopedAnimation() {

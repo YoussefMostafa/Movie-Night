@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import FBSDKLoginKit
+import FirebaseAuth
 
 class FirebaseManager {
     
