@@ -43,13 +43,9 @@ class MNViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc func keyboardWillShow(_ notification: Notification) {
-        
-    }
+    @objc func keyboardWillShow(_ notification: Notification) {}
     
-    @objc func keyboardWillHide(_ notification: Notification) {
-        
-    }
+    @objc func keyboardWillHide(_ notification: Notification) {}
     
     func setupNavigationBar() {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
@@ -59,8 +55,6 @@ class MNViewController: UIViewController {
         return .lightContent
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+    deinit { NotificationCenter.default.removeObserver(self) }
     
 }

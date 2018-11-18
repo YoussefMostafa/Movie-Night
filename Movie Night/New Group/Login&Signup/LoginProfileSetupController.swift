@@ -63,6 +63,7 @@ class LoginProfileSetupController: MNViewController {
         imageView.addSubview(profileLoadingView)
         profileLoadingView.centerInSuperView()
         profileLoadingView.set(width: 18, height: 18)
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -76,7 +77,7 @@ class LoginProfileSetupController: MNViewController {
         return button
     }()
     
-    private var userNameTextField: UITextField = {
+    private lazy var userNameTextField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.layer.shadowColor = UIColor.rgb(55, 71, 79, 0.45).cgColor
         textField.layer.shadowOpacity = 1
@@ -85,6 +86,9 @@ class LoginProfileSetupController: MNViewController {
         textField.backgroundColor = UIColor.rgb(20, 29, 38)
         textField.textColor = UIColor.rgb(55, 71, 79)
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        textField.returnKeyType = .done
+        textField.delegate = self
+        textField.keyboardAppearance = .dark
         return textField
     }()
     
@@ -100,14 +104,28 @@ class LoginProfileSetupController: MNViewController {
     // MARK: - Class Methods
     
     override func setupUI() {
-        view.backgroundColor = UIColor.rgb(20, 29, 38)
+        setupNavigationControllerUI()
+        setupGestures()
+        setupMainUI()
+    }
+    
+    private func setupNavigationControllerUI() {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         navigationItem.hidesBackButton = true
         navigationController?.isNavigationBarHidden = false
-        continueButton.setTitle("Continue", for: .normal)
         navigationItem.title = "Profile"
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tapGesture)
+    }
+    
+    private func setupGestures() {
+        let tapGestureToDismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        let tapGestureToOpenImagePicker = UITapGestureRecognizer(target: self, action: #selector(choosePictureButtonHandler))
+        view.addGestureRecognizer(tapGestureToDismissKeyboard)
+        profileImageView.addGestureRecognizer(tapGestureToOpenImagePicker)
+    }
+    
+    private func setupMainUI() {
+        view.backgroundColor = UIColor.rgb(20, 29, 38)
+        continueButton.setTitle("Continue", for: .normal)
     }
     
     @objc private func dismissKeyboard() {
@@ -124,11 +142,26 @@ class LoginProfileSetupController: MNViewController {
     }
     
     override func keyboardWillShow(_ notification: Notification) {
-        
+        let frame = userNameTextField.frame
+        let keyboardFrame = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        if frame.maxY >= keyboardFrame.minY {
+            let yOffset = (frame.maxY+8) - keyboardFrame.minY
+            UIView.animate(withDuration: 0.3) {
+                self.view.frame = CGRect(x: 0, y: -yOffset, width: self.view.frame.width, height: self.view.frame.height)
+                self.welcomeLabel.isHidden = true
+                self.cautionLabel.isHidden = true
+            }
+        }
     }
     
     override func keyboardWillHide(_ notification: Notification) {
-        
+        if self.view.frame.minY < 0 {
+            UIView.animate(withDuration: 0.3) {
+                self.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+                self.welcomeLabel.isHidden = false
+                self.cautionLabel.isHidden = false
+            }
+        }
     }
     
     override func setupSubViews() {
@@ -194,5 +227,14 @@ extension LoginProfileSetupController: UINavigationControllerDelegate, UIImagePi
             profileImageView.image = image
             picker.dismiss(animated: true)
         }
+    }
+}
+
+// MARK: - TextFeild Extension
+
+extension LoginProfileSetupController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
     }
 }
