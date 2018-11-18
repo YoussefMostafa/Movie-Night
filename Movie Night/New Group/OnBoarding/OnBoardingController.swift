@@ -157,7 +157,7 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
         loadingViewStopedAnimation()
         let controller = LoginProfileSetupController()
         controller.userInfo = userInfo
-        navigationController?.pushViewController( controller, animated: true)
+        present(MNNavigationController(rootViewController: controller), animated: true)
     }
     
     func loadingViewStopedAnimation() {

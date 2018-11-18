@@ -106,12 +106,11 @@ class LoginProfileSetupController: MNViewController {
     
     override func setupUI() {
         view.backgroundColor = UIColor.rgb(20, 29, 38)
-        navigationController?.isNavigationBarHidden = false
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         navigationItem.hidesBackButton = true
+        navigationController?.isNavigationBarHidden = false
         continueButton.setTitle("Continue", for: .normal)
         navigationItem.title = "Profile"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
     }
     
     override func setupSubViews() {

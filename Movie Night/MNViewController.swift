@@ -22,9 +22,10 @@ class MNViewController: UIViewController {
         registerCells()
         setupDelegates()
         fetchData()
+        setupNavigationBar()
     }
     
-    // MARK: - Methods
+    // MARK: - Class Methods
     
     func prepareProps() {}
     func setupSubViews() {}
@@ -34,5 +35,14 @@ class MNViewController: UIViewController {
     func fetchData() {}
     func registerCells() {}
     func setupDelegates() {}
+    
+    
+    func setupNavigationBar() {
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .semibold)]
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
 }

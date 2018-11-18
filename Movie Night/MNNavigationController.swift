@@ -1,14 +1,16 @@
 //
-//  MNNavigationControllerExt.swift
+//  MNNavigationController.swift
 //  Movie Night
 //
-//  Created by Youssef Mostafa on 11/11/18.
+//  Created by Youssef Mostafa on 11/18/18.
 //  Copyright © 2018 UsefDev. All rights reserved.
 //
 
 import UIKit
 
-extension UINavigationController {
+class MNNavigationController: UINavigationController {
+    
+    // MARK: - Attributes
     
     private var gradientColors: [CGColor] {
         return [
@@ -17,13 +19,17 @@ extension UINavigationController {
         ]
     }
     
-    // MARK: - LyfeCycle Methods
+    // MARK: - LifeCycle Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         setupGradient()
     }
-    
     
     // MARK: - Class Methods
     
@@ -42,4 +48,11 @@ extension UINavigationController {
         navigationBar.layer.insertSublayer(gradientLayer, at: 1)
     }
     
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if let topVC = viewControllers.last {
+            return topVC.preferredStatusBarStyle
+        }
+        return .lightContent
+    }
 }

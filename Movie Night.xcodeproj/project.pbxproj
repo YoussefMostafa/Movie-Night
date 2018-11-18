@@ -11,7 +11,6 @@
 		D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */; };
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* MNFBLoginButton.swift */; };
-		D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */; };
 		D872C5C1219CAFF400807169 /* LoginProfileSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */; };
 		D872C5C4219EEFC300807169 /* UIPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C3219EEFC300807169 /* UIPadding.swift */; };
 		D872C5C6219F4FB600807169 /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C5219F4FB600807169 /* MNButton.swift */; };
@@ -20,6 +19,8 @@
 		D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D2219F5D1100807169 /* FirebaseManager.swift */; };
 		D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */; };
 		D872C5D921A0309A00807169 /* LoginProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D821A0309A00807169 /* LoginProfileViewModel.swift */; };
+		D872C5DD21A0B75000807169 /* MNNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5DC21A0B75000807169 /* MNNavigationBar.swift */; };
+		D87CA18E21A1597900143DC3 /* MNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87CA18D21A1597900143DC3 /* MNNavigationController.swift */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
@@ -41,7 +42,6 @@
 		D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroTextModel.swift; sourceTree = "<group>"; };
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D811658F219129760086C778 /* MNFBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButton.swift; sourceTree = "<group>"; };
-		D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationControllerExt.swift; sourceTree = "<group>"; };
 		D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfileSetupController.swift; sourceTree = "<group>"; };
 		D872C5C3219EEFC300807169 /* UIPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPadding.swift; sourceTree = "<group>"; };
 		D872C5C5219F4FB600807169 /* MNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
@@ -52,6 +52,8 @@
 		D872C5D2219F5D1100807169 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButtonDelegate.swift; sourceTree = "<group>"; };
 		D872C5D821A0309A00807169 /* LoginProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfileViewModel.swift; sourceTree = "<group>"; };
+		D872C5DC21A0B75000807169 /* MNNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationBar.swift; sourceTree = "<group>"; };
+		D87CA18D21A1597900143DC3 /* MNNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationController.swift; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */,
 				D811658B218EFB8B0086C778 /* MNViewController.swift */,
+				D87CA18D21A1597900143DC3 /* MNNavigationController.swift */,
 			);
 			name = Supers;
 			sourceTree = "<group>";
@@ -263,7 +266,6 @@
 			children = (
 				D872C5C2219EEFA300807169 /* EasyConstaints */,
 				D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */,
-				D8715CC721982E14005D0431 /* MNNavigationControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +284,7 @@
 				D872C5D421A0283000807169 /* MNFBLoginButton */,
 				D872C5C9219F509800807169 /* BLMultiColorLoader */,
 				D872C5C5219F4FB600807169 /* MNButton.swift */,
+				D872C5DC21A0B75000807169 /* MNNavigationBar.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87CA18E21A1597900143DC3 /* MNNavigationController.swift in Sources */,
 				D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */,
 				D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */,
 				D872C5C1219CAFF400807169 /* LoginProfileSetupController.swift in Sources */,
@@ -428,8 +432,8 @@
 				D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */,
 				D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */,
 				D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */,
-				D8715CC821982E14005D0431 /* MNNavigationControllerExt.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
+				D872C5DD21A0B75000807169 /* MNNavigationBar.swift in Sources */,
 				D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */,
