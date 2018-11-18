@@ -34,14 +34,14 @@ class LoginProfileSetupController: MNViewController {
     
     // MARK: - Views
     
-    private(set) var welcomeLabel: UILabel = {
+    private var welcomeLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         label.textColor = .white
         return label
     }()
     
-    private(set) var cautionLabel: UILabel = {
+    private var cautionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = UIColor.rgb(135, 145, 149)
@@ -49,13 +49,13 @@ class LoginProfileSetupController: MNViewController {
         return label
     }()
     
-    private(set) var profileLoadingView: UIActivityIndicatorView = {
+    private var profileLoadingView: UIActivityIndicatorView = {
         let loadingView = UIActivityIndicatorView()
         loadingView.color = .black
         return loadingView
     }()
     
-    private(set) lazy var profileImageView: UIImageView = {
+    private lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 47
         imageView.image = #imageLiteral(resourceName: "Oval")
@@ -66,16 +66,17 @@ class LoginProfileSetupController: MNViewController {
         return imageView
     }()
     
-    private(set) var choosePictureButton: UIButton = {
+    private lazy var choosePictureButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Choose another picture", for: .normal)
         button.backgroundColor = .clear
         button.tintColor = UIColor.rgb(135, 145, 149)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        button.addTarget(self, action: #selector(choosePictureButtonHandler), for: .touchUpInside)
         return button
     }()
     
-    private(set) var userNameTextField: UITextField = {
+    private var userNameTextField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.layer.shadowColor = UIColor.rgb(55, 71, 79, 0.45).cgColor
         textField.layer.shadowOpacity = 1
@@ -87,7 +88,7 @@ class LoginProfileSetupController: MNViewController {
         return textField
     }()
     
-    private(set) var continueButton: MNButton = {
+    private var continueButton: MNButton = {
         let button = MNButton(type: .system)
         button.backgroundColor = UIColor.rgb(67, 71, 86)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
@@ -105,6 +106,29 @@ class LoginProfileSetupController: MNViewController {
         navigationController?.isNavigationBarHidden = false
         continueButton.setTitle("Continue", for: .normal)
         navigationItem.title = "Profile"
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func choosePictureButtonHandler() {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.allowsEditing = false
+            present(imagePickerController, animated: true)
+        }
+    }
+    
+    override func keyboardWillShow(_ notification: Notification) {
+        
+    }
+    
+    override func keyboardWillHide(_ notification: Notification) {
+        
     }
     
     override func setupSubViews() {
@@ -159,5 +183,16 @@ class LoginProfileSetupController: MNViewController {
             height: 46
         )
         
+    }
+}
+
+// MARK: - ImagePicker Extension
+
+extension LoginProfileSetupController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            profileImageView.image = image
+            picker.dismiss(animated: true)
+        }
     }
 }
