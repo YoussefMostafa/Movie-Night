@@ -70,7 +70,7 @@ class MNFBLoginButton: MNButton {
     }
     
     private func setupConstraints() {
-        fbImageView.edgesToSuperView(exclude: .trailing, width: 36, height: nil, padding: 0)
+        fbImageView.edgesToSuperView(exclude: .trailing, width: 36)
     }
     
     required init?(coder aDecoder: NSCoder) {

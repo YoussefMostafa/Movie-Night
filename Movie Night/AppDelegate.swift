@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FBSDKLoginKit
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -58,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func prepareAppWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = OnBoardingController()
+//        window?.rootViewController = MNNavigationController(rootViewController: LoginProfileSetupController())
         window?.makeKeyAndVisible()
     }
     

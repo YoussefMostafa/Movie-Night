@@ -18,10 +18,10 @@ class MNViewController: UIViewController {
         prepareProps()
         setupSubViews()
         setupConstraints()
-        prepareDataSources()
         registerCells()
-        setupDelegates()
         fetchData()
+        prepareDataSources()
+        setupDelegates()
         setupNavigationBar()
     }
     

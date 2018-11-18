@@ -23,7 +23,6 @@ class MNNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     open override func viewDidLayoutSubviews() {

@@ -13,8 +13,6 @@ class LoginProfileSetupController: MNViewController {
     
     // MARK: - Attributes
     
-    var navigationBarInset: CGFloat = 0
-    
     private var dataSource: LoginProfileViewModel? {
         willSet {
             welcomeLabel.text = newValue?.welcomeText
@@ -100,10 +98,6 @@ class LoginProfileSetupController: MNViewController {
     
     // MARK: - Class Methods
     
-    override func prepareProps() {
-        navigationBarInset = navigationController?.navigationBar.frame.maxY ?? 0
-    }
-    
     override func setupUI() {
         view.backgroundColor = UIColor.rgb(20, 29, 38)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
@@ -114,6 +108,7 @@ class LoginProfileSetupController: MNViewController {
     }
     
     override func setupSubViews() {
+        view.addSubview(navigationController!.navigationBar)
         view.addSubview(welcomeLabel)
         view.addSubview(cautionLabel)
         view.addSubview(profileImageView)
@@ -125,10 +120,10 @@ class LoginProfileSetupController: MNViewController {
     override func setupConstraints() {
         
         welcomeLabel.anchor(
-            top: view.topAnchor,
+            top: navigationController!.navigationBar.bottomAnchor,
             leading: view.leadingAnchor,
             trailing: view.trailingAnchor,
-            padding: UIPadding(top: 29+navigationBarInset, left: 24, right: 24),
+            padding: UIPadding(top: 29, left: 24, right: 24),
             height: 32
         )
         
