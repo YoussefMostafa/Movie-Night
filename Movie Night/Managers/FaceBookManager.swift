@@ -45,8 +45,6 @@ class FaceBookManager {
             
             if results.isCancelled {
                 completionHandler(nil, error)
-                print("a7a")
-                print(results.token)
                 return
             }
             

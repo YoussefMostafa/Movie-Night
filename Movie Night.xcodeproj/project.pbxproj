@@ -19,7 +19,6 @@
 		D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D2219F5D1100807169 /* FirebaseManager.swift */; };
 		D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */; };
 		D872C5D921A0309A00807169 /* LoginProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D821A0309A00807169 /* LoginProfileViewModel.swift */; };
-		D872C5DD21A0B75000807169 /* MNNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5DC21A0B75000807169 /* MNNavigationBar.swift */; };
 		D87CA18E21A1597900143DC3 /* MNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87CA18D21A1597900143DC3 /* MNNavigationController.swift */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
@@ -29,6 +28,7 @@
 		D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A01E2198CA0F0048D414 /* APIManager.swift */; };
 		D8A2A0212198CB3A0048D414 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */; };
 		D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A0222198CFAF0048D414 /* FaceBookManager.swift */; };
+		D8D4FEFF21A499A200609D24 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D4FEFE21A499A200609D24 /* HomeController.swift */; };
 		D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */; };
 		D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */; };
 		D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */; };
@@ -52,7 +52,6 @@
 		D872C5D2219F5D1100807169 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButtonDelegate.swift; sourceTree = "<group>"; };
 		D872C5D821A0309A00807169 /* LoginProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfileViewModel.swift; sourceTree = "<group>"; };
-		D872C5DC21A0B75000807169 /* MNNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationBar.swift; sourceTree = "<group>"; };
 		D87CA18D21A1597900143DC3 /* MNNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationController.swift; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		D8A2A01E2198CA0F0048D414 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8A2A0222198CFAF0048D414 /* FaceBookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookManager.swift; sourceTree = "<group>"; };
+		D8D4FEFE21A499A200609D24 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageCell.swift; sourceTree = "<group>"; };
 		D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -176,14 +176,14 @@
 				D8949FDB21871DCE00A549B5 /* Info.plist */,
 				D8949FCF21871DCC00A549B5 /* AppDelegate.swift */,
 				D8949FE521871FFA00A549B5 /* SupportFiles */,
-				D8A2A01D2198C9A70048D414 /* Managers */,
 				D8F7E31921873FB70016B7E6 /* Extensions */,
-				D872C5BE219CAD8200807169 /* Supers */,
 				D8F7E31F218749F80016B7E6 /* CustomComponents */,
 				D8949FE421871FF700A549B5 /* Models */,
 				D8949FE321871FF300A549B5 /* Views */,
 				D8949FE221871FF000A549B5 /* ViewModels */,
 				D8949FE121871FEB00A549B5 /* Controllers */,
+				D8A2A01D2198C9A70048D414 /* Managers */,
+				D872C5BE219CAD8200807169 /* Supers */,
 			);
 			path = "Movie Night";
 			sourceTree = "<group>";
@@ -191,6 +191,7 @@
 		D8949FE121871FEB00A549B5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D8D4FEFD21A4998B00609D24 /* Home */,
 				D872C5BF219CAF0A00807169 /* Login&Signup */,
 				D8949FE821872DFA00A549B5 /* OnBoarding */,
 			);
@@ -261,6 +262,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		D8D4FEFD21A4998B00609D24 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D8D4FEFE21A499A200609D24 /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		D8F7E31921873FB70016B7E6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +293,6 @@
 				D872C5D421A0283000807169 /* MNFBLoginButton */,
 				D872C5C9219F509800807169 /* BLMultiColorLoader */,
 				D872C5C5219F4FB600807169 /* MNButton.swift */,
-				D872C5DC21A0B75000807169 /* MNNavigationBar.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -391,6 +400,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +443,6 @@
 				D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */,
 				D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
-				D872C5DD21A0B75000807169 /* MNNavigationBar.swift in Sources */,
 				D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */,
@@ -443,6 +452,7 @@
 				D8A006CC219A2206004EC041 /* UserModel.swift in Sources */,
 				D872C5D921A0309A00807169 /* LoginProfileViewModel.swift in Sources */,
 				D872C5C6219F4FB600807169 /* MNButton.swift in Sources */,
+				D8D4FEFF21A499A200609D24 /* HomeController.swift in Sources */,
 				D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */,
 				D872C5C4219EEFC300807169 /* UIPadding.swift in Sources */,
 			);

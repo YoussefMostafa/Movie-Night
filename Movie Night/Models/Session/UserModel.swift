@@ -1,5 +1,5 @@
 //
-//  UserInfo.swift
+//  UserModel.swift
 //  Movie Night
 //
 //  Created by Youssef Mostafa on 11/12/18.
@@ -13,7 +13,7 @@ class UserModel: NSObject, NSCoding {
     var uid: String
     var name: String?
     var email: String?
-    var profilePicture: URL?
+    var profilePicture: String?
     var phoneNumber: String?
     
     private enum CodingKeys: String {
@@ -24,7 +24,7 @@ class UserModel: NSObject, NSCoding {
         case phoneNumber = "phoneNumber"
     }
     
-    init(uid: String, name: String?, email: String?, profilePicture: URL?, phoneNumber: String?) {
+    init(uid: String, name: String?, email: String?, profilePicture: String?, phoneNumber: String?) {
         self.uid = uid
         self.name = name
         self.email = email
@@ -36,7 +36,7 @@ class UserModel: NSObject, NSCoding {
         self.uid = aDecoder.decodeObject(forKey: CodingKeys.uid.rawValue) as! String
         self.name = aDecoder.decodeObject(forKey: CodingKeys.name.rawValue) as? String
         self.email = aDecoder.decodeObject(forKey: CodingKeys.email.rawValue) as? String
-        self.profilePicture = aDecoder.decodeObject(forKey: CodingKeys.profilePicture.rawValue) as? URL
+        self.profilePicture = aDecoder.decodeObject(forKey: CodingKeys.profilePicture.rawValue) as? String
         self.phoneNumber = aDecoder.decodeObject(forKey: CodingKeys.phoneNumber.rawValue) as? String
     }
     

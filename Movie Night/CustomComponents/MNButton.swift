@@ -11,7 +11,7 @@ import Foundation
 
 class MNButton: UIButton {
     
-    private(set) lazy var loadingView: BLMultiColorLoader = {
+    private lazy var loadingView: BLMultiColorLoader = {
         let view = BLMultiColorLoader()
         view.colorArray = [UIColor.white]
         view.lineWidth = 2
@@ -23,11 +23,13 @@ class MNButton: UIButton {
     }()
     
     func startAnimation() {
+        layer.opacity = 0.5
         loadingView.startAnimation()
         isEnabled = false
     }
     
     func stopAnimation() {
+        layer.opacity = 1
         loadingView.stopAnimation()
         isEnabled = true
     }

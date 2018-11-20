@@ -34,7 +34,14 @@ class AppManager {
     // MARK: - Class Methods
     
     static func configure() {
-        FirebaseApp.configure()
+        FirebaseManager.configure()
+    }
+    
+    static func getRootController() -> UIViewController {
+        if let _ = fetchUser() {
+            return MNNavigationController(rootViewController: HomeController())
+        }
+        return OnBoardingController()
     }
     
     // MARK: - User Session
@@ -56,12 +63,30 @@ class AppManager {
         
         do {
             let userInfo = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(userData) as! UserModel
+            shared.user = userInfo
             return userInfo
         } catch {
             print("soemthing went wrong while unarchiving user data")
             return nil
         }
     }
+    
+    static func uploadUserData(_ user: UserModel, _ userImage: UIImage?, _ completionHandler: @escaping (Error?)->() ) {
+        FirebaseManager.shared.uploadImage(userImage, uid: user.uid) { (imagePath, error) in
+            if let error = error {
+                print("\n\(error.localizedDescription)\n")
+            }
+            user.profilePicture = imagePath
+            FirebaseManager.shared.saveUserToDatabase(user) { (error) in
+                if let error = error {
+                    completionHandler(error)
+                    return
+                }
+                completionHandler(nil)
+            }
+        }
+    }
+    
     
     
 }

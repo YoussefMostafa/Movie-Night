@@ -23,6 +23,7 @@ class MNNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
     }
     
     open override func viewDidLayoutSubviews() {
@@ -31,6 +32,10 @@ class MNNavigationController: UINavigationController {
     }
     
     // MARK: - Class Methods
+    
+    private func setupUI() {
+        isNavigationBarHidden = true
+    }
     
     private func setupGradient() {
         let gradientLayer = CAGradientLayer()

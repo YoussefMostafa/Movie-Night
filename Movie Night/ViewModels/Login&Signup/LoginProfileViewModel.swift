@@ -24,8 +24,8 @@ struct LoginProfileViewModel {
         prepareProfilePicUrl(userInfo.profilePicture)
     }
     
-    private mutating func prepareProfilePicUrl(_ url: URL?) {
+    private mutating func prepareProfilePicUrl(_ url: String?) {
         guard let url = url else { return }
-        profilePic = URL(string: url.absoluteString + "?type=large")
+        profilePic = URL(string: url + "?type=large")
     }
 }

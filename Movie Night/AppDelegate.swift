@@ -57,8 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func prepareAppWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = OnBoardingController()
-//        window?.rootViewController = MNNavigationController(rootViewController: LoginProfileSetupController())
+        window?.rootViewController = AppManager.getRootController()
         window?.makeKeyAndVisible()
     }
     

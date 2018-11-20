@@ -25,7 +25,7 @@ class LoginProfileSetupController: MNViewController {
         }
     }
     
-    var userInfo: UserModel? {
+    var userModel: UserModel? {
         willSet {
             guard let userInfo = newValue else { return }
             dataSource = LoginProfileViewModel(userInfo)
@@ -93,12 +93,13 @@ class LoginProfileSetupController: MNViewController {
         return textField
     }()
     
-    private var continueButton: MNButton = {
+    private lazy var continueButton: MNButton = {
         let button = MNButton(type: .system)
         button.backgroundColor = UIColor.rgb(67, 71, 86)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         button.tintColor = .white
         button.layer.cornerRadius = 2
+        button.addTarget(self, action: #selector(continueButtonHandler), for: .touchUpInside)
         return button
     }()
     
@@ -127,6 +128,27 @@ class LoginProfileSetupController: MNViewController {
     private func setupMainUI() {
         view.backgroundColor = UIColor.rgb(20, 29, 38)
         continueButton.setTitle("Continue", for: .normal)
+    }
+    
+    @objc private func continueButtonHandler() {
+        continueButton.startAnimation()
+        guard let user = userModel else { return }
+        AppManager.uploadUserData(user, profileImageView.image) { error in
+            if let error = error {
+                print("\n\(error.localizedDescription)\n")
+                return
+            }
+            AppManager.shared.user = user
+            AppManager.save(user)
+            self.continueButton.stopAnimation()
+            self.navigateToHomeController()
+        }
+    }
+    
+    private func navigateToHomeController() {
+        let controller = UINavigationController(rootViewController: HomeController())
+        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = controller
+        present(controller, animated: true)
     }
     
     @objc private func dismissKeyboard() {

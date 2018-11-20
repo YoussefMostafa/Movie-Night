@@ -1,5 +1,5 @@
 //
-//  UserInfo.swift
+//  UserModel.swift
 //  Movie Night
 //
 //  Created by Youssef Mostafa on 11/12/18.
@@ -47,6 +47,5 @@ class UserModel: NSObject, NSCoding {
         aCoder.encode(profilePicture, forKey: CodingKeys.profilePicture.rawValue)
         aCoder.encode(phoneNumber, forKey: CodingKeys.phoneNumber.rawValue)
     }
-    
     
 }
