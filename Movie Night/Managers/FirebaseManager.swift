@@ -27,7 +27,7 @@ class FirebaseManager {
         FirebaseApp.configure()
     }
     
-    static func signin(with token: FBSDKAccessToken, _ completionHandler: @escaping (UserInfo?, Error?)->())  {
+    static func signin(with token: FBSDKAccessToken, _ completionHandler: @escaping (UserModel?, Error?)->())  {
         let credential = FacebookAuthProvider.credential(withAccessToken: token.tokenString)
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
             if error != nil {
@@ -38,9 +38,9 @@ class FirebaseManager {
         }
     }
     
-    private static func getUserInfo(from authResults: AuthDataResult) -> UserInfo {
+    private static func getUserInfo(from authResults: AuthDataResult) -> UserModel {
         let user = authResults.user    
-        return UserInfo(uid: user.uid, name: user.displayName, email: user.email, profilePicture: user.photoURL, phoneNumber: user.phoneNumber)
+        return UserModel(uid: user.uid, name: user.displayName, email: user.email, profilePicture: user.photoURL, phoneNumber: user.phoneNumber)
     }
     
 }

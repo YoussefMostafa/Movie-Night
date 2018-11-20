@@ -17,7 +17,7 @@ struct LoginProfileViewModel {
     
     // MARK: - Dependancy Injection
     
-    init(_ userInfo: UserInfo) {
+    init(_ userInfo: UserModel) {
         welcomeText = "Hey \(userInfo.name ?? "")!"
         cautionText = "You’re about to continue with Facebook. Take a look at your information"
         username = userInfo.name

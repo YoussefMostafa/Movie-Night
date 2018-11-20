@@ -25,7 +25,7 @@ class LoginProfileSetupController: MNViewController {
         }
     }
     
-    var userInfo: UserInfo? {
+    var userInfo: UserModel? {
         willSet {
             guard let userInfo = newValue else { return }
             dataSource = LoginProfileViewModel(userInfo)
@@ -59,6 +59,7 @@ class LoginProfileSetupController: MNViewController {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 47
         imageView.image = #imageLiteral(resourceName: "Oval")
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         imageView.addSubview(profileLoadingView)
         profileLoadingView.centerInSuperView()

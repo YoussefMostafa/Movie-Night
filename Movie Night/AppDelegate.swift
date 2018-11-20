@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func prepare() {
         prepareAppWindow()
-        prepareFirebase()
+        AppManager.configure()
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -62,9 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
     
-    private func prepareFirebase() {
-        FirebaseManager.configure()
-    }
     
 }
 

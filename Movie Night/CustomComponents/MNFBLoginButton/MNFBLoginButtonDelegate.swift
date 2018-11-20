@@ -9,7 +9,7 @@
 import Foundation
 
 protocol MNFBLoginButtonDelegate {
-    func loginSuccessed(with userInfo: UserInfo)
+    func loginSuccessed(with userInfo: UserModel)
     func loadingViewStartedAnimation()
     func loadingViewStopedAnimation()
 }

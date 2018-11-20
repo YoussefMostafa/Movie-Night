@@ -153,7 +153,7 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
         return .lightContent
     }
     
-    func loginSuccessed(with userInfo: UserInfo) {
+    func loginSuccessed(with userInfo: UserModel) {
         loadingViewStopedAnimation()
         let controller = LoginProfileSetupController()
         controller.userInfo = userInfo

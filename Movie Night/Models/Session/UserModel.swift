@@ -20,8 +20,8 @@ class UserModel: NSObject, NSCoding {
         case uid = "uid"
         case name = "name"
         case email = "email"
-        case profilePicture = "pPicture"
-        case phoneNumber = "pNumber"
+        case profilePicture = "profilePicture"
+        case phoneNumber = "phoneNumber"
     }
     
     init(uid: String, name: String?, email: String?, profilePicture: URL?, phoneNumber: String?) {

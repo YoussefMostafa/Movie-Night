@@ -32,7 +32,7 @@ class FaceBookManager {
     
     // MARK: - Methods
     
-    static func login(_ controller: UIViewController, _ completionHandler: @escaping (UserInfo?, Error?)->()) {
+    static func login(_ controller: UIViewController, _ completionHandler: @escaping (UserModel?, Error?)->()) {
         let loginManager = FBSDKLoginManager()
         loginManager.logIn(withReadPermissions: ["email"], from: controller) { (results, error) in
             
@@ -56,7 +56,7 @@ class FaceBookManager {
         }
     }
     
-    private static func signInUsingFireBase(_ completionHandler: @escaping (UserInfo?, Error?) -> () ) {
+    private static func signInUsingFireBase(_ completionHandler: @escaping (UserModel?, Error?) -> () ) {
         FirebaseManager.signin(with: shared.accessToken, { (userInfo, error) in
             if let error = error {
                 print(error.localizedDescription)
