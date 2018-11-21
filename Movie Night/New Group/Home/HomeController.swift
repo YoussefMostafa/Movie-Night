@@ -9,4 +9,8 @@
 import UIKit
 
 class HomeController: MNViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

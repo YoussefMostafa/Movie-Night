@@ -21,7 +21,7 @@ struct LoginProfileViewModel {
         welcomeText = "Hey \(userInfo.name ?? "")!"
         cautionText = "You’re about to continue with Facebook. Take a look at your information"
         username = userInfo.name
-        prepareProfilePicUrl(userInfo.profilePicture)
+        prepareProfilePicUrl(userInfo.avatarPath)
     }
     
     private mutating func prepareProfilePicUrl(_ url: String?) {

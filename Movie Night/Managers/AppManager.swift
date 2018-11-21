@@ -37,7 +37,7 @@ class AppManager {
         FirebaseManager.configure()
     }
     
-    static func getRootController() -> UIViewController {
+    static func rootController() -> UIViewController {
         if let _ = fetchUser() {
             return MNNavigationController(rootViewController: HomeController())
         }
@@ -76,7 +76,7 @@ class AppManager {
             if let error = error {
                 print("\n\(error.localizedDescription)\n")
             }
-            user.profilePicture = imagePath
+            user.avatarPath = imagePath
             FirebaseManager.shared.saveUserToDatabase(user) { (error) in
                 if let error = error {
                     completionHandler(error)

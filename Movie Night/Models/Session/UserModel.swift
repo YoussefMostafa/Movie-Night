@@ -13,7 +13,7 @@ class UserModel: NSObject, NSCoding {
     var uid: String
     var name: String?
     var email: String?
-    var profilePicture: String?
+    var avatarPath: String?
     var phoneNumber: String?
     
     private enum CodingKeys: String {
@@ -28,7 +28,7 @@ class UserModel: NSObject, NSCoding {
         self.uid = uid
         self.name = name
         self.email = email
-        self.profilePicture = profilePicture
+        self.avatarPath = profilePicture
         self.phoneNumber = phoneNumber
     }
     
@@ -36,7 +36,7 @@ class UserModel: NSObject, NSCoding {
         self.uid = aDecoder.decodeObject(forKey: CodingKeys.uid.rawValue) as! String
         self.name = aDecoder.decodeObject(forKey: CodingKeys.name.rawValue) as? String
         self.email = aDecoder.decodeObject(forKey: CodingKeys.email.rawValue) as? String
-        self.profilePicture = aDecoder.decodeObject(forKey: CodingKeys.profilePicture.rawValue) as? String
+        self.avatarPath = aDecoder.decodeObject(forKey: CodingKeys.profilePicture.rawValue) as? String
         self.phoneNumber = aDecoder.decodeObject(forKey: CodingKeys.phoneNumber.rawValue) as? String
     }
     
@@ -44,7 +44,7 @@ class UserModel: NSObject, NSCoding {
         aCoder.encode(uid, forKey: CodingKeys.uid.rawValue)
         aCoder.encode(name, forKey: CodingKeys.name.rawValue)
         aCoder.encode(email, forKey: CodingKeys.email.rawValue)
-        aCoder.encode(profilePicture, forKey: CodingKeys.profilePicture.rawValue)
+        aCoder.encode(avatarPath, forKey: CodingKeys.profilePicture.rawValue)
         aCoder.encode(phoneNumber, forKey: CodingKeys.phoneNumber.rawValue)
     }
     

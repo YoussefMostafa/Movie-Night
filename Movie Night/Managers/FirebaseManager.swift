@@ -74,24 +74,23 @@ class FirebaseManager {
     
     func uploadImage(_ image: UIImage?, uid: String, _ completionHandler: @escaping (String?, Error?)->() ) {
         
-        guard let storageRef = storageRef else {
-            
-            return }
-        
+        guard let storageRef = storageRef else { return }
         guard let image = image else { return }
-        
         guard let imageData = (UIImage.pngData(image))() else { return }
-        storageRef.child("users/\(uid).png").putData(imageData, metadata: nil) { (metadata, error) in
+        
+        let imageRef = storageRef.child("users/\(uid).png")
+        imageRef.putData(imageData, metadata: nil) { (metadata, error) in
             if let error = error {
                 completionHandler(nil, error)
             }
             
-            storageRef.downloadURL(completion: { (url, error) in
+            imageRef.downloadURL(completion: { (url, error) in
                 if let error = error {
                     completionHandler(nil, error)
                 }
                 completionHandler(url?.absoluteString, nil)
             })
+            
         }
     }
     
@@ -101,7 +100,7 @@ class FirebaseManager {
             "username": user.name,
             "email": user.email,
             "phoneNumber": user.phoneNumber,
-            "img": user.profilePicture
+            "img": user.avatarPath
         ]
     }
     
