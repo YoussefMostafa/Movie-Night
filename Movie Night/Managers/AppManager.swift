@@ -19,6 +19,8 @@ class AppManager {
         }
     }
     
+    // MARK: - User Defaults Keys
+    
     enum UserDefaultsKeys: String {
         case userData = "userDataKey"
     }
@@ -39,7 +41,7 @@ class AppManager {
     
     static func rootController() -> UIViewController {
         if let _ = fetchUser() {
-            return MNNavigationController(rootViewController: HomeController())
+            return MNNavigationController(rootViewController: DashboardTabBarController())
         }
         return OnBoardingController()
     }

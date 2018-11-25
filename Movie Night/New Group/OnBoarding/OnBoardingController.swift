@@ -163,7 +163,7 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     private func controller(basedOn isRegistered: Bool, _ userInfo: UserModel) -> UIViewController {
         var controller: UIViewController?
         if isRegistered {
-            controller = HomeController()
+            controller = DashboardTabBarController()
         } else {
             controller = LoginProfileSetupController()
             (controller as! LoginProfileSetupController).userModel = userInfo

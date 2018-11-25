@@ -1,5 +1,5 @@
 //
-//  HomeController.swift
+//  MovieHomeController.swift
 //  Movie Night
 //
 //  Created by Youssef Mostafa on 11/20/18.
@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HomeController: MNViewController {
+class MovieHomeController: MNViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
     }
 }

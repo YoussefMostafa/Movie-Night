@@ -145,7 +145,7 @@ class LoginProfileSetupController: MNViewController {
     }
     
     private func navigateToHomeController() {
-        let controller = UINavigationController(rootViewController: HomeController())
+        let controller = UINavigationController(rootViewController: DashboardTabBarController())
         (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = controller
         present(controller, animated: true)
     }

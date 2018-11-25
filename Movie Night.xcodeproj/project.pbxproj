@@ -11,6 +11,7 @@
 		D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */; };
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* MNFBLoginButton.swift */; };
+		D85D7D9521AAC69400C1BCFF /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D7D9421AAC69400C1BCFF /* DashboardTabBarController.swift */; };
 		D872C5C1219CAFF400807169 /* LoginProfileSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */; };
 		D872C5C4219EEFC300807169 /* UIPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C3219EEFC300807169 /* UIPadding.swift */; };
 		D872C5C6219F4FB600807169 /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C5219F4FB600807169 /* MNButton.swift */; };
@@ -28,7 +29,7 @@
 		D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A01E2198CA0F0048D414 /* APIManager.swift */; };
 		D8A2A0212198CB3A0048D414 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */; };
 		D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A2A0222198CFAF0048D414 /* FaceBookManager.swift */; };
-		D8D4FEFF21A499A200609D24 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D4FEFE21A499A200609D24 /* HomeController.swift */; };
+		D8D4FEFF21A499A200609D24 /* MovieHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D4FEFE21A499A200609D24 /* MovieHomeController.swift */; };
 		D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */; };
 		D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */; };
 		D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */; };
@@ -42,6 +43,7 @@
 		D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroTextModel.swift; sourceTree = "<group>"; };
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D811658F219129760086C778 /* MNFBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButton.swift; sourceTree = "<group>"; };
+		D85D7D9421AAC69400C1BCFF /* DashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
 		D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfileSetupController.swift; sourceTree = "<group>"; };
 		D872C5C3219EEFC300807169 /* UIPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPadding.swift; sourceTree = "<group>"; };
 		D872C5C5219F4FB600807169 /* MNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		D8A2A01E2198CA0F0048D414 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D8A2A0202198CB3A0048D414 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8A2A0222198CFAF0048D414 /* FaceBookManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookManager.swift; sourceTree = "<group>"; };
-		D8D4FEFE21A499A200609D24 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		D8D4FEFE21A499A200609D24 /* MovieHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeController.swift; sourceTree = "<group>"; };
 		D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageCell.swift; sourceTree = "<group>"; };
 		D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -265,7 +267,8 @@
 		D8D4FEFD21A4998B00609D24 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				D8D4FEFE21A499A200609D24 /* HomeController.swift */,
+				D85D7D9421AAC69400C1BCFF /* DashboardTabBarController.swift */,
+				D8D4FEFE21A499A200609D24 /* MovieHomeController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -447,12 +450,13 @@
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */,
 				D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */,
+				D85D7D9521AAC69400C1BCFF /* DashboardTabBarController.swift in Sources */,
 				D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */,
 				D872C5D1219F5CA000807169 /* AppManager.swift in Sources */,
 				D8A006CC219A2206004EC041 /* UserModel.swift in Sources */,
 				D872C5D921A0309A00807169 /* LoginProfileViewModel.swift in Sources */,
 				D872C5C6219F4FB600807169 /* MNButton.swift in Sources */,
-				D8D4FEFF21A499A200609D24 /* HomeController.swift in Sources */,
+				D8D4FEFF21A499A200609D24 /* MovieHomeController.swift in Sources */,
 				D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */,
 				D872C5C4219EEFC300807169 /* UIPadding.swift in Sources */,
 			);
