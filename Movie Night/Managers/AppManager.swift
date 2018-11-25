@@ -48,6 +48,7 @@ class AppManager {
     
     static func save(_ user: UserModel) {
         do {
+            AppManager.shared.user = user
             let userData = try NSKeyedArchiver.archivedData(withRootObject: user, requiringSecureCoding: false)
             UserDefaults.standard.set(userData, forKey: AppManager.UserDefaultsKeys.userData.rawValue)
         } catch {

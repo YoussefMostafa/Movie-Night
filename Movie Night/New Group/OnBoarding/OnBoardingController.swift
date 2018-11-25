@@ -155,6 +155,7 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     
     func loginSuccessed(with userInfo: UserModel) {
         FirebaseManager.shared.isUserRegistered(userInfo.uid) { (isRegistered) in
+            AppManager.save(userInfo)
             self.present(MNNavigationController(rootViewController: self.controller(basedOn: isRegistered, userInfo)), animated: true)
         }
     }

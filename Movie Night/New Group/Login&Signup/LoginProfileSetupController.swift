@@ -138,7 +138,6 @@ class LoginProfileSetupController: MNViewController {
                 print("\n\(error.localizedDescription)\n")
                 return
             }
-            AppManager.shared.user = user
             AppManager.save(user)
             self.continueButton.stopAnimation()
             self.navigateToHomeController()
