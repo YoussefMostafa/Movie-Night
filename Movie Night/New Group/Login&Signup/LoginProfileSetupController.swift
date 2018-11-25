@@ -34,14 +34,14 @@ class LoginProfileSetupController: MNViewController {
     
     // MARK: - Views
     
-    private var welcomeLabel: UILabel = {
+    private let welcomeLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         label.textColor = .white
         return label
     }()
     
-    private var cautionLabel: UILabel = {
+    private let cautionLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = UIColor.rgb(135, 145, 149)
@@ -49,7 +49,7 @@ class LoginProfileSetupController: MNViewController {
         return label
     }()
     
-    private var profileLoadingView: UIActivityIndicatorView = {
+    private let profileLoadingView: UIActivityIndicatorView = {
         let loadingView = UIActivityIndicatorView()
         loadingView.color = .black
         return loadingView
@@ -68,7 +68,7 @@ class LoginProfileSetupController: MNViewController {
         return imageView
     }()
     
-    private lazy var choosePictureButton: UIButton = {
+    private let choosePictureButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Choose another picture", for: .normal)
         button.backgroundColor = .clear
@@ -93,7 +93,7 @@ class LoginProfileSetupController: MNViewController {
         return textField
     }()
     
-    private lazy var continueButton: MNButton = {
+    private let continueButton: MNButton = {
         let button = MNButton(type: .system)
         button.backgroundColor = UIColor.rgb(67, 71, 86)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)

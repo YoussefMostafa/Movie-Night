@@ -46,12 +46,12 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
         return collectionView
     }()
     
-    var fbLoginButton: MNFBLoginButton = {
+    let fbLoginButton: MNFBLoginButton = {
         let button = MNFBLoginButton(type: .system)
         return button
     }()
     
-    var signUpWithMailButton: UIButton = {
+    let signUpWithMailButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Signup With Phone Number", for: .normal)
         button.titleLabel?.textAlignment = .center
@@ -154,10 +154,18 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     }
     
     func loginSuccessed(with userInfo: UserModel) {
-        loadingViewStopedAnimation()
-        let controller = LoginProfileSetupController()
-        controller.userModel = userInfo
-        present(MNNavigationController(rootViewController: controller), animated: true)
+        FirebaseManager.shared.isUserRegistered(userInfo.uid) { (isRegistered) in
+            var controller: UIViewController?
+            if isRegistered {
+                controller = HomeController()
+            } else {
+                controller = LoginProfileSetupController()
+                (controller as! LoginProfileSetupController).userModel = userInfo
+            }
+            self.loadingViewStopedAnimation()
+            self.present(MNNavigationController(rootViewController: controller!), animated: true)
+        }
+        
     }
     
     func loadingViewStopedAnimation() {

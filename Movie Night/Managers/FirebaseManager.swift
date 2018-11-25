@@ -94,6 +94,17 @@ class FirebaseManager {
         }
     }
     
+    func isUserRegistered(_ userId: String, _ completionHandler: @escaping (Bool)->() ) {
+        guard let ref = databaseRef else { return }
+        ref.child("users/\(userId)").observeSingleEvent(of: .value) { (userData) in
+            if userData.exists() {
+                completionHandler(true)
+                return
+            }
+            completionHandler(false)
+        }
+    }
+    
     func getDictionaryProps(from user: UserModel) -> [String: String?] {
         return [
             "uid": user.uid,

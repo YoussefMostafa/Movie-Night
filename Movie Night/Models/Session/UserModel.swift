@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class UserModel: NSObject, NSCoding {
     
@@ -30,6 +31,11 @@ class UserModel: NSObject, NSCoding {
         self.email = email
         self.avatarPath = profilePicture
         self.phoneNumber = phoneNumber
+    }
+    
+    convenience init(_ snapShot: DataSnapshot) {
+        let data = snapShot.value as! Dictionary<String, String>
+        self.init(uid: data["uid"]!, name: data["username"], email: data["email"], profilePicture: data["img"], phoneNumber: data["phoneNumber"])
     }
     
     required init?(coder aDecoder: NSCoder) {
