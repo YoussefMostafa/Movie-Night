@@ -155,17 +155,20 @@ class OnBoardingController: MNViewController, MNFBLoginButtonDelegate {
     
     func loginSuccessed(with userInfo: UserModel) {
         FirebaseManager.shared.isUserRegistered(userInfo.uid) { (isRegistered) in
-            var controller: UIViewController?
-            if isRegistered {
-                controller = HomeController()
-            } else {
-                controller = LoginProfileSetupController()
-                (controller as! LoginProfileSetupController).userModel = userInfo
-            }
-            self.loadingViewStopedAnimation()
-            self.present(MNNavigationController(rootViewController: controller!), animated: true)
+            self.present(MNNavigationController(rootViewController: self.controller(basedOn: isRegistered, userInfo)), animated: true)
         }
-        
+    }
+    
+    private func controller(basedOn isRegistered: Bool, _ userInfo: UserModel) -> UIViewController {
+        var controller: UIViewController?
+        if isRegistered {
+            controller = HomeController()
+        } else {
+            controller = LoginProfileSetupController()
+            (controller as! LoginProfileSetupController).userModel = userInfo
+        }
+        loadingViewStopedAnimation()
+        return(controller!)
     }
     
     func loadingViewStopedAnimation() {
