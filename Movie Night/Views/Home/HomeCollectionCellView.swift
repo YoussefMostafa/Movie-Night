@@ -10,6 +10,9 @@ import UIKit
 
 class HomeCollectionCellView: MNUIView {
     
+    override func setupSubViews() {
+        
+    }
     override func setupUI() {
         backgroundColor = .green
     }

@@ -14,7 +14,7 @@ class HomeBuilder {
     
     private var cellsTotalHeight: CGFloat = 0
     
-    private var collectionCells: [MNUIView]? {
+    private var collectionCells: [HomeCollectionCellView]? {
         willSet {
             if let collectionViews = newValue {
                 layout(collectionViews, In: UIView())
@@ -39,15 +39,15 @@ class HomeBuilder {
         collectionCells = buildViews(numberOfViews: delegate.numberOfCollectionCells())
     }
     
-    private func buildViews(numberOfViews: Int) -> [MNUIView] {
-        var views = [MNUIView]()
+    private func buildViews(numberOfViews: Int) -> [HomeCollectionCellView] {
+        var views = [HomeCollectionCellView]()
         for _ in 0..<numberOfViews {
-            views.append(MNUIView())
+            views.append(HomeCollectionCellView())
         }
         return views
     }
     
-    private func layout(_ collectionViews: [MNUIView], In view: UIView) {
+    private func layout(_ collectionViews: [HomeCollectionCellView], In view: UIView) {
         guard let delegate = delegate else { return }
         for index in collectionViews.enumerated() {
             let collectionView = index.element
