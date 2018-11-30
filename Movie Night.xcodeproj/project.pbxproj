@@ -12,6 +12,8 @@
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* MNFBLoginButton.swift */; };
 		D85D7D9521AAC69400C1BCFF /* DashboardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D7D9421AAC69400C1BCFF /* DashboardTabBarController.swift */; };
+		D85D7D9821ADE5DA00C1BCFF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D7D9721ADE5DA00C1BCFF /* Movie.swift */; };
+		D85D7D9A21ADE7E800C1BCFF /* NowPlayingMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85D7D9921ADE7E800C1BCFF /* NowPlayingMovies.swift */; };
 		D872C5C1219CAFF400807169 /* LoginProfileSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */; };
 		D872C5C4219EEFC300807169 /* UIPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C3219EEFC300807169 /* UIPadding.swift */; };
 		D872C5C6219F4FB600807169 /* MNButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5C5219F4FB600807169 /* MNButton.swift */; };
@@ -44,6 +46,8 @@
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D811658F219129760086C778 /* MNFBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButton.swift; sourceTree = "<group>"; };
 		D85D7D9421AAC69400C1BCFF /* DashboardTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabBarController.swift; sourceTree = "<group>"; };
+		D85D7D9721ADE5DA00C1BCFF /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		D85D7D9921ADE7E800C1BCFF /* NowPlayingMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingMovies.swift; sourceTree = "<group>"; };
 		D872C5C0219CAFF400807169 /* LoginProfileSetupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfileSetupController.swift; sourceTree = "<group>"; };
 		D872C5C3219EEFC300807169 /* UIPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPadding.swift; sourceTree = "<group>"; };
 		D872C5C5219F4FB600807169 /* MNButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNButton.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 				D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		D85D7D9621ADE52D00C1BCFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D85D7D9721ADE5DA00C1BCFF /* Movie.swift */,
+				D85D7D9921ADE7E800C1BCFF /* NowPlayingMovies.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D872C5BE219CAD8200807169 /* Supers */ = {
@@ -179,12 +192,12 @@
 				D8949FCF21871DCC00A549B5 /* AppDelegate.swift */,
 				D8949FE521871FFA00A549B5 /* SupportFiles */,
 				D8F7E31921873FB70016B7E6 /* Extensions */,
+				D8A2A01D2198C9A70048D414 /* Managers */,
 				D8F7E31F218749F80016B7E6 /* CustomComponents */,
 				D8949FE421871FF700A549B5 /* Models */,
 				D8949FE321871FF300A549B5 /* Views */,
 				D8949FE221871FF000A549B5 /* ViewModels */,
 				D8949FE121871FEB00A549B5 /* Controllers */,
-				D8A2A01D2198C9A70048D414 /* Managers */,
 				D872C5BE219CAD8200807169 /* Supers */,
 			);
 			path = "Movie Night";
@@ -220,6 +233,7 @@
 		D8949FE421871FF700A549B5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D85D7D9621ADE52D00C1BCFF /* Resources */,
 				D8A006CA219A21E8004EC041 /* Session */,
 				D8116588218EF7430086C778 /* OnBoarding */,
 			);
@@ -446,10 +460,12 @@
 				D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */,
 				D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
+				D85D7D9A21ADE7E800C1BCFF /* NowPlayingMovies.swift in Sources */,
 				D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */,
 				D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */,
+				D85D7D9821ADE5DA00C1BCFF /* Movie.swift in Sources */,
 				D85D7D9521AAC69400C1BCFF /* DashboardTabBarController.swift in Sources */,
 				D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */,
 				D872C5D1219F5CA000807169 /* AppManager.swift in Sources */,

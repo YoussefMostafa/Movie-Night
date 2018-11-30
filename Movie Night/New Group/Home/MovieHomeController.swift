@@ -13,5 +13,9 @@ class MovieHomeController: MNViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        
+        APIManager.getNowPlayingMovies(page: 1) { (nowPlayingMovies) in
+            
+        }
     }
 }
