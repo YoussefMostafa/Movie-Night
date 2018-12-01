@@ -21,7 +21,7 @@ extension UIView {
     }
     
     func edgesToSuperView(safeArea: Bool? = nil, padding: UIPadding? = nil) {
-        guard let superView = self.superview else { return }
+        guard let superView = superview else { return }
         let safeArea = safeArea ?? false
         anchor(
             top: safeArea ? superView.safeAreaLayoutGuide.topAnchor : superView.topAnchor,
@@ -33,7 +33,7 @@ extension UIView {
     }
     
     func edgesToSuperView(exclude anchorType: AnchorType, width: CGFloat? = nil, height: CGFloat? = nil, padding: UIPadding? = nil, safeArea: Bool? = nil) {
-        guard let superview = self.superview else { return }
+        guard let superview = superview else { return }
         let safeArea = safeArea ?? false
         let padding = UIPadding(top: padding?.top ?? 0, left: padding?.left ?? 0, bottom: padding?.bottom ?? 0, right: padding?.right ?? 0)
         switch anchorType {
@@ -77,6 +77,16 @@ extension UIView {
         }
     }
     
+    func edgesToSuperView(exclude anchorType: AnchorType, padding: UIPadding? = nil) {
+        edgesToSuperView(exclude: anchorType, width: nil, height: nil, padding: padding, safeArea: nil)
+    }
+    
+    func edgesToSuperLeadingAndTrailing(padding: CGFloat = 0) {
+        guard let superview = superview else { return }
+        anchorLeading(superview.leadingAnchor, padding: padding)
+        anchorTrailing(superview.trailingAnchor, padding: padding)
+    }
+    
     func anchor(top: YAnchor? = nil, bottom: YAnchor? = nil, leading: XAnchor? = nil, trailing: XAnchor? = nil, padding: UIPadding? = nil, width: CGFloat? = nil, height: CGFloat? = nil) {
         
         let view = self
@@ -94,8 +104,8 @@ extension UIView {
             view.leadingAnchor.constraint(equalTo: leading, constant: padding?.left ?? 0).isActive = true
         }
         
-        if let trailling = trailing {
-            view.trailingAnchor.constraint(equalTo: trailling, constant: -(padding?.right ?? 0)).isActive = true
+        if let trailing = trailing {
+            view.trailingAnchor.constraint(equalTo: trailing, constant: -(padding?.right ?? 0)).isActive = true
         }
         
         if let width = width {
@@ -109,32 +119,32 @@ extension UIView {
     
     func anchorBottom(_ anchor: YAnchor, padding: CGFloat) {
         turnAutoresizingMaskIntoConstraintsOff()
-        self.bottomAnchor.constraint(equalTo: anchor, constant: -padding).isActive = true
+        bottomAnchor.constraint(equalTo: anchor, constant: -padding).isActive = true
     }
     
     func anchorTop(_ anchor: YAnchor, padding: CGFloat) {
         turnAutoresizingMaskIntoConstraintsOff()
-        self.topAnchor.constraint(equalTo: anchor, constant: padding).isActive = true
+        topAnchor.constraint(equalTo: anchor, constant: padding).isActive = true
     }
     
     func anchorLeading(_ anchor: XAnchor, padding: CGFloat) {
         turnAutoresizingMaskIntoConstraintsOff()
-        self.leadingAnchor.constraint(equalTo: anchor, constant: padding).isActive = true
+        leadingAnchor.constraint(equalTo: anchor, constant: padding).isActive = true
     }
     
-    func anchorTrailling(_ anchor: XAnchor, padding: CGFloat) {
+    func anchorTrailing(_ anchor: XAnchor, padding: CGFloat) {
         turnAutoresizingMaskIntoConstraintsOff()
-        self.trailingAnchor.constraint(equalTo: anchor, constant: -padding).isActive = true
+        trailingAnchor.constraint(equalTo: anchor, constant: -padding).isActive = true
     }
     
     func setWidth(_ width: CGFloat) {
         turnAutoresizingMaskIntoConstraintsOff()
-        self.widthAnchor.constraint(equalToConstant: width).isActive = true
+        widthAnchor.constraint(equalToConstant: width).isActive = true
     }
     
     func setHeight(_ height: CGFloat) {
         turnAutoresizingMaskIntoConstraintsOff()
-        self.heightAnchor.constraint(equalToConstant: height).isActive = true
+        heightAnchor.constraint(equalToConstant: height).isActive = true
     }
     
     func centerInSuperView(width: CGFloat? = nil, height: CGFloat? = nil, safeArea: Bool? = nil ) {
@@ -150,17 +160,17 @@ extension UIView {
     }
     
     func centerHorizontally(constant: CGFloat = 0, safeArea: Bool? = nil) {
-        guard let superView = self.superview else { return }
+        guard let superView = superview else { return }
         turnAutoresizingMaskIntoConstraintsOff()
         let safeArea = safeArea ?? false
-        self.centerXAnchor.constraint(equalTo: safeArea ? superView.safeAreaLayoutGuide.centerXAnchor : superView.centerXAnchor , constant: constant).isActive = true
+        centerXAnchor.constraint(equalTo: safeArea ? superView.safeAreaLayoutGuide.centerXAnchor : superView.centerXAnchor , constant: constant).isActive = true
     }
     
     func centerVertically(constant: CGFloat = 0, safeArea: Bool? = nil) {
-        guard let superView = self.superview else { return }
+        guard let superView = superview else { return }
         turnAutoresizingMaskIntoConstraintsOff()
         let safeArea = safeArea ?? false
-        self.centerYAnchor.constraint(equalTo: safeArea ? superView.safeAreaLayoutGuide.centerYAnchor : superView.centerYAnchor, constant: constant).isActive = true
+        centerYAnchor.constraint(equalTo: safeArea ? superView.safeAreaLayoutGuide.centerYAnchor : superView.centerYAnchor, constant: constant).isActive = true
     }
     
     func set(width: CGFloat, height: CGFloat) {

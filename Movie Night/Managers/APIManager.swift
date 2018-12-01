@@ -21,7 +21,7 @@ class APIManager {
         func params() -> [String: Any] {
             switch self {
             case .nowPlayingMovies:
-                return ["api_key": shared.apiKey, "page": 1 as Any]
+                return ["api_key": shared.apiKey, "page": 1 as Any, "region": "US"]
             }
         }
     }
@@ -36,12 +36,8 @@ class APIManager {
     
     // Mark: - Movies APIRequests
     
-    private static func createUrl(_ endPoint: EndPoints) -> URL? {
-        return URL(string: shared.apiHost+endPoint.rawValue)
-    }
-    
     static func fetchData<T: Decodable>(endPoint: EndPoints, _ completionHandler: @escaping (_ ç: T?, _ error: Error?)->()) {
-        guard let url = createUrl(endPoint) else { return }
+        guard let url = createRequestUrl(endPoint) else { return }
         Alamofire.request(url, method: .get, parameters: endPoint.params(), encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
@@ -55,5 +51,15 @@ class APIManager {
         }
     }
     
+    // MARK: - Class Methods
+    
+    static func createPhotoUrl(from path: String?) -> URL? {
+        guard let path = path else { return nil }
+        return URL(string: "https://image.tmdb.org/t/p/w500\(path)")
+    }
+    
+    private static func createRequestUrl(_ endPoint: EndPoints) -> URL? {
+        return URL(string: shared.apiHost+endPoint.rawValue)
+    }
     
 }

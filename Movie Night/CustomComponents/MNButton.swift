@@ -16,7 +16,7 @@ class MNButton: UIButton {
         view.colorArray = [UIColor.white]
         view.lineWidth = 2
         addSubview(view)
-        view.anchorTrailling(trailingAnchor, padding: 16)
+        view.anchorTrailing(trailingAnchor, padding: 16)
         view.centerVertically()
         view.set(width: 20, height: 20)
         return view
