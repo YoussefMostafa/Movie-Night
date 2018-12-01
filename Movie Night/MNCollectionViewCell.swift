@@ -13,7 +13,7 @@ class MNCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        addSubViews()
+        setupSubViews()
         setupConstraints()
     }
     
@@ -22,6 +22,6 @@ class MNCollectionViewCell: UICollectionViewCell {
     }
     
     internal func setupUI() {}
-    internal func addSubViews() {}
+    internal func setupSubViews() {}
     internal func setupConstraints() {}
 }

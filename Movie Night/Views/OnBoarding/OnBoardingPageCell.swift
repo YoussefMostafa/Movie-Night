@@ -11,7 +11,7 @@ import UIKit
 
 class OnBoardingPageCell: MNCollectionViewCell {
     
-    // MARK: Attributes
+    // MARK: Props
     
     var introText: String? {
         get {
@@ -37,7 +37,7 @@ class OnBoardingPageCell: MNCollectionViewCell {
     
     // MARK: LifeCycle
     
-    override func addSubViews() {
+    override func setupSubViews() {
         addSubview(introTextLabel)
     }
     

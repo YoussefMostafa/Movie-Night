@@ -19,11 +19,11 @@ class MNViewController: UIViewController {
         setupSubViews()
         setupConstraints()
         registerCells()
-        fetchData()
         prepareDataSources()
         setupDelegates()
         setupNavigationBar()
         addObservers()
+        fetchData()
     }
     
     // MARK: - Class Methods

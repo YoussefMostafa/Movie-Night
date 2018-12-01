@@ -14,7 +14,7 @@ class HomeBuilder {
     
     private var cellsTotalHeight: CGFloat = 0
     
-    private var collectionCells: [HomeCollectionCellView]? {
+    private var collectionCells: [HomeCollectionController]? {
         willSet {
             if let collectionViews = newValue {
                 layout(collectionViews, In: UIView())
@@ -39,32 +39,34 @@ class HomeBuilder {
         collectionCells = buildViews(numberOfViews: delegate.numberOfCollectionCells())
     }
     
-    private func buildViews(numberOfViews: Int) -> [HomeCollectionCellView] {
-        var views = [HomeCollectionCellView]()
+    private func buildViews(numberOfViews: Int) -> [HomeCollectionController] {
+        var views = [HomeCollectionController]()
         for _ in 0..<numberOfViews {
-            views.append(HomeCollectionCellView())
+            views.append(HomeCollectionController())
         }
         return views
     }
     
-    private func layout(_ collectionViews: [HomeCollectionCellView], In view: UIView) {
+    private func layout(_ collectionViews: [HomeCollectionController], In view: UIView) {
         guard let delegate = delegate else { return }
         for index in collectionViews.enumerated() {
-            let collectionView = index.element
+            let collectionController = index.element
             if view.subviews.last == nil {
-                view.addSubview(collectionView)
-                collectionView.anchorTop(view.topAnchor, padding: 0)
+                addChild(controller: collectionController)
+                view.addSubview(collectionController.view)
+                collectionController.view.anchorTop(view.topAnchor, padding: 0)
                 let size = delegate.sizeForCollectionCellAt(index: index.offset)
                 cellsTotalHeight += size.height
-                collectionView.set(width: size.width, height: size.height)
+                collectionController.view.set(width: size.width, height: size.height)
                 continue
             }
             guard let lastView = view.subviews.last else { return }
-            view.addSubview(collectionView)
-            collectionView.anchorTop(lastView.bottomAnchor, padding: delegate.spaceBetweenCells())
+            addChild(controller: collectionController)
+            view.addSubview(collectionController.view)
+            collectionController.view.anchorTop(lastView.bottomAnchor, padding: delegate.spaceBetweenCells())
             let size = delegate.sizeForCollectionCellAt(index: index.offset)
             cellsTotalHeight += size.height
-            collectionView.set(width: size.width, height: size.height)
+            collectionController.view.set(width: size.width, height: size.height)
         }
         delegate.homeBuilderDidLayoutCollectionViews(in: view, contentHeight())
     }
@@ -75,6 +77,13 @@ class HomeBuilder {
             delegate.spaceBetweenCells() * CGFloat(delegate.numberOfCollectionCells()-1)
         )
         return totalHeight
+    }
+    
+    private func addChild(controller: MNViewController) {
+        guard let delegate = delegate else { return }
+        let parent = (delegate as? UIViewController)
+        parent?.addChild(controller)
+        controller.didMove(toParent: parent)
     }
     
 }
