@@ -60,6 +60,7 @@ class HomeCollectionCell: MNCollectionViewCell {
     
     override func setupUI() {
         clipsToBounds = true
+        backgroundColor = .white
     }
     
     override func setupSubViews() {
@@ -77,7 +78,7 @@ class HomeCollectionCell: MNCollectionViewCell {
         contentRate.set(width: 44, height: 20)
         
         contentTitle.edgesToSuperLeadingAndTrailing()
-        contentTitle.anchorTop(contentImageView.bottomAnchor, padding: 7)
+        contentTitle.anchorTop(contentImageView.bottomAnchor, padding: 8)
     }
     
     

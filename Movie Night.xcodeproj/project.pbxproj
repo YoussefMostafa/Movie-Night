@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CF8027CAE0C640E37DBB8C5D /* Pods_Movie_Night.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF80E2DD074BAF0241E995F /* Pods_Movie_Night.framework */; };
+		D8102B5421B44FBA00D7D767 /* MNCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5321B44FBA00D7D767 /* MNCollectionViewDataSource.swift */; };
+		D8102B5621B460F800D7D767 /* CellsReuseIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5521B460F800D7D767 /* CellsReuseIdentifiers.swift */; };
 		D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */; };
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* MNFBLoginButton.swift */; };
@@ -47,6 +49,8 @@
 		0DF80E2DD074BAF0241E995F /* Pods_Movie_Night.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movie_Night.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1311163C16887FE599DFE855 /* Pods-Movie Night.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Night.release.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night.release.xcconfig"; sourceTree = "<group>"; };
 		C1C0BF42E0FD1C02FECDB888 /* Pods-Movie Night.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Night.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night.debug.xcconfig"; sourceTree = "<group>"; };
+		D8102B5321B44FBA00D7D767 /* MNCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		D8102B5521B460F800D7D767 /* CellsReuseIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsReuseIdentifiers.swift; sourceTree = "<group>"; };
 		D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroTextModel.swift; sourceTree = "<group>"; };
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D811658F219129760086C778 /* MNFBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButton.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 				D811658B218EFB8B0086C778 /* MNViewController.swift */,
 				D87CA18D21A1597900143DC3 /* MNNavigationController.swift */,
 				D815A7F921B120E300B09FB2 /* MNUIView.swift */,
+				D8102B5321B44FBA00D7D767 /* MNCollectionViewDataSource.swift */,
 			);
 			name = Supers;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				D8A2A01E2198CA0F0048D414 /* APIManager.swift */,
 				D8A2A0222198CFAF0048D414 /* FaceBookManager.swift */,
 				D872C5D2219F5D1100807169 /* FirebaseManager.swift */,
+				D8102B5521B460F800D7D767 /* CellsReuseIdentifiers.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -508,6 +514,7 @@
 				D87CA18E21A1597900143DC3 /* MNNavigationController.swift in Sources */,
 				D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */,
 				D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */,
+				D8102B5621B460F800D7D767 /* CellsReuseIdentifiers.swift in Sources */,
 				D872C5C1219CAFF400807169 /* LoginProfileSetupController.swift in Sources */,
 				D815A7FA21B120E300B09FB2 /* MNUIView.swift in Sources */,
 				D8F7E3242187ACC30016B7E6 /* EasyConstraintsEx.swift in Sources */,
@@ -516,6 +523,7 @@
 				D815A7F521B11A6200B09FB2 /* HomeBuilderDelegate.swift in Sources */,
 				D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */,
 				D815A80221B1C38100B09FB2 /* HomeCollectionCell.swift in Sources */,
+				D8102B5421B44FBA00D7D767 /* MNCollectionViewDataSource.swift in Sources */,
 				D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
 				D85D7D9A21ADE7E800C1BCFF /* NowPlayingMovies.swift in Sources */,

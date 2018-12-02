@@ -18,10 +18,13 @@ class APIManager {
     
     enum EndPoints: String {
         case nowPlayingMovies = "/movie/now_playing"
+        case popularMovies = "/movie/popular"
         func params() -> [String: Any] {
             switch self {
             case .nowPlayingMovies:
                 return ["api_key": shared.apiKey, "page": 1 as Any, "region": "US"]
+            case .popularMovies:
+                return EndPoints.nowPlayingMovies.params()
             }
         }
     }
