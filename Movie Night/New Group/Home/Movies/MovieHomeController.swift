@@ -65,7 +65,7 @@ extension MovieHomeController: HomeBuilderDelegate {
     }
     
     func sizeForCollectionCellAt(index: Int) -> CGSize {
-        return CGSize(width: view.bounds.width, height: 471)
+        return CGSize(width: view.bounds.width, height: 409)
     }
     
     func spaceBetweenCells() -> CGFloat {

@@ -41,6 +41,7 @@ class HomeBuilder {
     
     private func buildViews(numberOfViews: Int) -> [HomeCollectionController] {
         var views = [HomeCollectionController]()
+        
         for _ in 0..<numberOfViews {
             views.append(HomeCollectionController())
         }
@@ -52,7 +53,7 @@ class HomeBuilder {
         for index in collectionViews.enumerated() {
             let collectionController = index.element
             if view.subviews.last == nil {
-                addChild(controller: collectionController)
+                addChild(controller: index.element)
                 view.addSubview(collectionController.view)
                 collectionController.view.anchorTop(view.topAnchor, padding: 0)
                 let size = delegate.sizeForCollectionCellAt(index: index.offset)
@@ -61,7 +62,7 @@ class HomeBuilder {
                 continue
             }
             guard let lastView = view.subviews.last else { return }
-            addChild(controller: collectionController)
+            addChild(controller: index.element)
             view.addSubview(collectionController.view)
             collectionController.view.anchorTop(lastView.bottomAnchor, padding: delegate.spaceBetweenCells())
             let size = delegate.sizeForCollectionCellAt(index: index.offset)
@@ -79,7 +80,7 @@ class HomeBuilder {
         return totalHeight
     }
     
-    private func addChild(controller: MNViewController) {
+    private func addChild(controller: HomeCollectionController) {
         guard let delegate = delegate else { return }
         let parent = (delegate as? UIViewController)
         parent?.addChild(controller)

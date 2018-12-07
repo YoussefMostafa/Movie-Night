@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class OnBoardingPageCell: MNCollectionViewCell {
+class OnBoardingPageCell: MNCollectionViewCell<String>{
     
     // MARK: Props
     

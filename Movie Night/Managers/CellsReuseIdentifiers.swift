@@ -10,9 +10,9 @@ import Foundation
 
 enum CellsReuseIdentifiers: String {
     
-    case homeCollectionCell = "MovieCellKeyIdentifier"
+    case homeCollectionCell = "HomeCollectionCellIdentifier"
     
-    func identifier() -> String {
+    var identifier: String {
         return self.rawValue
     }
 }

@@ -8,16 +8,15 @@
 
 import UIKit
 
-class HomeCollectionCell: MNCollectionViewCell {
+class HomeCollectionCell: MNCollectionViewCell<Movie> {
     
-    var dataSource: Movie? {
+    override var dataSource: Movie? {
         willSet {
             if let newValue = newValue {
                 contentRate.text = "\(newValue.rate ?? 0)"
                 contentTitle.text = "\(newValue.title ?? "")"
                 if newValue.posterPath != nil {
                     let url = APIManager.createPhotoUrl(from: newValue.posterPath!)
-                    
                     contentImageView.sd_setImage(with: url, placeholderImage: nil, options: .progressiveDownload, progress: nil, completed: nil)
                 }
             }
@@ -60,7 +59,6 @@ class HomeCollectionCell: MNCollectionViewCell {
     
     override func setupUI() {
         clipsToBounds = true
-        backgroundColor = .white
     }
     
     override func setupSubViews() {
