@@ -54,20 +54,32 @@ class HomeBuilder {
             let collectionController = index.element
             if view.subviews.last == nil {
                 addChild(controller: index.element)
+                let header = delegate.headerForCollection(at: index.offset)
+                view.addSubview(header)
                 view.addSubview(collectionController.view)
-                collectionController.view.anchorTop(view.topAnchor, padding: 0)
                 let size = delegate.sizeForCollectionCellAt(index: index.offset)
                 cellsTotalHeight += size.height
+                header.anchorTop(view.topAnchor, padding: 0)
+                header.centerHorizontally()
+                let headerSize = delegate.sizeForHeader(at: index.offset)
+                header.set(width: headerSize.width, height: headerSize.height)
                 collectionController.view.set(width: size.width, height: size.height)
+                collectionController.view.anchorTop(header.bottomAnchor, padding: 20)
                 continue
             }
             guard let lastView = view.subviews.last else { return }
             addChild(controller: index.element)
+            let header = delegate.headerForCollection(at: index.offset)
+            view.addSubview(header)
             view.addSubview(collectionController.view)
-            collectionController.view.anchorTop(lastView.bottomAnchor, padding: delegate.spaceBetweenCells())
             let size = delegate.sizeForCollectionCellAt(index: index.offset)
             cellsTotalHeight += size.height
+            header.anchorTop(lastView.bottomAnchor, padding: 16)
+            header.centerHorizontally()
+            let headerSize = delegate.sizeForHeader(at: index.offset)
+            header.set(width: headerSize.width, height: headerSize.height)
             collectionController.view.set(width: size.width, height: size.height)
+            collectionController.view.anchorTop(header.bottomAnchor, padding: 20)
         }
         delegate.homeBuilderDidLayoutCollectionViews(in: view, contentHeight())
     }

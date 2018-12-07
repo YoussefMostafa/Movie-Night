@@ -61,7 +61,7 @@ class MovieHomeController: MNViewController {
 extension MovieHomeController: HomeBuilderDelegate {
     
     func numberOfCollectionCells() -> Int {
-        return 1
+        return 4
     }
     
     func sizeForCollectionCellAt(index: Int) -> CGSize {
@@ -77,6 +77,14 @@ extension MovieHomeController: HomeBuilderDelegate {
         containerView.anchorTop(scrollView.topAnchor, padding: 0)
         containerView.anchorBottom(scrollView.bottomAnchor, padding: 0)
         containerView.set(width: view.bounds.width, height: contentHeight)
+    }
+    
+    func headerForCollection(at index: Int) -> HomeCollectionHeaderView {
+        return HomeCollectionHeaderView()
+    }
+    
+    func sizeForHeader(at index: Int) -> CGSize {
+        return CGSize(width: view.bounds.size.width - 32, height: 40)
     }
     
 }

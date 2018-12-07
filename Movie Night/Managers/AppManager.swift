@@ -18,6 +18,7 @@ class AppManager {
             print("\nUser info has been loaded .. \n")
         }
     }
+
     
     // MARK: - User Defaults Keys
     

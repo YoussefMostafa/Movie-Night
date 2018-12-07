@@ -10,6 +10,9 @@ import UIKit
 
 class HomeCollectionController: MNCollectionViewController<Movie,HomeCollectionCell> {
     
+    // MARK: - Props
+    
+    
     // MARK: - Methods
     
     override func setupUI() {
@@ -48,7 +51,6 @@ class HomeCollectionController: MNCollectionViewController<Movie,HomeCollectionC
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
         return 16
     }
     
