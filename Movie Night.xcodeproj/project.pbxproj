@@ -10,6 +10,7 @@
 		CF8027CAE0C640E37DBB8C5D /* Pods_Movie_Night.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF80E2DD074BAF0241E995F /* Pods_Movie_Night.framework */; };
 		D8102B5621B460F800D7D767 /* CellsReuseIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5521B460F800D7D767 /* CellsReuseIdentifiers.swift */; };
 		D8102B5821B7049F00D7D767 /* MNCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5721B7049F00D7D767 /* MNCollectionViewController.swift */; };
+		D8102B5B21BB048100D7D767 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5A21BB048100D7D767 /* MovieViewModel.swift */; };
 		D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */; };
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* MNFBLoginButton.swift */; };
@@ -51,6 +52,7 @@
 		C1C0BF42E0FD1C02FECDB888 /* Pods-Movie Night.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movie Night.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Movie Night/Pods-Movie Night.debug.xcconfig"; sourceTree = "<group>"; };
 		D8102B5521B460F800D7D767 /* CellsReuseIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellsReuseIdentifiers.swift; sourceTree = "<group>"; };
 		D8102B5721B7049F00D7D767 /* MNCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionViewController.swift; sourceTree = "<group>"; };
+		D8102B5A21BB048100D7D767 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroTextModel.swift; sourceTree = "<group>"; };
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D811658F219129760086C778 /* MNFBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButton.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 				1311163C16887FE599DFE855 /* Pods-Movie Night.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D8102B5921BB046A00D7D767 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D8102B5A21BB048100D7D767 /* MovieViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		D8116588218EF7430086C778 /* OnBoarding */ = {
@@ -274,6 +284,7 @@
 		D8949FE221871FF000A549B5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D8102B5921BB046A00D7D767 /* Home */,
 				D872C5D721A0306100807169 /* Login&Signup */,
 			);
 			path = ViewModels;
@@ -519,6 +530,7 @@
 				D815A7FA21B120E300B09FB2 /* MNUIView.swift in Sources */,
 				D8F7E3242187ACC30016B7E6 /* EasyConstraintsEx.swift in Sources */,
 				D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */,
+				D8102B5B21BB048100D7D767 /* MovieViewModel.swift in Sources */,
 				D8A2A01F2198CA0F0048D414 /* APIManager.swift in Sources */,
 				D815A7F521B11A6200B09FB2 /* HomeBuilderDelegate.swift in Sources */,
 				D872C5CC219F50A400807169 /* BLMultiColorLoader.m in Sources */,

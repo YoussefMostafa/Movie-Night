@@ -10,13 +10,16 @@ import UIKit
 
 class HomeCollectionCell: MNCollectionViewCell<Movie> {
     
+    // MARK: - DataSource
+    
     override var dataSource: Movie? {
         willSet {
-            if let newValue = newValue {
-                contentRate.text = "\(newValue.rate ?? 0)"
-                contentTitle.text = "\(newValue.title ?? "")"
-                if newValue.posterPath != nil {
-                    let url = APIManager.createPhotoUrl(from: newValue.posterPath!)
+            if let movie = newValue {
+                let movieViewModel = MovieViewModel(movie)
+                contentRate.text = movieViewModel.contentRate
+                contentTitle.text = movieViewModel.contentTitle
+                if movieViewModel.posterPath != nil {
+                    let url = APIManager.createPhotoUrl(from: movieViewModel.posterPath!)
                     contentImageView.sd_setImage(with: url, placeholderImage: nil, options: .progressiveDownload, progress: nil, completed: nil)
                 }
             }
@@ -76,7 +79,7 @@ class HomeCollectionCell: MNCollectionViewCell<Movie> {
         contentRate.set(width: 44, height: 20)
         
         contentTitle.edgesToSuperLeadingAndTrailing()
-        contentTitle.anchorTop(contentImageView.bottomAnchor, padding: 8)
+        contentTitle.anchorTop(contentImageView.bottomAnchor, padding: 10)
     }
     
     
