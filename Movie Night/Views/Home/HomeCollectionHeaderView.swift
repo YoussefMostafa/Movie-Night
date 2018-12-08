@@ -10,6 +10,12 @@ import UIKit
 
 class HomeCollectionHeaderView: UILabel {
     
+    var type: CollectionType? {
+        didSet {
+            text = type?.title
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -18,9 +24,8 @@ class HomeCollectionHeaderView: UILabel {
     private func setupUI() {
         textColor = .white
         textAlignment = .left
-        font = UIFont.systemFont(ofSize: 23, weight: .heavy)
+        font = UIFont.systemFont(ofSize: 24, weight: .heavy)
         layer.opacity = 9.5
-        text = "Now Playing"
     }
     
     required init?(coder aDecoder: NSCoder) {

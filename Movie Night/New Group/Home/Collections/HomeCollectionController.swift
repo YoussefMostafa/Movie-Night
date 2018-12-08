@@ -12,6 +12,7 @@ class HomeCollectionController: MNCollectionViewController<Movie,HomeCollectionC
     
     // MARK: - Props
     
+    var type: CollectionType?
     
     // MARK: - Methods
     
@@ -23,7 +24,8 @@ class HomeCollectionController: MNCollectionViewController<Movie,HomeCollectionC
     }
     
     override func fetchData() {
-        APIManager.fetchData(endPoint: .nowPlayingMovies) { (data: NowPlayingMovies?, error) in
+        guard let type = type, let endPoint = type.endPoint else {return}
+        APIManager.fetchData(endPoint: endPoint) { (data: NowPlayingMovies?, error) in
             if let error = error {
                 print("\n\(error.localizedDescription)\n")
                 return
@@ -47,7 +49,7 @@ class HomeCollectionController: MNCollectionViewController<Movie,HomeCollectionC
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 411)
+        return CGSize(width: 140, height: 249)
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

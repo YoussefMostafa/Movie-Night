@@ -24,4 +24,14 @@ enum CollectionType {
         }
     }
     
+    var endPoint: APIManager.EndPoints? {
+        switch self {
+        case .nowPlaying: return .nowPlayingMovies
+        case .popular: return  .popularMovies
+        case .topRated: return .topRated
+        case .upcomming: return .upcomming
+        
+        }
+    }
+    
 }

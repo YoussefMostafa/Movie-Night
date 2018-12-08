@@ -18,10 +18,7 @@ class HomeCollectionCell: MNCollectionViewCell<Movie> {
                 let movieViewModel = MovieViewModel(movie)
                 contentRate.text = movieViewModel.contentRate
                 contentTitle.text = movieViewModel.contentTitle
-                if movieViewModel.posterPath != nil {
-                    let url = APIManager.createPhotoUrl(from: movieViewModel.posterPath!)
-                    contentImageView.sd_setImage(with: url, placeholderImage: nil, options: .progressiveDownload, progress: nil, completed: nil)
-                }
+                loadImage(movie.posterPath)
             }
         }
     }
@@ -49,7 +46,7 @@ class HomeCollectionCell: MNCollectionViewCell<Movie> {
     
     private let contentTitle: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         label.layer.opacity = 0.95
         label.backgroundColor = .clear
         label.textColor = .white
@@ -72,14 +69,22 @@ class HomeCollectionCell: MNCollectionViewCell<Movie> {
     
     override func setupConstraints() {
         contentImageView.edgesToSuperView(exclude: .bottom)
-        contentImageView.setHeight(360)
         
         contentRate.anchorTop(topAnchor, padding: 8)
         contentRate.anchorLeading(leadingAnchor, padding: 8)
         contentRate.set(width: 44, height: 20)
         
         contentTitle.edgesToSuperLeadingAndTrailing()
-        contentTitle.anchorTop(contentImageView.bottomAnchor, padding: 10)
+        contentTitle.anchorTop(contentImageView.bottomAnchor, padding: 8)
+        contentTitle.anchorBottom(bottomAnchor, padding: 0)
+        contentTitle.setHeight(40)
+    }
+    
+    private func loadImage(_ path: String?) {
+        if let path = path {
+            let url = APIManager.createPhotoUrl(from: path)
+            contentImageView.sd_setImage(with: url, placeholderImage: nil, options: .progressiveDownload, progress: nil, completed: nil)
+        }
     }
     
     
