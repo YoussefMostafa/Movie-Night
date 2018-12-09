@@ -8,13 +8,13 @@
 
 import UIKit
 
-class HomeBuilder {
+class HomeBuilder<T: UICollectionViewController> {
     
     // MARK: - Props
     
     private var cellsTotalHeight: CGFloat = 0
     
-    private var collectionCells: [HomeCollectionController]? {
+    private var collectionCells: [T]? {
         willSet {
             if let collectionViews = newValue {
                 layout(collectionViews, In: UIView())
@@ -39,17 +39,17 @@ class HomeBuilder {
         collectionCells = buildViews(numberOfViews: delegate.numberOfCollectionCells())
     }
     
-    private func buildViews(numberOfViews: Int) -> [HomeCollectionController] {
-        var views = [HomeCollectionController]()
+    private func buildViews(numberOfViews: Int) -> [T] {
+        var views = [T]()
         
         for x in 0..<numberOfViews {
             print(x)
-            views.append(HomeCollectionController())
+            views.append(T())
         }
         return views
     }
     
-    private func layout(_ collectionViews: [HomeCollectionController], In view: UIView) {
+    private func layout(_ collectionViews: [T], In view: UIView) {
         guard let delegate = delegate else { return }
         for index in collectionViews.enumerated() {
             let variableAnchor = view.subviews.last?.bottomAnchor ?? view.topAnchor
@@ -58,7 +58,7 @@ class HomeBuilder {
             let headerSize = delegate.sizeForHeader(at: index.offset)
             let header = delegate.headerForCollection(at: index.offset)
             header.type = delegate.typeForCollection(at: index.offset)
-            collectionController.type = delegate.typeForCollection(at: index.offset)
+            setupControllerType(delegate.typeForCollection(at: index.offset), collectionController)
             addChild(controller: index.element)
             addSubView(to: view, views: header, collectionController.view)
             cellsTotalHeight += (size.height+headerSize.height)
@@ -83,13 +83,22 @@ class HomeBuilder {
         return totalHeight + (CGFloat(delegate.numberOfCollectionCells()) * delegate.spaceBetweenCells())
     }
     
-    private func addChild(controller: HomeCollectionController) {
+    private func addChild(controller: T) {
         guard let delegate = delegate else { return }
         let parent = (delegate as? UIViewController)
         parent?.addChild(controller)
         controller.didMove(toParent: parent)
     }
     
-    
+    private func setupControllerType(_ type: CollectionType?, _ controller: T) {
+        guard let type = type else { return }
+        if controller is MoviesHomeCollectionController {
+            let controller = controller as! MoviesHomeCollectionController
+            controller.type = type
+        } else if controller is TVHomeCollectionController {
+            let controller = controller as! TVHomeCollectionController
+            controller.type = type
+        }
+    }
     
 }

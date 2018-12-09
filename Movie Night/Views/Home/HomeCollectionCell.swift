@@ -8,17 +8,17 @@
 
 import UIKit
 
-class HomeCollectionCell: MNCollectionViewCell<Movie> {
+class HomeCollectionCell<T>: MNCollectionViewCell<T> {
     
     // MARK: - DataSource
     
-    override var dataSource: Movie? {
-        willSet {
-            if let movie = newValue {
-                let movieViewModel = MovieViewModel(movie)
-                contentRate.text = movieViewModel.contentRate
-                contentTitle.text = movieViewModel.contentTitle
-                loadImage(movie.posterPath)
+    override var dataSource: T? {
+        didSet {
+            guard let dataSource = dataSource else { return }
+            if dataSource is Movie {
+                fillMovieData(dataSource as! Movie)
+            } else if dataSource is TV {
+                fillTvData(dataSource as! TV)
             }
         }
     }
@@ -83,8 +83,22 @@ class HomeCollectionCell: MNCollectionViewCell<Movie> {
     private func loadImage(_ path: String?) {
         if let path = path {
             let url = APIManager.createPhotoUrl(from: path)
-            contentImageView.sd_setImage(with: url, placeholderImage: nil, options: .progressiveDownload, progress: nil, completed: nil)
+            contentImageView.sd_setImage(with: url)
         }
+    }
+    
+    private func fillMovieData(_ movie: Movie) {
+        let movieViewModel = MovieViewModel(movie)
+        contentRate.text = movieViewModel.contentRate
+        contentTitle.text = movieViewModel.contentTitle
+        loadImage(movieViewModel.posterPath)
+    }
+    
+    private func fillTvData(_ tv: TV) {
+        let tvViewModel = TVViewModel(tv)
+        contentRate.text = tvViewModel.contentRate
+        contentTitle.text = tvViewModel.contentTitle
+        loadImage(tvViewModel.posterPath)
     }
     
     

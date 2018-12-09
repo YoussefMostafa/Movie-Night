@@ -36,7 +36,7 @@ class DashboardTabBarController: UITabBarController {
         let movieHomeController = createNavigationController(with: MovieHomeController(), tabBarButtonImage: #imageLiteral(resourceName: "Movie"), tabBarButtonTitle: "Movies")
         
         // TVHomeController
-        let tvHomeController = createNavigationController(with: UIViewController(), tabBarButtonImage: #imageLiteral(resourceName: "Television"), tabBarButtonTitle: "TV")
+        let tvHomeController = createNavigationController(with: TVHomeController(), tabBarButtonImage: #imageLiteral(resourceName: "Television"), tabBarButtonTitle: "TV")
         
         // FavoritesHomeController
         let favoritesHomeController = createNavigationController(with: UIViewController(), tabBarButtonImage: #imageLiteral(resourceName: "heart"), tabBarButtonTitle: "Favorites")

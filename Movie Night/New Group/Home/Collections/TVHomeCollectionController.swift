@@ -1,14 +1,14 @@
 //
-//  HomeCollectionController.swift
+//  TVHomeCollectionController.swift
 //  Movie Night
 //
-//  Created by Youssef Mostafa on 11/30/18.
+//  Created by Youssef Mostafa on 12/9/18.
 //  Copyright © 2018 UsefDev. All rights reserved.
 //
 
 import UIKit
 
-class HomeCollectionController: MNCollectionViewController<Movie,HomeCollectionCell> {
+class TVHomeCollectionController: MNCollectionViewController<TV, HomeCollectionCell<TV>> {
     
     // MARK: - Props
     
@@ -27,13 +27,13 @@ class HomeCollectionController: MNCollectionViewController<Movie,HomeCollectionC
     
     override func fetchData() {
         guard let type = type, let endPoint = type.endPoint else {return}
-        APIManager.fetchData(endPoint: endPoint) { (data: NowPlayingMovies?, error) in
+        APIManager.fetchData(endPoint: endPoint) { (data: TVRequestedPage?, error) in
             if let error = error {
                 print("\n\(error.localizedDescription)\n")
                 return
             }
-            guard let movies = data?.movies else { return }
-            self.dataSource = movies
+            guard let series = data?.series else { return }
+            self.dataSource = series
         }
     }
     

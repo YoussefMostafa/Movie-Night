@@ -1,14 +1,14 @@
 //
-//  MovieViewModel.swift
+//  TVViewModel.swift
 //  Movie Night
 //
-//  Created by Youssef Mostafa on 12/7/18.
+//  Created by Youssef Mostafa on 12/9/18.
 //  Copyright © 2018 UsefDev. All rights reserved.
 //
 
 import Foundation
 
-struct MovieViewModel {
+struct TVViewModel {
     
     var contentRate: String?
     var contentTitle: String?
@@ -17,7 +17,7 @@ struct MovieViewModel {
     
     // MARK: - Dependacy Injection
     
-    init(_ dependancy: Movie) {
+    init(_ dependancy: TV) {
         contentRate = "\(dependancy.rate ?? 0)"
         contentTitle = "\(dependancy.title ?? "")"
         overview = "\(dependancy.overview ?? "")"

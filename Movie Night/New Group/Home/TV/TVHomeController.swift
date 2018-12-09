@@ -1,14 +1,14 @@
 //
-//  MovieHomeController.swift
+//  TVHomeController.swift
 //  Movie Night
 //
-//  Created by Youssef Mostafa on 11/20/18.
+//  Created by Youssef Mostafa on 12/9/18.
 //  Copyright © 2018 UsefDev. All rights reserved.
 //
 
 import UIKit
 
-class MovieHomeController: MNViewController, HomeBuilderDelegate {
+class TVHomeController: MNViewController, HomeBuilderDelegate {
     
     // MARK: - Views
     
@@ -31,7 +31,7 @@ class MovieHomeController: MNViewController, HomeBuilderDelegate {
     
     // MARK: - Props
     
-    var homeBuilder = HomeBuilder<MoviesHomeCollectionController>()
+    var homeBuilder = HomeBuilder<TVHomeCollectionController>()
     
     // MARK: - LifeCycle Methods
     
@@ -93,10 +93,10 @@ class MovieHomeController: MNViewController, HomeBuilderDelegate {
     
     func typeForCollection(at index: Int) -> CollectionType? {
         switch index {
-        case 0: return .nowPlaying
-        case 1: return .topRatedMovies
-        case 2: return .popularMovies
-        case 3: return .upcomming
+        case 0: return .airingToday
+        case 1: return .onTv
+        case 2: return .popularOnTV
+        case 3: return .topRatedOnTV
         default: return nil
         }
     }
