@@ -27,7 +27,7 @@ class TVHomeCollectionController: MNCollectionViewController<TV, HomeCollectionC
     
     override func fetchData() {
         guard let type = type, let endPoint = type.endPoint else {return}
-        APIManager.fetchData(endPoint: endPoint) { (data: TVRequestedPage?, error) in
+        APIManager.fetchData(endPoint) { (data: TVRequestedPage?, error) in
             if let error = error {
                 print("\n\(error.localizedDescription)\n")
                 return
@@ -47,7 +47,7 @@ class TVHomeCollectionController: MNCollectionViewController<TV, HomeCollectionC
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let dataSource = dataSource else { return 0 }
-        return dataSource.count >= 10 ? 10 : dataSource.count
+        return dataSource.count >= 20 ? 20 : dataSource.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

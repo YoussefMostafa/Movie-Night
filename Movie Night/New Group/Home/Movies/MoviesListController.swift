@@ -1,39 +1,52 @@
 //
-//  MoviesHomeCollectionController.swift
+//  MoviesListController.swift
 //  Movie Night
 //
-//  Created by Youssef Mostafa on 11/30/18.
+//  Created by Youssef Mostafa on 12/9/18.
 //  Copyright © 2018 UsefDev. All rights reserved.
 //
 
 import UIKit
 
-class MoviesHomeCollectionController: MNCollectionViewController<Movie,HomeCollectionCell<Movie>> {
+class MoviesListController: MNCollectionViewController<Movie,ListCollectionViewCell<Movie>> {
+    
+    // MARK: - DataSource
+    
+    override var dataSource: [Movie]? {
+        didSet {
+            guard let dataSource = dataSource else { return }
+            totalMovies = dataSource.count
+            collectionView.reloadData()
+            
+        }
+    }
     
     // MARK: - Props
     
-    var type: CollectionType?
+    var type: CollectionType? = CollectionType.nowPlaying
+    private var page = 1
+    private var totalMovies = 0
     
     // MARK: - Methods
     
     override func setupUI() {
         super.setupUI()
         collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
+            layout.scrollDirection = .vertical
         }
     }
     
     override func fetchData() {
         guard let type = type, let endPoint = type.endPoint else {return}
-        APIManager.fetchData(endPoint) { (data: MoviesRequestedPage?, error) in
+        APIManager.fetchData(in: page, endPoint) { (data: MoviesRequestedPage?, error) in
             if let error = error {
                 print("\n\(error.localizedDescription)\n")
                 return
             }
             guard let movies = data?.movies else { return }
-            self.dataSource = movies
+            self.dataSource == nil ? self.dataSource = movies : self.dataSource?.append(contentsOf: movies)
         }
     }
     
@@ -47,11 +60,11 @@ class MoviesHomeCollectionController: MNCollectionViewController<Movie,HomeColle
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let dataSource = dataSource else { return 0 }
-        return dataSource.count >= 20 ? 20 : dataSource.count
+        return dataSource.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 140, height: 249)
+        return CGSize(width: view.bounds.width - 32, height: 192)
     }
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -62,4 +75,12 @@ class MoviesHomeCollectionController: MNCollectionViewController<Movie,HomeColle
         return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.item+1 == totalMovies {
+            page += 1
+            fetchData()
+        }
+    }
+    
 }
+

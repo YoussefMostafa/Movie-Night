@@ -26,24 +26,24 @@ class APIManager {
         case popularOnTV = "/tv/popular"
         case topRatedOnTV = "/tv/top_rated"
         
-        func params() -> [String: Any] {
+        func params(_ page: Int = 1) -> [String: Any] {
             switch self {
             case .nowPlayingMovies:
-                return ["api_key": shared.apiKey, "page": 1 as Any, "region": "US"]
+                return ["api_key": shared.apiKey, "page": page as Any, "region": "US"]
             case .popularMovies:
-                return EndPoints.nowPlayingMovies.params()
+                return EndPoints.nowPlayingMovies.params(page)
             case .topRatedMovies:
-                return EndPoints.nowPlayingMovies.params()
+                return EndPoints.nowPlayingMovies.params(page)
             case .upcomming:
-                return EndPoints.nowPlayingMovies.params()
+                return EndPoints.nowPlayingMovies.params(page)
             case .airingToday:
-                return EndPoints.nowPlayingMovies.params()
+                return EndPoints.nowPlayingMovies.params(page)
             case .onTv:
-                return EndPoints.nowPlayingMovies.params()
+                return EndPoints.nowPlayingMovies.params(page)
             case .popularOnTV:
-                return EndPoints.nowPlayingMovies.params()
+                return EndPoints.nowPlayingMovies.params(page)
             case .topRatedOnTV:
-                return EndPoints.nowPlayingMovies.params()
+                return EndPoints.nowPlayingMovies.params(page)
             }
         }
     }
@@ -58,17 +58,17 @@ class APIManager {
     
     // Mark: - Movies APIRequests
     
-    static func fetchData<T: Decodable>(endPoint: EndPoints, _ completionHandler: @escaping (_ ç: T?, _ error: Error?)->()) {
+    static func fetchData<T: Decodable>(in page: Int = 1, _ endPoint: EndPoints, _ completionHandler: @escaping (_ data: T?, _ error: Error?)->()) {
         guard let url = createRequestUrl(endPoint) else { return }
-        Alamofire.request(url, method: .get, parameters: endPoint.params(), encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+        Alamofire.request(url, method: .get, parameters: endPoint.params(page), encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 print(error.localizedDescription)
                 completionHandler(nil, error)
             case .success:
                 guard let data = response.data else { return }
-                guard let nowPlayingMovies = try? JSONDecoder().decode(T.self, from: data) else { return }
-                completionHandler(nowPlayingMovies, nil)
+                guard let requestedData = try? JSONDecoder().decode(T.self, from: data) else { return }
+                completionHandler(requestedData, nil)
             }
         }
     }

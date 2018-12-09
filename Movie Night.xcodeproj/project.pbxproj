@@ -38,6 +38,8 @@
 		D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */; };
 		D872C5D921A0309A00807169 /* LoginProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D872C5D821A0309A00807169 /* LoginProfileViewModel.swift */; };
 		D87CA18E21A1597900143DC3 /* MNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87CA18D21A1597900143DC3 /* MNNavigationController.swift */; };
+		D892902A21BDC06A00ADFE71 /* MoviesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892902921BDC06A00ADFE71 /* MoviesListController.swift */; };
+		D892902D21BDC2A400ADFE71 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D892902C21BDC2A400ADFE71 /* ListCollectionViewCell.swift */; };
 		D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8949FCF21871DCC00A549B5 /* AppDelegate.swift */; };
 		D8949FD721871DCE00A549B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD621871DCE00A549B5 /* Assets.xcassets */; };
 		D8949FDA21871DCE00A549B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8949FD821871DCE00A549B5 /* LaunchScreen.storyboard */; };
@@ -89,6 +91,8 @@
 		D872C5D521A0284D00807169 /* MNFBLoginButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButtonDelegate.swift; sourceTree = "<group>"; };
 		D872C5D821A0309A00807169 /* LoginProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProfileViewModel.swift; sourceTree = "<group>"; };
 		D87CA18D21A1597900143DC3 /* MNNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNNavigationController.swift; sourceTree = "<group>"; };
+		D892902921BDC06A00ADFE71 /* MoviesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListController.swift; sourceTree = "<group>"; };
+		D892902C21BDC2A400ADFE71 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		D8949FCC21871DCC00A549B5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8949FCF21871DCC00A549B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8949FD621871DCE00A549B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				D8D4FEFE21A499A200609D24 /* MovieHomeController.swift */,
+				D892902921BDC06A00ADFE71 /* MoviesListController.swift */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -262,6 +267,14 @@
 			path = "Login&Signup";
 			sourceTree = "<group>";
 		};
+		D892902B21BDC24D00ADFE71 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				D892902C21BDC2A400ADFE71 /* ListCollectionViewCell.swift */,
+			);
+			path = Lists;
+			sourceTree = "<group>";
+		};
 		D8949FC321871DCC00A549B5 = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				D815A7F621B1205000B09FB2 /* Home */,
+				D892902B21BDC24D00ADFE71 /* Lists */,
 				D8F7E31E218749870016B7E6 /* OnBoarding */,
 			);
 			path = Views;
@@ -572,6 +586,7 @@
 				D872C5D621A0284D00807169 /* MNFBLoginButtonDelegate.swift in Sources */,
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
 				D85D7D9A21ADE7E800C1BCFF /* MoviesRequestedPage.swift in Sources */,
+				D892902A21BDC06A00ADFE71 /* MoviesListController.swift in Sources */,
 				D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */,
 				D8102B5F21BB15D100D7D767 /* MNCollectionType.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
@@ -586,6 +601,7 @@
 				D8A006CC219A2206004EC041 /* UserModel.swift in Sources */,
 				D8102B6421BD23C800D7D767 /* TV.swift in Sources */,
 				D872C5D921A0309A00807169 /* LoginProfileViewModel.swift in Sources */,
+				D892902D21BDC2A400ADFE71 /* ListCollectionViewCell.swift in Sources */,
 				D872C5C6219F4FB600807169 /* MNButton.swift in Sources */,
 				D8102B5821B7049F00D7D767 /* MNCollectionViewController.swift in Sources */,
 				D8D4FEFF21A499A200609D24 /* MovieHomeController.swift in Sources */,

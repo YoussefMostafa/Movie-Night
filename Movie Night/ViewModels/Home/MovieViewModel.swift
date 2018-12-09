@@ -14,6 +14,7 @@ struct MovieViewModel {
     var contentTitle: String?
     var overview: String?
     var posterPath: String?
+    var backdropPath: String?
     
     // MARK: - Dependacy Injection
     
@@ -22,5 +23,6 @@ struct MovieViewModel {
         contentTitle = "\(dependancy.title ?? "")"
         overview = "\(dependancy.overview ?? "")"
         posterPath = dependancy.posterPath
+        backdropPath = dependancy.backdropPath
     }
 }
