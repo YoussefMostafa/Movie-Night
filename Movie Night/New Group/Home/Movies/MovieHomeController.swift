@@ -39,6 +39,7 @@ class MovieHomeController: MNViewController {
     
     override func setupUI() {
         view.backgroundColor = .black
+        scrollView.showsVerticalScrollIndicator = false
     }
     
     override func setupSubViews() {
@@ -65,7 +66,11 @@ extension MovieHomeController: HomeBuilderDelegate {
     }
     
     func sizeForCollectionCellAt(index: Int) -> CGSize {
-        return CGSize(width: view.bounds.width, height: 301)
+        return CGSize(width: view.bounds.width, height: 297)
+    }
+    
+    func sizeForHeader(at index: Int) -> CGSize {
+        return CGSize(width: view.bounds.size.width - 32, height: 34)
     }
     
     func spaceBetweenCells() -> CGFloat {
@@ -81,10 +86,6 @@ extension MovieHomeController: HomeBuilderDelegate {
     
     func headerForCollection(at index: Int) -> HomeCollectionHeaderView {
         return HomeCollectionHeaderView()
-    }
-    
-    func sizeForHeader(at index: Int) -> CGSize {
-        return CGSize(width: view.bounds.size.width - 32, height: 34)
     }
     
     func typeForCollection(at index: Int) -> CollectionType? {

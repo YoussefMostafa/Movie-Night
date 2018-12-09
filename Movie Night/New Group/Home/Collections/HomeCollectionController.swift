@@ -18,6 +18,7 @@ class HomeCollectionController: MNCollectionViewController<Movie,HomeCollectionC
     
     override func setupUI() {
         super.setupUI()
+        collectionView.showsHorizontalScrollIndicator = false
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
         }

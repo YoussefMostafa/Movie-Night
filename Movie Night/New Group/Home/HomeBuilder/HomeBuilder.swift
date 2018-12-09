@@ -62,8 +62,9 @@ class HomeBuilder {
                 view.addSubview(collectionController.view)
                 let size = delegate.sizeForCollectionCellAt(index: index.offset)
                 let headerSize = delegate.sizeForHeader(at: index.offset)
-                cellsTotalHeight += size.height+headerSize.height
-                header.anchorTop(view.topAnchor, padding: 0)
+                print(headerSize.height)
+                cellsTotalHeight += (size.height+headerSize.height)
+                header.anchorTop(view.topAnchor, padding: delegate.spaceBetweenCells())
                 header.centerHorizontally()
                 header.set(width: headerSize.width, height: headerSize.height)
                 collectionController.view.set(width: size.width, height: size.height)
@@ -75,23 +76,21 @@ class HomeBuilder {
             view.addSubview(header)
             view.addSubview(collectionController.view)
             let size = delegate.sizeForCollectionCellAt(index: index.offset)
-            let headerSize = delegate.sizeForHeader(at: index.offset)
-            cellsTotalHeight += size.height+headerSize.height
-            header.anchorTop(lastView.bottomAnchor, padding: 0)
-            header.centerHorizontally()
-            header.set(width: headerSize.width, height: headerSize.height)
-            collectionController.view.set(width: size.width, height: size.height)
-            collectionController.view.anchorTop(header.bottomAnchor, padding: 0)
+            let headerSize = delegate.sizeForHeader(at: index.offset) // 
+            cellsTotalHeight += (size.height+headerSize.height) //
+            header.anchorTop(lastView.bottomAnchor, padding: delegate.spaceBetweenCells()) // --
+            header.centerHorizontally() //
+            header.set(width: headerSize.width, height: headerSize.height) //
+            collectionController.view.set(width: size.width, height: size.height) //
+            collectionController.view.anchorTop(header.bottomAnchor, padding: 0) //
         }
         delegate.homeBuilderDidLayoutCollectionViews(in: view, contentHeight())
     }
     
     private func contentHeight() -> CGFloat {
         guard let delegate = delegate else { return 0 }
-        let totalHeight = cellsTotalHeight + (
-            delegate.spaceBetweenCells() * CGFloat(delegate.numberOfCollectionCells()-1)
-        )
-        return totalHeight
+        let totalHeight = cellsTotalHeight
+        return totalHeight + (CGFloat(delegate.numberOfCollectionCells()) * delegate.spaceBetweenCells())
     }
     
     private func addChild(controller: HomeCollectionController) {
@@ -100,5 +99,7 @@ class HomeBuilder {
         parent?.addChild(controller)
         controller.didMove(toParent: parent)
     }
+    
+    
     
 }
