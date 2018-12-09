@@ -18,6 +18,12 @@ class MovieHomeController: MNViewController {
         return scrollView
     }()
     
+    private let visualEffectView: UIVisualEffectView = {
+        let visualEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let view = UIVisualEffectView(effect: visualEffect)
+        return view
+    }()
+    
     private let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         return imageView
@@ -40,15 +46,18 @@ class MovieHomeController: MNViewController {
     override func setupUI() {
         view.backgroundColor = .black
         scrollView.showsVerticalScrollIndicator = false
+        backgroundImageView.image = #imageLiteral(resourceName: "MoviesHomeBackgroundImage")
     }
     
     override func setupSubViews() {
         view.addSubview(backgroundImageView)
+        backgroundImageView.addSubview(visualEffectView)
         view.addSubview(scrollView)
     }
     
     override func setupConstraints() {
         backgroundImageView.edgesToSuperView()
+        visualEffectView.edgesToSuperView()
         scrollView.edgesToSuperView(exclude: .top)
         scrollView.anchorTop(view.safeAreaLayoutGuide.topAnchor, padding: 0)
     }
@@ -97,5 +106,6 @@ extension MovieHomeController: HomeBuilderDelegate {
         default: return nil
         }
     }
+    
     
 }

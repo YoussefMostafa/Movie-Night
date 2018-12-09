@@ -28,6 +28,7 @@ class DashboardTabBarController: UITabBarController {
     
     private func setupTabBarUI() {
         tabBar.tintColor = .white
+        tabBar.barStyle = .black
     }
     
     private func createTabBarControllers() -> [UINavigationController] {
