@@ -100,8 +100,8 @@ extension MovieHomeController: HomeBuilderDelegate {
     func typeForCollection(at index: Int) -> CollectionType? {
         switch index {
         case 0: return .nowPlaying
-        case 1: return .topRated
-        case 2: return .popular
+        case 1: return .topRatedMovies
+        case 2: return .popularMovies
         case 3: return .upcomming
         default: return nil
         }

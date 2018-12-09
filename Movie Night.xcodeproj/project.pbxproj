@@ -12,7 +12,7 @@
 		D8102B5821B7049F00D7D767 /* MNCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5721B7049F00D7D767 /* MNCollectionViewController.swift */; };
 		D8102B5B21BB048100D7D767 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5A21BB048100D7D767 /* MovieViewModel.swift */; };
 		D8102B5D21BB10FC00D7D767 /* HomeCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5C21BB10FC00D7D767 /* HomeCollectionHeaderView.swift */; };
-		D8102B5F21BB15D100D7D767 /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5E21BB15D100D7D767 /* CollectionType.swift */; };
+		D8102B5F21BB15D100D7D767 /* MNCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8102B5E21BB15D100D7D767 /* MNCollectionType.swift */; };
 		D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */; };
 		D811658C218EFB8B0086C778 /* MNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658B218EFB8B0086C778 /* MNViewController.swift */; };
 		D8116590219129760086C778 /* MNFBLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D811658F219129760086C778 /* MNFBLoginButton.swift */; };
@@ -56,7 +56,7 @@
 		D8102B5721B7049F00D7D767 /* MNCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionViewController.swift; sourceTree = "<group>"; };
 		D8102B5A21BB048100D7D767 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		D8102B5C21BB10FC00D7D767 /* HomeCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionHeaderView.swift; sourceTree = "<group>"; };
-		D8102B5E21BB15D100D7D767 /* CollectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
+		D8102B5E21BB15D100D7D767 /* MNCollectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCollectionType.swift; sourceTree = "<group>"; };
 		D8116589218EF7840086C778 /* OnboardingIntroTextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingIntroTextModel.swift; sourceTree = "<group>"; };
 		D811658B218EFB8B0086C778 /* MNViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNViewController.swift; sourceTree = "<group>"; };
 		D811658F219129760086C778 /* MNFBLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNFBLoginButton.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				D815A7F921B120E300B09FB2 /* MNUIView.swift */,
 				D8102B5721B7049F00D7D767 /* MNCollectionViewController.swift */,
 				D8F7E32021874A750016B7E6 /* MNCollectionViewCell.swift */,
-				D8102B5E21BB15D100D7D767 /* CollectionType.swift */,
+				D8102B5E21BB15D100D7D767 /* MNCollectionType.swift */,
 			);
 			name = Supers;
 			sourceTree = "<group>";
@@ -546,7 +546,7 @@
 				D8949FD021871DCC00A549B5 /* AppDelegate.swift in Sources */,
 				D85D7D9A21ADE7E800C1BCFF /* NowPlayingMovies.swift in Sources */,
 				D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */,
-				D8102B5F21BB15D100D7D767 /* CollectionType.swift in Sources */,
+				D8102B5F21BB15D100D7D767 /* MNCollectionType.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */,
 				D815A7F021B119D300B09FB2 /* HomeBuilder.swift in Sources */,
