@@ -52,39 +52,29 @@ class HomeBuilder {
     private func layout(_ collectionViews: [HomeCollectionController], In view: UIView) {
         guard let delegate = delegate else { return }
         for index in collectionViews.enumerated() {
+            let variableAnchor = view.subviews.last?.bottomAnchor ?? view.topAnchor
             let collectionController = index.element
+            let size = delegate.sizeForCollectionCellAt(index: index.offset)
+            let headerSize = delegate.sizeForHeader(at: index.offset)
             let header = delegate.headerForCollection(at: index.offset)
             header.type = delegate.typeForCollection(at: index.offset)
             collectionController.type = delegate.typeForCollection(at: index.offset)
-            if view.subviews.last == nil {
-                addChild(controller: index.element)
-                view.addSubview(header)
-                view.addSubview(collectionController.view)
-                let size = delegate.sizeForCollectionCellAt(index: index.offset)
-                let headerSize = delegate.sizeForHeader(at: index.offset)
-                print(headerSize.height)
-                cellsTotalHeight += (size.height+headerSize.height)
-                header.anchorTop(view.topAnchor, padding: delegate.spaceBetweenCells())
-                header.centerHorizontally()
-                header.set(width: headerSize.width, height: headerSize.height)
-                collectionController.view.set(width: size.width, height: size.height)
-                collectionController.view.anchorTop(header.bottomAnchor, padding: 0)
-                continue
-            }
-            guard let lastView = view.subviews.last else { return }
             addChild(controller: index.element)
-            view.addSubview(header)
-            view.addSubview(collectionController.view)
-            let size = delegate.sizeForCollectionCellAt(index: index.offset)
-            let headerSize = delegate.sizeForHeader(at: index.offset) // 
-            cellsTotalHeight += (size.height+headerSize.height) //
-            header.anchorTop(lastView.bottomAnchor, padding: delegate.spaceBetweenCells()) // --
-            header.centerHorizontally() //
-            header.set(width: headerSize.width, height: headerSize.height) //
-            collectionController.view.set(width: size.width, height: size.height) //
-            collectionController.view.anchorTop(header.bottomAnchor, padding: 0) //
+            addSubView(to: view, views: header, collectionController.view)
+            cellsTotalHeight += (size.height+headerSize.height)
+            header.anchorTop(variableAnchor, padding: delegate.spaceBetweenCells())
+            header.centerHorizontally()
+            header.set(width: headerSize.width, height: headerSize.height)
+            collectionController.view.set(width: size.width, height: size.height)
+            collectionController.view.anchorTop(header.bottomAnchor, padding: 0)
         }
         delegate.homeBuilderDidLayoutCollectionViews(in: view, contentHeight())
+    }
+    
+    private func addSubView(to superView: UIView, views: UIView...) {
+        for view in views {
+            superView.addSubview(view)
+        }
     }
     
     private func contentHeight() -> CGFloat {
