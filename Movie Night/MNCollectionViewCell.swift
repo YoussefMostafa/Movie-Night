@@ -12,7 +12,11 @@ class MNCollectionViewCell<T>: UICollectionViewCell {
     
     // MARK: - DataSource
     
-    var dataSource: T?
+    var dataSource: T? {
+        willSet {
+            cleanup()
+        }
+    }
     
     // MARK: - Initializers
     
@@ -29,7 +33,8 @@ class MNCollectionViewCell<T>: UICollectionViewCell {
     
     // MARK: - Methods
     
-    internal func setupUI() {}
-    internal func setupSubViews() {}
-    internal func setupConstraints() {}
+    func setupUI() {}
+    func setupSubViews() {}
+    func setupConstraints() {}
+    func cleanup() {}
 }

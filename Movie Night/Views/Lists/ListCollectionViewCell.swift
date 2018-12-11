@@ -28,6 +28,7 @@ class ListCollectionViewCell<T>: MNCollectionViewCell<T> {
     private let backdropImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -36,7 +37,7 @@ class ListCollectionViewCell<T>: MNCollectionViewCell<T> {
         view.layer.opacity = 5.5
         view.backgroundColor = UIColor.rgb(0, 0, 0, 0.6)
         view.layer.shadowColor = UIColor.rgb(0, 0, 0, 0.6).cgColor
-        view.layer.shadowOffset = CGSize(width: 0, height: 4)
+        view.layer.shadowOffset = CGSize(width: 0, height: -4)
         view.layer.shadowRadius = 10
         return view
     }()
@@ -48,6 +49,7 @@ class ListCollectionViewCell<T>: MNCollectionViewCell<T> {
         label.textAlignment = .center
         label.backgroundColor = UIColor.rgb(74, 74, 74, 0.9)
         label.layer.cornerRadius = 4
+        label.numberOfLines = 0
         label.layer.masksToBounds = true
         return label
     }()
@@ -107,6 +109,12 @@ class ListCollectionViewCell<T>: MNCollectionViewCell<T> {
             let url = APIManager.createPhotoUrl(from: path)
             backdropImage.sd_setImage(with: url)
         }
+    }
+    
+    override func cleanup() {
+        backdropImage.image = nil
+        contentTitle.text = nil
+        contentRate.text = nil
     }
     
 }
