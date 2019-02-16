@@ -28,7 +28,7 @@ class HomeCollectionHeaderView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("See All", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
-        button.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.5568627451, green: 0.5568627451, blue: 0.5764705882, alpha: 1), for: .normal)
         return button
     }()
     

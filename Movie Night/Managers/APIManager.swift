@@ -77,7 +77,7 @@ class APIManager {
     
     static func createPhotoUrl(from path: String?) -> URL? {
         guard let path = path else { return nil }
-        return URL(string: "https://image.tmdb.org/t/p/w185\(path)")
+        return URL(string: "https://image.tmdb.org/t/p/w300\(path)")
     }
     
     private static func createRequestUrl(_ endPoint: EndPoints) -> URL? {

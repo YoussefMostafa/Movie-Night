@@ -42,8 +42,7 @@ class HomeBuilder<T: UICollectionViewController> {
     private func buildViews(numberOfViews: Int) -> [T] {
         var views = [T]()
         
-        for x in 0..<numberOfViews {
-            print(x)
+        for _ in 0..<numberOfViews {
             views.append(T())
         }
         return views

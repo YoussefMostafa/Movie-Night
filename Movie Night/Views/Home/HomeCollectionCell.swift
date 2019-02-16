@@ -98,6 +98,7 @@ class HomeCollectionCell<T>: MNCollectionViewCell<T> {
     private func fillTvData(_ tv: TV) {
         let tvViewModel = TVViewModel(tv)
         contentRate.text = tvViewModel.contentRate
+        contentRate.isHidden =  contentRate.text == nil ? true : false
         contentTitle.text = tvViewModel.contentTitle
         loadImage(tvViewModel.posterPath)
     }
