@@ -90,6 +90,7 @@ class HomeCollectionCell<T>: MNCollectionViewCell<T> {
     private func fillMovieData(_ movie: Movie) {
         let movieViewModel = MovieViewModel(movie)
         contentRate.text = movieViewModel.contentRate
+        contentRate.isHidden =  contentRate.text == nil ? true : false
         contentTitle.text = movieViewModel.contentTitle
         loadImage(movieViewModel.posterPath)
     }

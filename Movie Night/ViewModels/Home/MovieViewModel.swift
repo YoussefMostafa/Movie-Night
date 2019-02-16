@@ -19,7 +19,7 @@ struct MovieViewModel {
     // MARK: - Dependacy Injection
     
     init(_ dependancy: Movie) {
-        contentRate = "\(dependancy.rate ?? 0)"
+        contentRate =  (dependancy.rate != nil && dependancy.rate != 0.0) ? "\(dependancy.rate!)" : nil
         contentTitle = "\(dependancy.title ?? "")"
         overview = "\(dependancy.overview ?? "")"
         posterPath = dependancy.posterPath
