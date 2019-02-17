@@ -19,7 +19,7 @@ class HomeCollectionCell<T>: MNCollectionViewCell<T> {
                 contentRate.text = dataSource.contentRate
                 contentRate.isHidden =  contentRate.text == nil ? true : false
                 contentTitle.text = dataSource.contentTitle
-                contentImageView.sd_setImage(with: APIManager.createPhotoUrl(from: dataSource.posterPath, with: .low))
+                contentImageView.sd_setImage(with: APIManager.createPhotoUrl(from: dataSource.posterPath, with: .high))
             }
         }
     }
@@ -56,6 +56,12 @@ class HomeCollectionCell<T>: MNCollectionViewCell<T> {
         return label
     }()
     
+    private let visualEffectView: UIVisualEffectView = {
+        let effect = UIBlurEffect(style: .regular)
+        let visualEffectView = UIVisualEffectView(effect: effect)
+        return visualEffectView
+    }()
+    
     // MARK: - LifeCycle Methods
     
     override func setupUI() {
@@ -63,12 +69,15 @@ class HomeCollectionCell<T>: MNCollectionViewCell<T> {
     }
     
     override func setupSubViews() {
+        addSubview(visualEffectView)
         addSubview(contentImageView)
         addSubview(contentRate)
         addSubview(contentTitle)
     }
     
     override func setupConstraints() {
+        visualEffectView.anchor(top: contentImageView.topAnchor, bottom: contentImageView.bottomAnchor, leading: contentImageView.leadingAnchor, trailing: contentImageView.trailingAnchor)
+        
         contentImageView.edgesToSuperView(exclude: .bottom)
         
         contentRate.anchorTop(topAnchor, padding: 8)
