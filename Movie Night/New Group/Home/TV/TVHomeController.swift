@@ -31,7 +31,7 @@ class TVHomeController: MNViewController, HomeBuilderDelegate {
     
     // MARK: - Props
     
-    var homeBuilder = HomeBuilder<TVHomeCollectionController>()
+    var homeBuilder = HomeBuilder<HomeCollectionController>()
     
     // MARK: - LifeCycle Methods
     

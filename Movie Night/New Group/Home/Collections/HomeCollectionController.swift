@@ -1,14 +1,14 @@
 //
-//  TVHomeCollectionController.swift
+//  MoviesHomeCollectionController.swift
 //  Movie Night
 //
-//  Created by Youssef Mostafa on 12/9/18.
+//  Created by Youssef Mostafa on 11/30/18.
 //  Copyright © 2018 UsefDev. All rights reserved.
 //
 
 import UIKit
 
-class TVHomeCollectionController: MNCollectionViewController<TV, HomeCollectionCell<TV>> {
+class HomeCollectionController: MNCollectionViewController<MNCardViewModel,HomeCollectionCell<MNCardViewModel>> {
     
     // MARK: - Props
     
@@ -27,13 +27,40 @@ class TVHomeCollectionController: MNCollectionViewController<TV, HomeCollectionC
     
     override func fetchData() {
         guard let type = type, let endPoint = type.endPoint else {return}
+        switch type {
+        case .popularMovies, .nowPlaying, .topRatedMovies, .upcomming:
+            fetchMovies(endPoint: endPoint)
+        case .airingToday, .onTv, .popularOnTV, .topRatedOnTV:
+            fetchTvSeries(endPoint: endPoint)
+        }
+        
+    }
+    
+    private func fetchMovies(endPoint: APIManager.EndPoints) {
+        APIManager.fetchData(endPoint) { (data: MoviesRequestedPage?, error) in
+            if let error = error {
+                print("\n\(error.localizedDescription)\n")
+                return
+            }
+            guard let movies = data?.movies else { return }
+            let movieViewModels = movies.map({ (movie) -> MovieViewModel in
+                return MovieViewModel(movie)
+            })
+            self.dataSource = movieViewModels
+        }
+    }
+    
+    private func fetchTvSeries(endPoint: APIManager.EndPoints) {
         APIManager.fetchData(endPoint) { (data: TVRequestedPage?, error) in
             if let error = error {
                 print("\n\(error.localizedDescription)\n")
                 return
             }
-            guard let series = data?.series else { return }
-            self.dataSource = series
+            guard let tvSeries = data?.series else { return }
+            let tvSeriesViewModels = tvSeries.map({ (tv) -> TVViewModel in
+                return TVViewModel(tv)
+            })
+            self.dataSource = tvSeriesViewModels
         }
     }
     

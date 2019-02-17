@@ -31,7 +31,7 @@ class MovieHomeController: MNViewController, HomeBuilderDelegate {
     
     // MARK: - Props
     
-    var homeBuilder = HomeBuilder<MoviesHomeCollectionController>()
+    var homeBuilder = HomeBuilder<HomeCollectionController>()
     
     // MARK: - LifeCycle Methods
     

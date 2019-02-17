@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 class APIManager {
     
@@ -48,6 +49,14 @@ class APIManager {
         }
     }
     
+    enum PosterQuality: String {
+        case low = "w185"
+        case high = "w342"
+        case veryHigh = "w500"
+        
+        var value: String { return self.rawValue }
+    }
+    
     // MARK: - Singelton instance
     
     static let shared = APIManager()
@@ -75,13 +84,13 @@ class APIManager {
     
     // MARK: - Class Methods
     
-    static func createPhotoUrl(from path: String?) -> URL? {
-        guard let path = path else { return nil }
-        return URL(string: "https://image.tmdb.org/t/p/w300\(path)")
-    }
-    
     private static func createRequestUrl(_ endPoint: EndPoints) -> URL? {
         return URL(string: shared.apiHost+endPoint.rawValue)
+    }
+    
+    static func createPhotoUrl(from path: String?, with quality: PosterQuality) -> URL? {
+        guard let path = path else { return nil }
+        return URL(string: "https://image.tmdb.org/t/p/\(quality.value)\(path)")
     }
     
 }

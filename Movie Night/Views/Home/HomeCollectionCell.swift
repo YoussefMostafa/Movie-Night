@@ -15,10 +15,11 @@ class HomeCollectionCell<T>: MNCollectionViewCell<T> {
     override var dataSource: T? {
         didSet {
             guard let dataSource = dataSource else { return }
-            if dataSource is Movie {
-                fillMovieData(dataSource as! Movie)
-            } else if dataSource is TV {
-                fillTvData(dataSource as! TV)
+            if let dataSource = dataSource as? MNCardViewModel {
+                contentRate.text = dataSource.contentRate
+                contentRate.isHidden =  contentRate.text == nil ? true : false
+                contentTitle.text = dataSource.contentTitle
+                contentImageView.sd_setImage(with: APIManager.createPhotoUrl(from: dataSource.posterPath, with: .low))
             }
         }
     }
@@ -80,28 +81,10 @@ class HomeCollectionCell<T>: MNCollectionViewCell<T> {
         contentTitle.setHeight(40)
     }
     
-    private func loadImage(_ path: String?) {
-        if let path = path {
-            let url = APIManager.createPhotoUrl(from: path)
-            contentImageView.sd_setImage(with: url)
-        }
+    override func cleanup() {
+        contentRate.text = nil
+        contentImageView.image = nil
+        contentTitle.text = nil
     }
-    
-    private func fillMovieData(_ movie: Movie) {
-        let movieViewModel = MovieViewModel(movie)
-        contentRate.text = movieViewModel.contentRate
-        contentRate.isHidden =  contentRate.text == nil ? true : false
-        contentTitle.text = movieViewModel.contentTitle
-        loadImage(movieViewModel.posterPath)
-    }
-    
-    private func fillTvData(_ tv: TV) {
-        let tvViewModel = TVViewModel(tv)
-        contentRate.text = tvViewModel.contentRate
-        contentRate.isHidden =  contentRate.text == nil ? true : false
-        contentTitle.text = tvViewModel.contentTitle
-        loadImage(tvViewModel.posterPath)
-    }
-    
     
 }

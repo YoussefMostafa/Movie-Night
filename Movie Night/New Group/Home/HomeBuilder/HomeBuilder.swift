@@ -91,11 +91,8 @@ class HomeBuilder<T: UICollectionViewController> {
     
     private func setupControllerType(_ type: CollectionType?, _ controller: T) {
         guard let type = type else { return }
-        if controller is MoviesHomeCollectionController {
-            let controller = controller as! MoviesHomeCollectionController
-            controller.type = type
-        } else if controller is TVHomeCollectionController {
-            let controller = controller as! TVHomeCollectionController
+        if controller is HomeCollectionController {
+            let controller = controller as! HomeCollectionController
             controller.type = type
         }
     }

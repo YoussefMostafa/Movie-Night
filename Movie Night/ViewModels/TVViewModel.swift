@@ -8,17 +8,12 @@
 
 import Foundation
 
-struct TVViewModel {
-    
-    var contentRate: String?
-    var contentTitle: String?
-    var overview: String?
-    var posterPath: String?
-    var backdropPath: String?
+class TVViewModel: MNCardViewModel {
     
     // MARK: - Dependacy Injection
     
     init(_ dependancy: TV) {
+        super.init()
         contentRate = (dependancy.rate != nil && dependancy.rate != 0.0) ? "\(dependancy.rate!)" : nil
         contentTitle = "\(dependancy.title ?? "")"
         overview = "\(dependancy.overview ?? "")"

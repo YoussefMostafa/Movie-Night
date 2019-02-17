@@ -106,7 +106,7 @@ class ListCollectionViewCell<T>: MNCollectionViewCell<T> {
     
     private func loadImage(_ path: String?) {
         if let path = path {
-            let url = APIManager.createPhotoUrl(from: path)
+            let url = APIManager.createPhotoUrl(from: path, with: .high)
             backdropImage.sd_setImage(with: url)
         }
     }

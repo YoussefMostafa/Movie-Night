@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoviesHomeCollectionController: MNCollectionViewController<Movie,HomeCollectionCell<Movie>> {
+class HomeCollectionController: MNCollectionViewController<MNCardViewModel,HomeCollectionCell<MNCardViewModel>> {
     
     // MARK: - Props
     
@@ -33,7 +33,10 @@ class MoviesHomeCollectionController: MNCollectionViewController<Movie,HomeColle
                 return
             }
             guard let movies = data?.movies else { return }
-            self.dataSource = movies
+            let movieViewModels = movies.map({ (movie) -> MovieViewModel in
+                return MovieViewModel(movie)
+            })
+            self.dataSource = movieViewModels
         }
     }
     
