@@ -59,6 +59,8 @@ class HomeCollectionCell<T>: MNCollectionViewCell<T> {
     private let visualEffectView: UIVisualEffectView = {
         let effect = UIBlurEffect(style: .regular)
         let visualEffectView = UIVisualEffectView(effect: effect)
+        visualEffectView.layer.cornerRadius = 4
+        visualEffectView.layer.masksToBounds = true
         return visualEffectView
     }()
     

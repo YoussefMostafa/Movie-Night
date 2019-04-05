@@ -145,9 +145,10 @@ class LoginProfileSetupController: MNViewController {
     }
     
     private func navigateToHomeController() {
-        let controller = UINavigationController(rootViewController: DashboardTabBarController())
-        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = controller
-        present(controller, animated: true)
+        let navigationController = UINavigationController(rootViewController: DashboardTabBarController())
+        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = navigationController
+        navigationController.isNavigationBarHidden = true
+        present(navigationController, animated: true)
     }
     
     @objc private func dismissKeyboard() {
@@ -187,7 +188,6 @@ class LoginProfileSetupController: MNViewController {
     }
     
     override func setupSubViews() {
-        view.addSubview(navigationController!.navigationBar)
         view.addSubview(welcomeLabel)
         view.addSubview(cautionLabel)
         view.addSubview(profileImageView)
@@ -199,7 +199,7 @@ class LoginProfileSetupController: MNViewController {
     override func setupConstraints() {
         
         welcomeLabel.anchor(
-            top: navigationController!.navigationBar.bottomAnchor,
+            top: view.safeAreaLayoutGuide.topAnchor,
             leading: view.leadingAnchor,
             trailing: view.trailingAnchor,
             padding: UIPadding(top: 29, left: 24, right: 24),

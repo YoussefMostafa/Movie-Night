@@ -36,6 +36,8 @@ class HomeCollectionController: MNCollectionViewController<MNCardViewModel,HomeC
         
     }
     
+    // TODO:- refactor duplication in this two methods
+    
     private func fetchMovies(endPoint: APIManager.EndPoints) {
         APIManager.fetchData(endPoint) { (data: MoviesRequestedPage?, error) in
             if let error = error {

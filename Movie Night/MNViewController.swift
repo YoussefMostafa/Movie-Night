@@ -36,7 +36,7 @@ class MNViewController: UIViewController {
     func fetchData() {}
     func registerCells() {}
     func setupDelegates() {}
-    
+
     
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
