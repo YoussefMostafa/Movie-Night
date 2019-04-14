@@ -8,11 +8,12 @@
 
 import UIKit
 
-class HomeCollectionController: MNCollectionViewController<MNCardViewModel,HomeCollectionCell<MNCardViewModel>> {
+class HomeCollectionController: MNCollectionViewController<MNCardViewModel,HomeCollectionCell<MNCardViewModel>>, UIViewControllerTransitioningDelegate {
     
     // MARK: - Props
     
     var type: CollectionType?
+    var animatedTransitioning: MNCardCustomPresentingAnimatedTransitioning?
     
     // MARK: - Methods
     
@@ -33,7 +34,10 @@ class HomeCollectionController: MNCollectionViewController<MNCardViewModel,HomeC
         case .airingToday, .onTv, .popularOnTV, .topRatedOnTV:
             fetchTvSeries(endPoint: endPoint)
         }
-        
+    }
+    
+    override func prepareProps() {
+        animatedTransitioning = MNCardCustomPresentingAnimatedTransitioning()
     }
     
     // TODO:- refactor duplication in this two methods
@@ -89,6 +93,41 @@ class HomeCollectionController: MNCollectionViewController<MNCardViewModel,HomeC
     
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = CardDetailsViewController()
+        controller.transitioningDelegate = self
+        
+        guard
+            let animatedTransitioning = animatedTransitioning ,
+            var frame = collectionView.layoutAttributesForItem(at: indexPath)?.frame
+            else { return }
+        
+        let screenWidth = UIScreen.main.bounds.width
+        let contentOffset = collectionView.contentOffset.x > 0 ? collectionView.contentOffset.x + screenWidth : collectionView.contentOffset.x
+        let screenOffset = Int(contentOffset/screenWidth)
+        let realisticX = frame.minX - (CGFloat(screenOffset) * screenWidth)
+        
+        frame = CGRect(x: frame.minX, y: frame.minY * -1, width: frame.width, height: frame.height-40)
+        
+//        print("screenOffset: \(screenOffset)")
+        print("content offset: \(collectionView.contentOffset)")
+//        print("frame \(frame.minX)")
+//        print("realisticX \(realisticX)")
+        
+//        print("cv: \(collectionView.convert(frame, from: collectionView))")
+//        print("sp: \(collectionView.convert(frame, from: collectionView.superview))")
+//        print("bv: \(collectionView.convert(frame, from: collectionView.backgroundView))")
+
+        
+        animatedTransitioning.startFrame = frame
+        controller.endTransitioningFrame = frame
+//        present(controller, animated: true, completion: nil)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return animatedTransitioning
     }
     
 }

@@ -49,6 +49,9 @@
 		D8A3EF6522187C53000BCCAA /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3EF6422187C53000BCCAA /* Bindable.swift */; };
 		D8A3EF67221978F9000BCCAA /* UIImageViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3EF66221978F9000BCCAA /* UIImageViewExt.swift */; };
 		D8A3EF6922198709000BCCAA /* MNCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3EF6822198709000BCCAA /* MNCardViewModel.swift */; };
+		D8AE1C19225A202000A11CA2 /* MNCardCustomPresentingAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE1C18225A202000A11CA2 /* MNCardCustomPresentingAnimatedTransitioning.swift */; };
+		D8AE1C1C225A234900A11CA2 /* CardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE1C1B225A234900A11CA2 /* CardDetailsViewController.swift */; };
+		D8AE1C1E225AAFFD00A11CA2 /* MNCardCustomDismissalAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AE1C1D225AAFFD00A11CA2 /* MNCardCustomDismissalAnimatedTransitioning.swift */; };
 		D8D4FEFF21A499A200609D24 /* MovieHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D4FEFE21A499A200609D24 /* MovieHomeController.swift */; };
 		D8F7E31B2187400C0016B7E6 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */; };
 		D8F7E31D218747880016B7E6 /* OnBoardingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */; };
@@ -105,6 +108,9 @@
 		D8A3EF6422187C53000BCCAA /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		D8A3EF66221978F9000BCCAA /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		D8A3EF6822198709000BCCAA /* MNCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCardViewModel.swift; sourceTree = "<group>"; };
+		D8AE1C18225A202000A11CA2 /* MNCardCustomPresentingAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCardCustomPresentingAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		D8AE1C1B225A234900A11CA2 /* CardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailsViewController.swift; sourceTree = "<group>"; };
+		D8AE1C1D225AAFFD00A11CA2 /* MNCardCustomDismissalAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MNCardCustomDismissalAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		D8D4FEFE21A499A200609D24 /* MovieHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHomeController.swift; sourceTree = "<group>"; };
 		D8F7E31A2187400C0016B7E6 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		D8F7E31C218747880016B7E6 /* OnBoardingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageCell.swift; sourceTree = "<group>"; };
@@ -301,6 +307,7 @@
 				D8D4FEFD21A4998B00609D24 /* Home */,
 				D872C5BF219CAF0A00807169 /* Login&Signup */,
 				D8949FE821872DFA00A549B5 /* OnBoarding */,
+				D8AE1C1B225A234900A11CA2 /* CardDetailsViewController.swift */,
 			);
 			name = Controllers;
 			path = "New Group";
@@ -412,6 +419,8 @@
 				D872C5D421A0283000807169 /* MNFBLoginButton */,
 				D872C5C9219F509800807169 /* BLMultiColorLoader */,
 				D872C5C5219F4FB600807169 /* MNButton.swift */,
+				D8AE1C18225A202000A11CA2 /* MNCardCustomPresentingAnimatedTransitioning.swift */,
+				D8AE1C1D225AAFFD00A11CA2 /* MNCardCustomDismissalAnimatedTransitioning.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -553,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D87CA18E21A1597900143DC3 /* MNNavigationController.swift in Sources */,
+				D8AE1C1C225A234900A11CA2 /* CardDetailsViewController.swift in Sources */,
 				D811658A218EF7840086C778 /* OnboardingIntroTextModel.swift in Sources */,
 				D8F7E32121874A750016B7E6 /* MNCollectionViewCell.swift in Sources */,
 				D8102B5621B460F800D7D767 /* CellsReuseIdentifiers.swift in Sources */,
@@ -575,6 +585,7 @@
 				D8A3EF67221978F9000BCCAA /* UIImageViewExt.swift in Sources */,
 				D85D7D9A21ADE7E800C1BCFF /* MoviesRequestedPage.swift in Sources */,
 				D8A2A0232198CFAF0048D414 /* FaceBookManager.swift in Sources */,
+				D8AE1C1E225AAFFD00A11CA2 /* MNCardCustomDismissalAnimatedTransitioning.swift in Sources */,
 				D8102B5F21BB15D100D7D767 /* MNCollectionType.swift in Sources */,
 				D8949FEA21872E3100A549B5 /* OnBoardingController.swift in Sources */,
 				D872C5D3219F5D1100807169 /* FirebaseManager.swift in Sources */,
@@ -588,6 +599,7 @@
 				D8A006CC219A2206004EC041 /* UserModel.swift in Sources */,
 				D8102B6421BD23C800D7D767 /* TV.swift in Sources */,
 				D872C5D921A0309A00807169 /* LoginProfileViewModel.swift in Sources */,
+				D8AE1C19225A202000A11CA2 /* MNCardCustomPresentingAnimatedTransitioning.swift in Sources */,
 				D892902D21BDC2A400ADFE71 /* ListCollectionViewCell.swift in Sources */,
 				D8A3EF6522187C53000BCCAA /* Bindable.swift in Sources */,
 				D872C5C6219F4FB600807169 /* MNButton.swift in Sources */,
